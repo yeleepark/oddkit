@@ -29,6 +29,9 @@
     "jsonFormatter": {
       "description": "在瀏覽器本機格式化、壓縮和驗證 JSON"
     },
+    "timestampConverter": {
+      "description": "將 Unix 時間戳記轉換為日期，或將日期轉換回時間戳記"
+    },
     "promptComment": "{count} 個本機瀏覽器工具",
     "heroTitle": "只在需要時使用的實用工具。",
     "meta": {
@@ -590,6 +593,100 @@
         "美化 json",
         "json 語法檢查",
         "瀏覽器 json 工具",
+        "oddkit"
+      ]
+    }
+  },
+  "timestampConverter": {
+    "title": "時間戳記轉換器",
+    "description": "在瀏覽器中將 Unix 時間戳記轉換為可讀日期，或將日期轉換回時間戳記。支援秒與毫秒，同時顯示本地時間與 UTC。",
+    "sections": {
+      "toDate": {
+        "title": "時間戳記轉日期"
+      },
+      "toTimestamp": {
+        "title": "日期轉時間戳記"
+      }
+    },
+    "controls": {
+      "timestamp": "Unix 時間戳記",
+      "timestampPlaceholder": "例如：1720000000",
+      "unit": "單位",
+      "now": "目前時間",
+      "dateTime": "日期與時間",
+      "interpretAs": "解讀方式",
+      "useCurrentTime": "使用目前時間",
+      "compareZone": "比較時區",
+      "compareZonePlaceholder": "選擇一個時區"
+    },
+    "units": {
+      "auto": "自動偵測",
+      "seconds": "秒",
+      "milliseconds": "毫秒"
+    },
+    "interpretations": {
+      "local": "本地時間",
+      "utc": "UTC"
+    },
+    "results": {
+      "local": "本地時間（{zone}）",
+      "utc": "UTC",
+      "detectedUnit": "偵測到的單位：{unit}",
+      "unixSeconds": "Unix 秒",
+      "unixMilliseconds": "Unix 毫秒",
+      "isoUtc": "ISO 8601（UTC）",
+      "empty": "-"
+    },
+    "actions": {
+      "copy": "複製",
+      "copied": "已複製"
+    },
+    "errors": {
+      "empty": "請輸入要轉換的時間戳記。",
+      "not_a_number": "請輸入有效的數字，單位為秒或毫秒。",
+      "out_of_range": "此數值超出 JavaScript 日期可表示的範圍。",
+      "dateEmpty": "請選擇要轉換的日期與時間。",
+      "dateInvalid": "無法解析此日期與時間。"
+    },
+    "ui": {
+      "eyebrow": "// 1720000000 是幾點"
+    },
+    "seo": {
+      "overviewTitle": "以瀏覽器運作的時間戳記轉換器",
+      "overview": "在查看記錄檔、API 回應、排程工作或分析資料時，將 Unix 時間戳記轉換為易讀的日期，也可以將日期轉換回時間戳記。",
+      "privacy": "時間戳記與日期皆在瀏覽器中本地轉換，你輸入的內容不會上傳到 oddkit。",
+      "useCasesTitle": "常見用途",
+      "useCases": [
+        "查看記錄檔或 API 回應中的 Unix 時間戳記對應的實際時間",
+        "將排程工作或 API 呼叫所需的日期轉換為時間戳記",
+        "在本地時間、UTC 與其他時區之間比較同一時刻"
+      ],
+      "faqTitle": "常見問題",
+      "faq": [
+        {
+          "question": "我的時間戳記或日期會上傳到 oddkit 嗎？",
+          "answer": "不會。所有轉換都在瀏覽器中本地完成。"
+        },
+        {
+          "question": "工具如何判斷時間戳記是秒還是毫秒？",
+          "answer": "預設會依數值位數自動判斷：目前的秒級時間戳記約為 10 位數，毫秒級約為 13 位數。你也可以手動指定秒或毫秒。"
+        },
+        {
+          "question": "可以查看其他時區的時間嗎？",
+          "answer": "可以。使用比較時區選單，即可將同一時刻顯示為任何支援的 IANA 時區，並與本地時間、UTC 一併查看。"
+        }
+      ]
+    },
+    "meta": {
+      "title": "時間戳記轉換器 - oddkit",
+      "description": "在瀏覽器中將 Unix 時間戳記轉換為日期，或將日期轉換回時間戳記。支援秒/毫秒、本地時間、UTC 以及時區比較。",
+      "keywords": [
+        "時間戳記轉換",
+        "Unix 時間戳記",
+        "epoch 轉換",
+        "Unix 時間轉日期",
+        "日期轉時間戳記",
+        "UTC 轉換器",
         "oddkit"
       ]
     }

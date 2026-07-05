@@ -36,6 +36,9 @@
     "jsonFormatter": {
       "description": "Formatea, minifica y valida JSON localmente en tu navegador"
     },
+    "timestampConverter": {
+      "description": "Convierte marcas de tiempo Unix en fechas y de vuelta en marcas de tiempo"
+    },
     "promptComment": "{count} herramientas locales del navegador",
     "heroTitle": "Herramientas útiles, solo cuando las necesitas.",
     "meta": {
@@ -605,6 +608,100 @@
         "json bonito",
         "linter json",
         "herramienta json en el navegador",
+        "oddkit"
+      ]
+    }
+  },
+  "timestampConverter": {
+    "title": "Conversor de marcas de tiempo",
+    "description": "Convierte marcas de tiempo Unix en fechas legibles y fechas de vuelta en marcas de tiempo, todo en tu navegador. Admite segundos y milisegundos, con hora local y UTC lado a lado.",
+    "sections": {
+      "toDate": {
+        "title": "Marca de tiempo a fecha"
+      },
+      "toTimestamp": {
+        "title": "Fecha a marca de tiempo"
+      }
+    },
+    "controls": {
+      "timestamp": "Marca de tiempo Unix",
+      "timestampPlaceholder": "p. ej. 1720000000",
+      "unit": "Unidad",
+      "now": "Ahora",
+      "dateTime": "Fecha y hora",
+      "interpretAs": "Interpretar como",
+      "useCurrentTime": "Usar la hora actual",
+      "compareZone": "Comparar zona horaria",
+      "compareZonePlaceholder": "Selecciona una zona horaria"
+    },
+    "units": {
+      "auto": "Detección automática",
+      "seconds": "Segundos",
+      "milliseconds": "Milisegundos"
+    },
+    "interpretations": {
+      "local": "Hora local",
+      "utc": "UTC"
+    },
+    "results": {
+      "local": "Local ({zone})",
+      "utc": "UTC",
+      "detectedUnit": "Unidad detectada: {unit}",
+      "unixSeconds": "Segundos Unix",
+      "unixMilliseconds": "Milisegundos Unix",
+      "isoUtc": "ISO 8601 (UTC)",
+      "empty": "-"
+    },
+    "actions": {
+      "copy": "Copiar",
+      "copied": "Copiado"
+    },
+    "errors": {
+      "empty": "Introduce una marca de tiempo para convertir.",
+      "not_a_number": "Introduce un número válido, en segundos o milisegundos.",
+      "out_of_range": "Este valor está fuera del rango que puede representar una fecha de JavaScript.",
+      "dateEmpty": "Elige una fecha y hora para convertir.",
+      "dateInvalid": "No se pudo interpretar esta fecha y hora."
+    },
+    "ui": {
+      "eyebrow": "// qué hora es 1720000000"
+    },
+    "seo": {
+      "overviewTitle": "Conversor de marcas de tiempo en el navegador",
+      "overview": "Convierte marcas de tiempo Unix en fechas legibles, y fechas de vuelta en marcas de tiempo, al revisar registros, respuestas de API, tareas programadas o datos de analítica.",
+      "privacy": "Las marcas de tiempo y fechas se convierten localmente en tu navegador. Nada de lo que introduces se sube a oddkit.",
+      "useCasesTitle": "Casos de uso comunes",
+      "useCases": [
+        "Comprobar qué hora representa una marca de tiempo Unix en un registro o respuesta de API",
+        "Convertir una fecha y hora programada en una marca de tiempo para una tarea cron o una llamada a la API",
+        "Comparar una marca de tiempo entre tu zona horaria local, UTC y otra zona horaria"
+      ],
+      "faqTitle": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Se suben mis marcas de tiempo o fechas a oddkit?",
+          "answer": "No. Todo el análisis y formateo ocurre localmente en tu navegador."
+        },
+        {
+          "question": "¿Cómo sabe la herramienta si una marca de tiempo está en segundos o milisegundos?",
+          "answer": "De forma predeterminada, lo detecta según la magnitud: las marcas de tiempo actuales en segundos tienen unos 10 dígitos, mientras que las de milisegundos tienen unos 13. También puedes forzar segundos o milisegundos manualmente."
+        },
+        {
+          "question": "¿Puedo ver una marca de tiempo en una zona horaria distinta a la mía?",
+          "answer": "Sí. Usa el selector de comparación de zona horaria para ver el mismo instante en cualquier zona horaria IANA compatible, junto con tu hora local y UTC."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Conversor de marcas de tiempo - oddkit",
+      "description": "Convierte marcas de tiempo Unix en fechas y de vuelta en tu navegador. Admite segundos y milisegundos, hora local, UTC y comparación de zonas horarias.",
+      "keywords": [
+        "conversor de marcas de tiempo",
+        "marca de tiempo unix",
+        "conversor epoch",
+        "hora unix a fecha",
+        "fecha a marca de tiempo",
+        "conversor utc",
         "oddkit"
       ]
     }

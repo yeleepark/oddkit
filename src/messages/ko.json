@@ -36,6 +36,9 @@
     "jsonFormatter": {
       "description": "붙여넣은 JSON을 정리하고 오류를 검사합니다."
     },
+    "timestampConverter": {
+      "description": "유닉스 타임스탬프를 날짜로, 날짜를 다시 타임스탬프로 변환합니다."
+    },
     "promptComment": "로컬 브라우저 도구 {count}개",
     "heroTitle": "작업자를 위한 작은 툴킷.",
     "meta": {
@@ -605,6 +608,100 @@
         "json 예쁘게 출력",
         "json 문법 검사",
         "브라우저 json 도구",
+        "oddkit"
+      ]
+    }
+  },
+  "timestampConverter": {
+    "title": "타임스탬프 변환기",
+    "description": "유닉스 타임스탬프를 사람이 읽을 수 있는 날짜로, 날짜를 다시 타임스탬프로 브라우저에서 변환합니다. 초 단위와 밀리초 단위를 모두 지원하며 로컬 시간과 UTC를 함께 보여줍니다.",
+    "sections": {
+      "toDate": {
+        "title": "타임스탬프 → 날짜"
+      },
+      "toTimestamp": {
+        "title": "날짜 → 타임스탬프"
+      }
+    },
+    "controls": {
+      "timestamp": "유닉스 타임스탬프",
+      "timestampPlaceholder": "예: 1720000000",
+      "unit": "단위",
+      "now": "현재 시각",
+      "dateTime": "날짜 및 시간",
+      "interpretAs": "해석 기준",
+      "useCurrentTime": "현재 시각 사용",
+      "compareZone": "비교할 시간대",
+      "compareZonePlaceholder": "시간대를 선택하세요"
+    },
+    "units": {
+      "auto": "자동 감지",
+      "seconds": "초",
+      "milliseconds": "밀리초"
+    },
+    "interpretations": {
+      "local": "로컬 시간",
+      "utc": "UTC"
+    },
+    "results": {
+      "local": "로컬 ({zone})",
+      "utc": "UTC",
+      "detectedUnit": "감지된 단위: {unit}",
+      "unixSeconds": "유닉스 초",
+      "unixMilliseconds": "유닉스 밀리초",
+      "isoUtc": "ISO 8601 (UTC)",
+      "empty": "-"
+    },
+    "actions": {
+      "copy": "복사",
+      "copied": "복사됨"
+    },
+    "errors": {
+      "empty": "변환할 타임스탬프를 입력하세요.",
+      "not_a_number": "초 또는 밀리초 단위의 유효한 숫자를 입력하세요.",
+      "out_of_range": "이 값은 자바스크립트 날짜로 표현할 수 있는 범위를 벗어났습니다.",
+      "dateEmpty": "변환할 날짜와 시간을 선택하세요.",
+      "dateInvalid": "이 날짜와 시간을 해석할 수 없습니다."
+    },
+    "ui": {
+      "eyebrow": "// 1720000000은 몇 시일까"
+    },
+    "seo": {
+      "overviewTitle": "브라우저 기반 타임스탬프 변환기",
+      "overview": "로그, API 응답, 예약 작업, 분석 데이터를 확인할 때 유닉스 타임스탬프를 읽기 쉬운 날짜로, 날짜를 다시 타임스탬프로 변환합니다.",
+      "privacy": "타임스탬프와 날짜는 브라우저에서 로컬로 변환됩니다. 입력한 값은 oddkit 서버로 업로드되지 않습니다.",
+      "useCasesTitle": "주요 사용 사례",
+      "useCases": [
+        "로그나 API 응답에 있는 유닉스 타임스탬프가 어떤 시각인지 확인",
+        "예약 작업이나 API 호출에 사용할 날짜를 타임스탬프로 변환",
+        "로컬 시간, UTC, 다른 시간대에서 같은 시각을 비교"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "타임스탬프나 날짜가 oddkit에 업로드되나요?",
+          "answer": "아니요. 모든 변환은 브라우저에서 로컬로 처리됩니다."
+        },
+        {
+          "question": "타임스탬프가 초 단위인지 밀리초 단위인지 어떻게 판단하나요?",
+          "answer": "기본적으로 자릿수로 자동 감지합니다. 현재 시점의 초 단위 타임스탬프는 약 10자리, 밀리초 단위는 약 13자리입니다. 초 또는 밀리초를 직접 지정할 수도 있습니다."
+        },
+        {
+          "question": "내 시간대가 아닌 다른 시간대로도 볼 수 있나요?",
+          "answer": "네. 비교할 시간대 선택에서 원하는 IANA 시간대를 골라 로컬 시간, UTC와 함께 확인할 수 있습니다."
+        }
+      ]
+    },
+    "meta": {
+      "title": "타임스탬프 변환기 - oddkit",
+      "description": "유닉스 타임스탬프를 브라우저에서 날짜로, 날짜를 다시 타임스탬프로 변환하세요. 초/밀리초, 로컬 시간, UTC, 시간대 비교를 지원합니다.",
+      "keywords": [
+        "타임스탬프 변환",
+        "유닉스 타임스탬프",
+        "에폭 변환기",
+        "유닉스 시간 변환",
+        "날짜 타임스탬프 변환",
+        "UTC 변환기",
         "oddkit"
       ]
     }

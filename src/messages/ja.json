@@ -36,6 +36,9 @@
     "jsonFormatter": {
       "description": "ブラウザ内でローカルにJSONを整形、圧縮、検証"
     },
+    "timestampConverter": {
+      "description": "Unixタイムスタンプを日付に、日付をタイムスタンプに変換"
+    },
     "promptComment": "ローカルブラウザツール {count} 個",
     "heroTitle": "必要な時だけ使う、ちょうどいいツール。",
     "meta": {
@@ -605,6 +608,100 @@
         "json整形",
         "jsonリンター",
         "ブラウザjsonツール",
+        "oddkit"
+      ]
+    }
+  },
+  "timestampConverter": {
+    "title": "タイムスタンプ変換ツール",
+    "description": "Unixタイムスタンプを読みやすい日付に、日付を再びタイムスタンプに、すべてブラウザ内で変換します。秒とミリ秒に対応し、ローカル時間とUTCを並べて表示します。",
+    "sections": {
+      "toDate": {
+        "title": "タイムスタンプ → 日付"
+      },
+      "toTimestamp": {
+        "title": "日付 → タイムスタンプ"
+      }
+    },
+    "controls": {
+      "timestamp": "Unixタイムスタンプ",
+      "timestampPlaceholder": "例: 1720000000",
+      "unit": "単位",
+      "now": "現在時刻",
+      "dateTime": "日付と時刻",
+      "interpretAs": "解釈方法",
+      "useCurrentTime": "現在時刻を使用",
+      "compareZone": "比較するタイムゾーン",
+      "compareZonePlaceholder": "タイムゾーンを選択"
+    },
+    "units": {
+      "auto": "自動判定",
+      "seconds": "秒",
+      "milliseconds": "ミリ秒"
+    },
+    "interpretations": {
+      "local": "ローカル時間",
+      "utc": "UTC"
+    },
+    "results": {
+      "local": "ローカル ({zone})",
+      "utc": "UTC",
+      "detectedUnit": "検出された単位: {unit}",
+      "unixSeconds": "Unix秒",
+      "unixMilliseconds": "Unixミリ秒",
+      "isoUtc": "ISO 8601 (UTC)",
+      "empty": "-"
+    },
+    "actions": {
+      "copy": "コピー",
+      "copied": "コピーしました"
+    },
+    "errors": {
+      "empty": "変換するタイムスタンプを入力してください。",
+      "not_a_number": "秒またはミリ秒の有効な数値を入力してください。",
+      "out_of_range": "この値はJavaScriptのDateで扱える範囲を超えています。",
+      "dateEmpty": "変換する日付と時刻を選択してください。",
+      "dateInvalid": "この日付と時刻を解析できませんでした。"
+    },
+    "ui": {
+      "eyebrow": "// 1720000000って何時？"
+    },
+    "seo": {
+      "overviewTitle": "ブラウザで動くタイムスタンプ変換ツール",
+      "overview": "ログ、APIレスポンス、スケジュールジョブ、分析データを確認するときに、Unixタイムスタンプを読みやすい日付に、日付を再びタイムスタンプに変換します。",
+      "privacy": "タイムスタンプと日付はブラウザ内でローカルに変換されます。入力内容がoddkitにアップロードされることはありません。",
+      "useCasesTitle": "よくある使い方",
+      "useCases": [
+        "ログやAPIレスポンス内のUnixタイムスタンプがどの時刻かを確認する",
+        "cronジョブやAPI呼び出しに使う日付をタイムスタンプに変換する",
+        "同じ瞬間をローカル時間・UTC・別のタイムゾーンで比較する"
+      ],
+      "faqTitle": "よくある質問",
+      "faq": [
+        {
+          "question": "タイムスタンプや日付はoddkitにアップロードされますか?",
+          "answer": "いいえ。すべての変換はブラウザ内でローカルに処理されます。"
+        },
+        {
+          "question": "タイムスタンプが秒とミリ秒のどちらかをどうやって判定しますか?",
+          "answer": "既定では桁数から自動判定します。現在の秒単位タイムスタンプは約10桁、ミリ秒単位は約13桁です。秒またはミリ秒を手動で指定することもできます。"
+        },
+        {
+          "question": "自分のタイムゾーン以外でも表示できますか?",
+          "answer": "はい。比較するタイムゾーンを選択すると、対応するIANAタイムゾーンでの表示をローカル時間・UTCと並べて確認できます。"
+        }
+      ]
+    },
+    "meta": {
+      "title": "タイムスタンプ変換ツール - oddkit",
+      "description": "Unixタイムスタンプをブラウザで日付に、日付を再びタイムスタンプに変換します。秒/ミリ秒、ローカル時間、UTC、タイムゾーン比較に対応。",
+      "keywords": [
+        "タイムスタンプ変換",
+        "Unixタイムスタンプ",
+        "エポック変換",
+        "Unix時間 変換",
+        "日付 タイムスタンプ変換",
+        "UTC変換",
         "oddkit"
       ]
     }
