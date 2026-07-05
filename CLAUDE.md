@@ -210,6 +210,7 @@ For documentation-only changes, tests are not required.
 When the user's request matches an available skill, invoke it via the Skill tool. When in doubt, invoke the skill.
 
 Key routing rules:
+
 - Commit message/commit convention → invoke `.claude/skills/commit-convention/SKILL.md`
 - Product ideas/brainstorming → invoke /office-hours
 - Strategy/scope → invoke /plan-ceo-review
