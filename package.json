@@ -1,0 +1,56 @@
+{
+  "name": "oddkit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Browser-based toolkit for small design, development, and content workflows.",
+  "keywords": [
+    "image-tools",
+    "image-generator",
+    "image-compressor",
+    "image-converter",
+    "image-resizer",
+    "nextjs",
+    "browser-tools"
+  ],
+  "homepage": "https://oddkit.tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yeleepark/oddkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yeleepark/oddkit/issues"
+  },
+  "author": "yelee park <dev.yelee@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "gif.js": "^0.2.0",
+    "next": "16.2.10",
+    "next-intl": "^4.13.1",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.10",
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
