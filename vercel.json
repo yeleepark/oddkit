@@ -9,6 +9,16 @@
       "dev": true
     }
   },
+  "domains": [
+    {
+      "domain": "oddkit.tools",
+      "gitBranch": "main"
+    },
+    {
+      "domain": "dev.oddkit.tools",
+      "gitBranch": "dev"
+    }
+  ],
   "env": [
     {
       "key": "NEXT_PUBLIC_SITE_URL",
@@ -18,7 +28,7 @@
   "envs": {
     "NEXT_PUBLIC_SITE_URL": {
       "production": "https://oddkit.tools",
-      "preview": "https://$VERCEL_URL"
+      "preview": "https://dev.oddkit.tools"
     }
   }
 }
