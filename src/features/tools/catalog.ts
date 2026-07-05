@@ -1,0 +1,44 @@
+export const TOOL_CATALOG = [
+  {
+    id: 'dummy-image',
+    num: '01',
+    tag: '#image · #placeholder',
+    href: '/tools/dummy-image',
+    titleKey: 'dummyImage.title',
+    descriptionKey: 'dummyImage.description',
+    homeDescriptionKey: 'dummyImage.description',
+    enabled: true,
+  },
+  {
+    id: 'image-converter',
+    num: '02',
+    tag: '#image · #convert',
+    href: '/tools/image-converter',
+    titleKey: 'imageConverter.title',
+    descriptionKey: 'imageConverter.description',
+    homeDescriptionKey: 'imageConverter.description',
+    enabled: true,
+  },
+  {
+    id: 'image-compressor',
+    num: '03',
+    tag: '#image · #optimize',
+    href: '/tools/image-compressor',
+    titleKey: 'imageCompressor.title',
+    descriptionKey: 'imageCompressor.description',
+    homeDescriptionKey: 'imageCompressor.description',
+    enabled: true,
+  },
+  {
+    id: 'image-resizer',
+    num: '04',
+    tag: '#image · #resize',
+    href: '/tools/image-resizer',
+    titleKey: 'imageResizer.title',
+    descriptionKey: 'imageResizer.description',
+    homeDescriptionKey: 'imageResizer.description',
+    enabled: true,
+  },
+] as const
+
+export type ToolCatalogItem = (typeof TOOL_CATALOG)[number]
