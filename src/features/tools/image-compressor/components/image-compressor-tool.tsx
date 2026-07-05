@@ -3,7 +3,11 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { compressImage } from '@/features/tools/image-compressor/lib/compressor'
-import { formatBytes, getCompressionRatio, getTargetSizeBytes } from '@/features/tools/image-compressor/lib/file'
+import {
+  formatBytes,
+  getCompressionRatio,
+  getTargetSizeBytes,
+} from '@/features/tools/image-compressor/lib/file'
 import {
   DEFAULT_IMAGE_COMPRESSOR_OPTIONS,
   IMAGE_COMPRESSOR_LIMITS,
@@ -138,7 +142,12 @@ export default function ImageCompressorTool() {
               </Chip>
               <Chip
                 active={options.mode === 'target'}
-                onClick={() => setOption({ mode: 'target', format: options.format === 'png' ? 'webp' : options.format })}
+                onClick={() =>
+                  setOption({
+                    mode: 'target',
+                    format: options.format === 'png' ? 'webp' : options.format,
+                  })
+                }
               >
                 {t('modes.target')}
               </Chip>
@@ -153,15 +162,25 @@ export default function ImageCompressorTool() {
                   type="number"
                   aria-label={t('controls.targetSize')}
                   min={IMAGE_COMPRESSOR_LIMITS.targetSizeMinKb}
-                  max={options.targetUnit === 'mb' ? IMAGE_COMPRESSOR_LIMITS.targetSizeMaxMb : IMAGE_COMPRESSOR_LIMITS.targetSizeMaxMb * 1024}
+                  max={
+                    options.targetUnit === 'mb'
+                      ? IMAGE_COMPRESSOR_LIMITS.targetSizeMaxMb
+                      : IMAGE_COMPRESSOR_LIMITS.targetSizeMaxMb * 1024
+                  }
                   value={options.targetSize}
-                  onChange={(event) => setOption({ targetSize: Math.max(1, Number(event.target.value)) })}
+                  onChange={(event) =>
+                    setOption({ targetSize: Math.max(1, Number(event.target.value)) })
+                  }
                   className="w-full"
                 />
                 <Select
                   aria-label="target unit"
                   value={options.targetUnit}
-                  onChange={(event) => setOption({ targetUnit: event.target.value as ImageCompressorOptions['targetUnit'] })}
+                  onChange={(event) =>
+                    setOption({
+                      targetUnit: event.target.value as ImageCompressorOptions['targetUnit'],
+                    })
+                  }
                 >
                   <option value="kb">KB</option>
                   <option value="mb">MB</option>
@@ -175,20 +194,18 @@ export default function ImageCompressorTool() {
 
           {options.mode === 'manual' && (
             <div>
-            <Label>
-              {t('controls.quality', { quality: Math.round(options.quality * 100) })}
-            </Label>
-            <input
-              type="range"
-              aria-label={t('controls.quality', { quality: Math.round(options.quality * 100) })}
-              min={IMAGE_COMPRESSOR_LIMITS.qualityMin}
-              max={IMAGE_COMPRESSOR_LIMITS.qualityMax}
-              step={0.05}
-              value={options.quality}
-              onChange={(event) => setOption({ quality: Number(event.target.value) })}
-              className="w-full"
-            />
-          </div>
+              <Label>{t('controls.quality', { quality: Math.round(options.quality * 100) })}</Label>
+              <input
+                type="range"
+                aria-label={t('controls.quality', { quality: Math.round(options.quality * 100) })}
+                min={IMAGE_COMPRESSOR_LIMITS.qualityMin}
+                max={IMAGE_COMPRESSOR_LIMITS.qualityMax}
+                step={0.05}
+                value={options.quality}
+                onChange={(event) => setOption({ quality: Number(event.target.value) })}
+                className="w-full"
+              />
+            </div>
           )}
 
           <div>
@@ -200,7 +217,9 @@ export default function ImageCompressorTool() {
                 min={IMAGE_COMPRESSOR_LIMITS.dimensionMin}
                 max={IMAGE_COMPRESSOR_LIMITS.dimensionMax}
                 value={options.maxWidth}
-                onChange={(event) => setOption({ maxWidth: Math.max(1, Number(event.target.value)) })}
+                onChange={(event) =>
+                  setOption({ maxWidth: Math.max(1, Number(event.target.value)) })
+                }
                 className="w-24"
               />
               <span className="font-mono text-sm text-faint">x</span>
@@ -210,7 +229,9 @@ export default function ImageCompressorTool() {
                 min={IMAGE_COMPRESSOR_LIMITS.dimensionMin}
                 max={IMAGE_COMPRESSOR_LIMITS.dimensionMax}
                 value={options.maxHeight}
-                onChange={(event) => setOption({ maxHeight: Math.max(1, Number(event.target.value)) })}
+                onChange={(event) =>
+                  setOption({ maxHeight: Math.max(1, Number(event.target.value)) })
+                }
                 className="w-24"
               />
               <span className="font-mono text-sm text-faint">px</span>
@@ -222,7 +243,9 @@ export default function ImageCompressorTool() {
             <Select
               aria-label={t('controls.format')}
               value={options.format}
-              onChange={(event) => setOption({ format: event.target.value as ImageCompressorOptions['format'] })}
+              onChange={(event) =>
+                setOption({ format: event.target.value as ImageCompressorOptions['format'] })
+              }
               className="w-full"
             >
               {IMAGE_COMPRESSOR_FORMAT_OPTIONS.map(({ value, key }) => (
@@ -238,10 +261,7 @@ export default function ImageCompressorTool() {
 
           {error && <p className="text-sm text-red-400">{error}</p>}
 
-          <Button
-            onClick={handleCompress}
-            disabled={!file || isCompressing}
-          >
+          <Button onClick={handleCompress} disabled={!file || isCompressing}>
             {isCompressing ? t('actions.compressing') : t('actions.compress')}
           </Button>
         </Controls>
@@ -267,11 +287,23 @@ export default function ImageCompressorTool() {
             <Stat label={t('stats.original')} value={file ? formatBytes(file.size) : '-'} />
             <Stat label={t('stats.compressed')} value={result ? formatBytes(result.size) : '-'} />
             <Stat label={t('stats.saved')} value={result ? `${savings}%` : '-'} />
-            <Stat label={t('stats.output')} value={result ? `${result.width}x${result.height}` : '-'} />
-            <Stat label={t('stats.quality')} value={result ? `${Math.round(result.quality * 100)}%` : '-'} />
+            <Stat
+              label={t('stats.output')}
+              value={result ? `${result.width}x${result.height}` : '-'}
+            />
+            <Stat
+              label={t('stats.quality')}
+              value={result ? `${Math.round(result.quality * 100)}%` : '-'}
+            />
             <Stat
               label={t('stats.target')}
-              value={result ? (result.targetReached ? t('stats.targetReached') : t('stats.targetMissed')) : '-'}
+              value={
+                result
+                  ? result.targetReached
+                    ? t('stats.targetReached')
+                    : t('stats.targetMissed')
+                  : '-'
+              }
               className={result?.targetReached === false ? 'text-acid' : ''}
             />
           </StatGrid>

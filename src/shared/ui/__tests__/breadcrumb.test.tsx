@@ -2,8 +2,14 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import Breadcrumb from '@/shared/ui/breadcrumb'
 
 jest.mock('@/i18n/navigation', () => ({
-  Link: ({ children, href, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) => (
-    <a href={href} {...props}>{children}</a>
+  Link: ({
+    children,
+    href,
+    ...props
+  }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) => (
+    <a href={href} {...props}>
+      {children}
+    </a>
   ),
 }))
 

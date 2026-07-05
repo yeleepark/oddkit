@@ -4,10 +4,11 @@ import { compressImage } from '@/features/tools/image-compressor/lib/compressor'
 import mockKoMessages from '@/messages/ko.json'
 
 jest.mock('next-intl', () => {
-  const readMessage = (path: string) => path.split('.').reduce<unknown>((current, segment) => {
-    if (!current || typeof current !== 'object') return undefined
-    return (current as Record<string, unknown>)[segment]
-  }, mockKoMessages)
+  const readMessage = (path: string) =>
+    path.split('.').reduce<unknown>((current, segment) => {
+      if (!current || typeof current !== 'object') return undefined
+      return (current as Record<string, unknown>)[segment]
+    }, mockKoMessages)
 
   const interpolate = (message: string, values?: Record<string, string | number>) => {
     if (!values) return message
@@ -32,8 +33,14 @@ jest.mock('next-intl', () => {
 })
 
 jest.mock('@/i18n/navigation', () => ({
-  Link: ({ children, href, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) => (
-    <a href={href} {...props}>{children}</a>
+  Link: ({
+    children,
+    href,
+    ...props
+  }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) => (
+    <a href={href} {...props}>
+      {children}
+    </a>
   ),
 }))
 
@@ -64,7 +71,12 @@ describe('ImageCompressorTool', () => {
     expect(screen.getByLabelText('품질: 80%')).toBeInTheDocument()
     expect(screen.getByLabelText('max width')).toHaveValue(1920)
     expect(screen.getByLabelText('max height')).toHaveValue(1920)
-    expect(screen.getByRole('button', { name: (name, element) => name === '이미지 압축' && (element as HTMLElement).classList.contains('tool-primary') })).toBeDisabled()
+    expect(
+      screen.getByRole('button', {
+        name: (name, element) =>
+          name === '이미지 압축' && (element as HTMLElement).classList.contains('tool-primary'),
+      })
+    ).toBeDisabled()
   })
 
   test('목표 용량 모드: WebP 출력과 목표 KB 값을 선택하면 압축 옵션에 그대로 전달한다', async () => {
@@ -93,7 +105,12 @@ describe('ImageCompressorTool', () => {
     fireEvent.change(screen.getByRole('combobox', { name: '출력 포맷' }), {
       target: { value: 'webp' },
     })
-    fireEvent.click(screen.getByRole('button', { name: (name, element) => name === '이미지 압축' && (element as HTMLElement).classList.contains('tool-primary') }))
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: (name, element) =>
+          name === '이미지 압축' && (element as HTMLElement).classList.contains('tool-primary'),
+      })
+    )
 
     await waitFor(() => {
       expect(mockedCompressImage).toHaveBeenCalledWith(sourceFile, {
@@ -123,9 +140,16 @@ describe('ImageCompressorTool', () => {
     fireEvent.change(screen.getByLabelText('이미지'), {
       target: { files: [new File(['broken'], 'broken.webp', { type: 'image/webp' })] },
     })
-    fireEvent.click(screen.getByRole('button', { name: (name, element) => name === '이미지 압축' && (element as HTMLElement).classList.contains('tool-primary') }))
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: (name, element) =>
+          name === '이미지 압축' && (element as HTMLElement).classList.contains('tool-primary'),
+      })
+    )
 
-    expect(await screen.findByText('이미지를 압축할 수 없습니다. 다른 파일이나 포맷을 시도하세요.')).toBeInTheDocument()
+    expect(
+      await screen.findByText('이미지를 압축할 수 없습니다. 다른 파일이나 포맷을 시도하세요.')
+    ).toBeInTheDocument()
     expect(screen.queryByRole('link', { name: '압축 이미지 다운로드' })).not.toBeInTheDocument()
   })
 })

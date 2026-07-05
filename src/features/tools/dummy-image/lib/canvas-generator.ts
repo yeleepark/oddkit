@@ -4,7 +4,17 @@ import { DUMMY_IMAGE_PATTERN } from '@/features/tools/dummy-image/model/config'
 import type { DummyImageConfig } from '@/features/tools/dummy-image/model/types'
 
 export function drawToCanvas(canvas: HTMLCanvasElement, config: DummyImageConfig): void {
-  const { type, width, height, primaryColor, secondaryColor, text, fontSize, gradientDirection, patternStyle } = config
+  const {
+    type,
+    width,
+    height,
+    primaryColor,
+    secondaryColor,
+    text,
+    fontSize,
+    gradientDirection,
+    patternStyle,
+  } = config
   const displayText = getDisplayText({ height, text, width })
   canvas.width = width
   canvas.height = height
@@ -69,8 +79,14 @@ function drawPattern(
     const step = DUMMY_IMAGE_PATTERN.gridStep
     ctx.lineWidth = 1
     ctx.beginPath()
-    for (let x = 0; x <= width; x += step) { ctx.moveTo(x, 0); ctx.lineTo(x, height) }
-    for (let y = 0; y <= height; y += step) { ctx.moveTo(0, y); ctx.lineTo(width, y) }
+    for (let x = 0; x <= width; x += step) {
+      ctx.moveTo(x, 0)
+      ctx.lineTo(x, height)
+    }
+    for (let y = 0; y <= height; y += step) {
+      ctx.moveTo(0, y)
+      ctx.lineTo(width, y)
+    }
     ctx.stroke()
     return
   }

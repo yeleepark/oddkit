@@ -4,10 +4,11 @@ import { resizeImage } from '@/features/tools/image-resizer/lib/resizer'
 import mockKoMessages from '@/messages/ko.json'
 
 jest.mock('next-intl', () => {
-  const readMessage = (path: string) => path.split('.').reduce<unknown>((current, segment) => {
-    if (!current || typeof current !== 'object') return undefined
-    return (current as Record<string, unknown>)[segment]
-  }, mockKoMessages)
+  const readMessage = (path: string) =>
+    path.split('.').reduce<unknown>((current, segment) => {
+      if (!current || typeof current !== 'object') return undefined
+      return (current as Record<string, unknown>)[segment]
+    }, mockKoMessages)
 
   const interpolate = (message: string, values?: Record<string, string | number>) => {
     if (!values) return message
@@ -32,8 +33,14 @@ jest.mock('next-intl', () => {
 })
 
 jest.mock('@/i18n/navigation', () => ({
-  Link: ({ children, href, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) => (
-    <a href={href} {...props}>{children}</a>
+  Link: ({
+    children,
+    href,
+    ...props
+  }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) => (
+    <a href={href} {...props}>
+      {children}
+    </a>
   ),
 }))
 

@@ -1,4 +1,7 @@
-import { getConvertedFileName, getConverterMimeType } from '@/features/tools/image-converter/lib/file'
+import {
+  getConvertedFileName,
+  getConverterMimeType,
+} from '@/features/tools/image-converter/lib/file'
 import type {
   ImageConverterOptions,
   ImageConverterResult,

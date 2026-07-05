@@ -2,10 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslations } from 'next-intl'
-import {
-  getAspectRatioHeight,
-  getAspectRatioWidth,
-} from '@/features/tools/image-resizer/lib/file'
+import { getAspectRatioHeight, getAspectRatioWidth } from '@/features/tools/image-resizer/lib/file'
 import { resizeImage } from '@/features/tools/image-resizer/lib/resizer'
 import {
   DEFAULT_IMAGE_RESIZER_OPTIONS,
@@ -16,7 +13,10 @@ import {
   IMAGE_RESIZER_FORMAT_OPTIONS,
   IMAGE_RESIZER_SCALE_PRESETS,
 } from '@/features/tools/image-resizer/model/options'
-import type { ImageResizerOptions, ImageResizerResult } from '@/features/tools/image-resizer/model/types'
+import type {
+  ImageResizerOptions,
+  ImageResizerResult,
+} from '@/features/tools/image-resizer/model/types'
 import { formatBytes } from '@/features/tools/image-compressor/lib/file'
 import ToolPageLayout from '@/shared/ui/ToolPageLayout'
 import Grid from '@/shared/ui/Grid'
@@ -74,9 +74,10 @@ export default function ImageResizerTool() {
     const nextWidth = Math.max(IMAGE_RESIZER_LIMITS.dimensionMin, Math.round(width))
     setOption({
       width: nextWidth,
-      height: options.keepAspectRatio && sourceDimensions
-        ? getAspectRatioHeight(nextWidth, sourceDimensions.width, sourceDimensions.height)
-        : options.height,
+      height:
+        options.keepAspectRatio && sourceDimensions
+          ? getAspectRatioHeight(nextWidth, sourceDimensions.width, sourceDimensions.height)
+          : options.height,
     })
   }
 
@@ -84,9 +85,10 @@ export default function ImageResizerTool() {
     const nextHeight = Math.max(IMAGE_RESIZER_LIMITS.dimensionMin, Math.round(height))
     setOption({
       height: nextHeight,
-      width: options.keepAspectRatio && sourceDimensions
-        ? getAspectRatioWidth(nextHeight, sourceDimensions.width, sourceDimensions.height)
-        : options.width,
+      width:
+        options.keepAspectRatio && sourceDimensions
+          ? getAspectRatioWidth(nextHeight, sourceDimensions.width, sourceDimensions.height)
+          : options.width,
     })
   }
 
@@ -228,7 +230,9 @@ export default function ImageResizerTool() {
             <Select
               aria-label={t('controls.format')}
               value={options.format}
-              onChange={(event) => setOption({ format: event.target.value as ImageResizerOptions['format'] })}
+              onChange={(event) =>
+                setOption({ format: event.target.value as ImageResizerOptions['format'] })
+              }
               className="w-full"
             >
               {IMAGE_RESIZER_FORMAT_OPTIONS.map(({ value, key }) => (
@@ -241,9 +245,7 @@ export default function ImageResizerTool() {
 
           {options.format !== 'png' && (
             <div>
-              <Label>
-                {t('controls.quality', { quality: Math.round(options.quality * 100) })}
-              </Label>
+              <Label>{t('controls.quality', { quality: Math.round(options.quality * 100) })}</Label>
               <input
                 type="range"
                 aria-label={t('controls.quality', { quality: Math.round(options.quality * 100) })}
@@ -259,10 +261,7 @@ export default function ImageResizerTool() {
 
           {error && <p className="text-sm text-red-400">{error}</p>}
 
-          <Button
-            onClick={handleResize}
-            disabled={!file || isResizing}
-          >
+          <Button onClick={handleResize} disabled={!file || isResizing}>
             {isResizing ? t('actions.resizing') : t('actions.resize')}
           </Button>
         </Controls>
@@ -287,9 +286,14 @@ export default function ImageResizerTool() {
           <StatGrid>
             <Stat
               label={t('stats.original')}
-              value={sourceDimensions ? `${sourceDimensions.width}x${sourceDimensions.height}` : '-'}
+              value={
+                sourceDimensions ? `${sourceDimensions.width}x${sourceDimensions.height}` : '-'
+              }
             />
-            <Stat label={t('stats.output')} value={result ? `${result.width}x${result.height}` : '-'} />
+            <Stat
+              label={t('stats.output')}
+              value={result ? `${result.width}x${result.height}` : '-'}
+            />
             <Stat label={t('stats.originalSize')} value={file ? formatBytes(file.size) : '-'} />
             <Stat label={t('stats.outputSize')} value={result ? formatBytes(result.size) : '-'} />
           </StatGrid>

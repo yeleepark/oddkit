@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --font-sans: var(--font-geist), system-ui, sans-serif;
@@ -84,9 +84,7 @@
   }
 
   body {
-    background:
-      radial-gradient(var(--theme-grid) 1px, transparent 1px),
-      var(--theme-ink);
+    background: radial-gradient(var(--theme-grid) 1px, transparent 1px), var(--theme-ink);
     background-size: 32px 32px;
     color: var(--theme-text-main);
     -webkit-font-smoothing: antialiased;
@@ -139,4 +137,3 @@
     background: var(--theme-acid);
   }
 }
-

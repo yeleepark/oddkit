@@ -132,7 +132,8 @@ async function compressToTargetSize(
   }
 
   return {
-    blob: smallestBlob ?? await canvasToBlob(canvas, mimeType, IMAGE_COMPRESSOR_LIMITS.qualityMin),
+    blob:
+      smallestBlob ?? (await canvasToBlob(canvas, mimeType, IMAGE_COMPRESSOR_LIMITS.qualityMin)),
     height: smallestHeight,
     quality: smallestQuality,
     targetReached: false,

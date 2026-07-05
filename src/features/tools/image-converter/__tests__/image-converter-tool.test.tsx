@@ -4,10 +4,11 @@ import { convertImage } from '@/features/tools/image-converter/lib/converter'
 import mockKoMessages from '@/messages/ko.json'
 
 jest.mock('next-intl', () => {
-  const readMessage = (path: string) => path.split('.').reduce<unknown>((current, segment) => {
-    if (!current || typeof current !== 'object') return undefined
-    return (current as Record<string, unknown>)[segment]
-  }, mockKoMessages)
+  const readMessage = (path: string) =>
+    path.split('.').reduce<unknown>((current, segment) => {
+      if (!current || typeof current !== 'object') return undefined
+      return (current as Record<string, unknown>)[segment]
+    }, mockKoMessages)
 
   const interpolate = (message: string, values?: Record<string, string | number>) => {
     if (!values) return message
@@ -32,8 +33,14 @@ jest.mock('next-intl', () => {
 })
 
 jest.mock('@/i18n/navigation', () => ({
-  Link: ({ children, href, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) => (
-    <a href={href} {...props}>{children}</a>
+  Link: ({
+    children,
+    href,
+    ...props
+  }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) => (
+    <a href={href} {...props}>
+      {children}
+    </a>
   ),
 }))
 
@@ -60,7 +67,9 @@ describe('ImageConverterTool', () => {
     await renderTool()
 
     expect(screen.getByRole('heading', { name: '이미지 포맷 변환기' })).toBeInTheDocument()
-    expect(screen.getByText('이미지를 업로드하면 여기에서 미리 볼 수 있습니다.')).toBeInTheDocument()
+    expect(
+      screen.getByText('이미지를 업로드하면 여기에서 미리 볼 수 있습니다.')
+    ).toBeInTheDocument()
     expect(screen.getByRole('combobox', { name: '출력 포맷' })).toHaveValue('webp')
     expect(screen.getByRole('button', { name: '이미지 변환' })).toBeDisabled()
     expect(screen.getByText('변환 · webp · 서버 업로드 없음')).toBeInTheDocument()
@@ -76,7 +85,9 @@ describe('ImageConverterTool', () => {
       },
     })
 
-    expect(screen.getByText('지원하지 않는 파일 형식입니다. JPG, PNG, WebP 이미지를 선택하세요.')).toBeInTheDocument()
+    expect(
+      screen.getByText('지원하지 않는 파일 형식입니다. JPG, PNG, WebP 이미지를 선택하세요.')
+    ).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '이미지 변환' })).toBeDisabled()
     expect(mockedConvertImage).not.toHaveBeenCalled()
   })

@@ -4,7 +4,17 @@ import { DUMMY_IMAGE_PATTERN } from '@/features/tools/dummy-image/model/config'
 import type { DummyImageConfig } from '@/features/tools/dummy-image/model/types'
 
 export function generateSVG(config: DummyImageConfig): string {
-  const { type, width, height, primaryColor, secondaryColor, text, fontSize, gradientDirection, patternStyle } = config
+  const {
+    type,
+    width,
+    height,
+    primaryColor,
+    secondaryColor,
+    text,
+    fontSize,
+    gradientDirection,
+    patternStyle,
+  } = config
   const displayText = getDisplayText({ height, text, width })
   const textEl = `<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="${fontSize}" fill="${getContrastColor(primaryColor)}">${displayText}</text>`
 
@@ -13,7 +23,8 @@ export function generateSVG(config: DummyImageConfig): string {
   }
 
   if (type === 'gradient') {
-    const x2 = gradientDirection === 'horizontal' || gradientDirection === 'diagonal' ? '100%' : '0%'
+    const x2 =
+      gradientDirection === 'horizontal' || gradientDirection === 'diagonal' ? '100%' : '0%'
     const y2 = gradientDirection === 'vertical' || gradientDirection === 'diagonal' ? '100%' : '0%'
     return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"><defs><linearGradient id="g" x1="0%" y1="0%" x2="${x2}" y2="${y2}"><stop offset="0%" stop-color="${primaryColor}"/><stop offset="100%" stop-color="${secondaryColor}"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/>${textEl}</svg>`
   }

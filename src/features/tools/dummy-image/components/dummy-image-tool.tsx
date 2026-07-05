@@ -33,8 +33,8 @@ export default function DummyImageTool() {
           <Label>{t('preview')}</Label>
           <CanvasPreview config={config} canvasRef={canvasRef} />
           <p className="mt-3 font-mono text-xs text-faint">
-            {t('ui.captionAction', { type: config.type })} · {config.width}x{config.height} · {config.format} ·{' '}
-            {commonT('noServerUpload')}
+            {t('ui.captionAction', { type: config.type })} · {config.width}x{config.height} ·{' '}
+            {config.format} · {commonT('noServerUpload')}
           </p>
         </div>
       </Grid>

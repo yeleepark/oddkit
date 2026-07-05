@@ -110,8 +110,8 @@ export default async function ImageCompressorPage({
       <ImageCompressorTool />
       <Container><section>
         <div>
-          <divclassName="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
-            <divclassName="space-y-6">
+          <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
+            <div className="space-y-6">
               <div>
                 <h2 className="text-base font-semibold text-text-main">{t('seo.overviewTitle')}</h2>
                 <p className="mt-2 text-sm text-mist">{t('seo.overview')}</p>
@@ -126,16 +126,16 @@ export default async function ImageCompressorPage({
                 </ul>
               </div>
             </div>
-            <divclassName="space-y-6">
+            <div className="space-y-6">
               <div>
                 <h2 className="text-base font-semibold text-text-main">{t('seo.formatsTitle')}</h2>
                 <p className="mt-2 text-sm text-mist">{t('seo.formats')}</p>
               </div>
               <div>
                 <h2 className="text-base font-semibold text-text-main">{t('seo.faqTitle')}</h2>
-                <divclassName="mt-2 space-y-3">
+                <div className="mt-2 space-y-3">
                   {faq.map((item) => (
-                    <divkey={item.question}>
+                    <div key={item.question}>
                       <h3 className="text-sm font-medium text-text-sub">{item.question}</h3>
                       <p className="mt-1 text-sm text-mist">{item.answer}</p>
                     </div>

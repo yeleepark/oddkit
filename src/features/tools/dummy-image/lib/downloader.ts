@@ -12,7 +12,10 @@ export function getFileExtension(format: ImageFormat): string {
   return format
 }
 
-export async function downloadImage(canvas: HTMLCanvasElement, config: DummyImageConfig): Promise<void> {
+export async function downloadImage(
+  canvas: HTMLCanvasElement,
+  config: DummyImageConfig
+): Promise<void> {
   const { format } = config
   const filename = `${SITE_CONFIG.name}-${config.width}x${config.height}.${getFileExtension(format)}`
 

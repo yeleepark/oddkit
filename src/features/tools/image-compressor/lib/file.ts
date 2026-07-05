@@ -1,5 +1,8 @@
 import { IMAGE_COMPRESSOR_MIME_TYPES } from '@/features/tools/image-compressor/model/options'
-import type { ImageCompressorFormat, ImageCompressorSizeUnit } from '@/features/tools/image-compressor/model/types'
+import type {
+  ImageCompressorFormat,
+  ImageCompressorSizeUnit,
+} from '@/features/tools/image-compressor/model/types'
 
 export function formatBytes(bytes: number): string {
   if (bytes < 1024) {

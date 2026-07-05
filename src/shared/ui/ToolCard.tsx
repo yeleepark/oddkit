@@ -9,7 +9,14 @@ interface ToolCardProps {
   roundedClassName?: string
 }
 
-export default function ToolCard({ title, description, href, num, tag, roundedClassName }: ToolCardProps) {
+export default function ToolCard({
+  title,
+  description,
+  href,
+  num,
+  tag,
+  roundedClassName,
+}: ToolCardProps) {
   return (
     <Link
       href={href}

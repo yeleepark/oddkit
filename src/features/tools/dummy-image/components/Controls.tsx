@@ -5,7 +5,10 @@ import OptionButton from '@/features/tools/dummy-image/components/option-button'
 import Label from '@/shared/ui/Label'
 import Chip from '@/shared/ui/Chip'
 import Input from '@/shared/ui/Input'
-import { DUMMY_IMAGE_FONT_SIZE_LIMITS, DUMMY_IMAGE_SIZE_LIMITS } from '@/features/tools/dummy-image/model/config'
+import {
+  DUMMY_IMAGE_FONT_SIZE_LIMITS,
+  DUMMY_IMAGE_SIZE_LIMITS,
+} from '@/features/tools/dummy-image/model/config'
 import {
   DUMMY_IMAGE_PRESETS,
   GRADIENT_DIRECTION_OPTIONS,
@@ -85,7 +88,11 @@ export default function Controls({ config, onChange }: ControlsProps) {
       <div className="flex gap-6">
         <div>
           <Label>
-            {config.type === 'gradient' ? t('startColor') : config.type === 'pattern' ? t('fgColor') : t('bgColor')}
+            {config.type === 'gradient'
+              ? t('startColor')
+              : config.type === 'pattern'
+                ? t('fgColor')
+                : t('bgColor')}
           </Label>
           <input
             type="color"
@@ -96,9 +103,7 @@ export default function Controls({ config, onChange }: ControlsProps) {
         </div>
         {(config.type === 'gradient' || config.type === 'pattern') && (
           <div>
-            <Label>
-              {config.type === 'gradient' ? t('endColor') : t('bgColor')}
-            </Label>
+            <Label>{config.type === 'gradient' ? t('endColor') : t('bgColor')}</Label>
             <input
               type="color"
               value={config.secondaryColor}
@@ -157,9 +162,7 @@ export default function Controls({ config, onChange }: ControlsProps) {
       </div>
 
       <div>
-        <Label>
-          {t('fontSize', { size: config.fontSize })}
-        </Label>
+        <Label>{t('fontSize', { size: config.fontSize })}</Label>
         <input
           type="range"
           min={DUMMY_IMAGE_FONT_SIZE_LIMITS.min}

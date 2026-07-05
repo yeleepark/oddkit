@@ -13,9 +13,5 @@ export default function MutedText({
   children: React.ReactNode
   className?: string
 }) {
-  return (
-    <span className={`text-faint ${className}`}>
-      {children}
-    </span>
-  )
+  return <span className={`text-faint ${className}`}>{children}</span>
 }

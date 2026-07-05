@@ -73,22 +73,21 @@ export default function LocaleSwitcher() {
 
   function handleListKeyDown(event: React.KeyboardEvent<HTMLUListElement>) {
     const focusableIndex = LOCALE_OPTIONS.findIndex(
-      ({ code }) => code === (document.activeElement as HTMLElement)?.dataset.code,
+      ({ code }) => code === (document.activeElement as HTMLElement)?.dataset.code
     )
 
     if (event.key === 'ArrowDown') {
       event.preventDefault()
       const nextIndex = focusableIndex < 0 ? 0 : (focusableIndex + 1) % LOCALE_OPTIONS.length
       const nextItem = containerRef.current?.querySelector<HTMLElement>(
-        `[data-code="${LOCALE_OPTIONS[nextIndex].code}"]`,
+        `[data-code="${LOCALE_OPTIONS[nextIndex].code}"]`
       )
       nextItem?.focus()
     } else if (event.key === 'ArrowUp') {
       event.preventDefault()
-      const prevIndex =
-        focusableIndex <= 0 ? LOCALE_OPTIONS.length - 1 : focusableIndex - 1
+      const prevIndex = focusableIndex <= 0 ? LOCALE_OPTIONS.length - 1 : focusableIndex - 1
       const prevItem = containerRef.current?.querySelector<HTMLElement>(
-        `[data-code="${LOCALE_OPTIONS[prevIndex].code}"]`,
+        `[data-code="${LOCALE_OPTIONS[prevIndex].code}"]`
       )
       prevItem?.focus()
     }

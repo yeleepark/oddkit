@@ -4,7 +4,14 @@ import { DEFAULT_DUMMY_IMAGE_CONFIG } from '@/features/tools/dummy-image/model/c
 const base = { ...DEFAULT_DUMMY_IMAGE_CONFIG }
 
 test('단색: SVG 문자열에 크기·배경색·텍스트 포함', () => {
-  const svg = generateSVG({ ...base, type: 'solid', width: 200, height: 100, primaryColor: '#ff0000', text: '200x100' })
+  const svg = generateSVG({
+    ...base,
+    type: 'solid',
+    width: 200,
+    height: 100,
+    primaryColor: '#ff0000',
+    text: '200x100',
+  })
   expect(svg).toContain('<svg')
   expect(svg).toContain('width="200"')
   expect(svg).toContain('height="100"')
@@ -18,7 +25,13 @@ test('단색: text가 빈 문자열이면 widthxheight를 표시', () => {
 })
 
 test('그라디언트: linearGradient 포함', () => {
-  const svg = generateSVG({ ...base, type: 'gradient', primaryColor: '#ff0000', secondaryColor: '#0000ff', gradientDirection: 'horizontal' })
+  const svg = generateSVG({
+    ...base,
+    type: 'gradient',
+    primaryColor: '#ff0000',
+    secondaryColor: '#0000ff',
+    gradientDirection: 'horizontal',
+  })
   expect(svg).toContain('linearGradient')
   expect(svg).toContain('#ff0000')
   expect(svg).toContain('#0000ff')

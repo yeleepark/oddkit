@@ -34,7 +34,12 @@ export default async function LegalPage({ locale, namespace }: LegalPageProps) {
   return (
     <Container>
       <div className="py-7 sm:py-10">
-        <Breadcrumb rootLabel={commonT('breadcrumb.root')} rootHref="/" items={items} currentId={namespace} />
+        <Breadcrumb
+          rootLabel={commonT('breadcrumb.root')}
+          rootHref="/"
+          items={items}
+          currentId={namespace}
+        />
         <PageHeader title={t('title')} description={t('updated')} />
         <div className="max-w-3xl space-y-8 text-[14.5px] leading-relaxed text-mist">
           <p>{t('intro')}</p>

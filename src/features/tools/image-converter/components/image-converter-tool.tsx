@@ -11,7 +11,10 @@ import {
   IMAGE_CONVERTER_ACCEPTED_TYPES,
   IMAGE_CONVERTER_FORMAT_OPTIONS,
 } from '@/features/tools/image-converter/model/options'
-import type { ImageConverterOptions, ImageConverterResult } from '@/features/tools/image-converter/model/types'
+import type {
+  ImageConverterOptions,
+  ImageConverterResult,
+} from '@/features/tools/image-converter/model/types'
 import { formatBytes } from '@/features/tools/image-compressor/lib/file'
 import ToolPageLayout from '@/shared/ui/ToolPageLayout'
 import Grid from '@/shared/ui/Grid'
@@ -121,7 +124,9 @@ export default function ImageConverterTool() {
             <Select
               aria-label={t('controls.format')}
               value={options.format}
-              onChange={(event) => setOption({ format: event.target.value as ImageConverterOptions['format'] })}
+              onChange={(event) =>
+                setOption({ format: event.target.value as ImageConverterOptions['format'] })
+              }
               className="w-full"
             >
               {IMAGE_CONVERTER_FORMAT_OPTIONS.map(({ value, key }) => (
@@ -134,9 +139,7 @@ export default function ImageConverterTool() {
 
           {options.format !== 'png' && (
             <div>
-              <Label>
-                {t('controls.quality', { quality: Math.round(options.quality * 100) })}
-              </Label>
+              <Label>{t('controls.quality', { quality: Math.round(options.quality * 100) })}</Label>
               <input
                 type="range"
                 aria-label={t('controls.quality', { quality: Math.round(options.quality * 100) })}
@@ -152,10 +155,7 @@ export default function ImageConverterTool() {
 
           {error && <p className="text-sm text-red-400">{error}</p>}
 
-          <Button
-            onClick={handleConvert}
-            disabled={!file || isConverting}
-          >
+          <Button onClick={handleConvert} disabled={!file || isConverting}>
             {isConverting ? t('actions.converting') : t('actions.convert')}
           </Button>
         </Controls>
@@ -180,8 +180,14 @@ export default function ImageConverterTool() {
           <StatGrid>
             <Stat label={t('stats.original')} value={file ? formatBytes(file.size) : '-'} />
             <Stat label={t('stats.output')} value={result ? formatBytes(result.size) : '-'} />
-            <Stat label={t('stats.format')} value={result ? result.type.replace('image/', '').toUpperCase() : '-'} />
-            <Stat label={t('stats.dimensions')} value={result ? `${result.width}x${result.height}` : '-'} />
+            <Stat
+              label={t('stats.format')}
+              value={result ? result.type.replace('image/', '').toUpperCase() : '-'}
+            />
+            <Stat
+              label={t('stats.dimensions')}
+              value={result ? `${result.width}x${result.height}` : '-'}
+            />
           </StatGrid>
 
           {result && resultUrl && (

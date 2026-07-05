@@ -16,12 +16,7 @@ export default function OptionButton<T extends string>({
   value,
 }: OptionButtonProps<T>) {
   return (
-    <Chip
-      type="button"
-      onClick={() => onSelect(value)}
-      active={active}
-      className={className}
-    >
+    <Chip type="button" onClick={() => onSelect(value)} active={active} className={className}>
       {children}
     </Chip>
   )

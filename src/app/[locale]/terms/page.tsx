@@ -13,7 +13,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
-  const { locale } = await params as { locale: AppLocale }
+  const { locale } = (await params) as { locale: AppLocale }
   const t = await getTranslations({ locale, namespace: 'terms' })
   const title = t('meta.title')
   const description = t('meta.description')
@@ -45,12 +45,8 @@ export async function generateMetadata({
   }
 }
 
-export default async function TermsPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
-  const { locale } = await params as { locale: AppLocale }
+export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = (await params) as { locale: AppLocale }
   const t = await getTranslations({ locale, namespace: 'terms' })
   const pageUrl = getCanonicalUrl(locale, pathname)
   const jsonLd = {

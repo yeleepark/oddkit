@@ -14,7 +14,9 @@ export default function Label({
   className?: string
 }) {
   return (
-    <label className={`mb-3 block font-mono text-[11px] font-medium uppercase text-mist ${className}`}>
+    <label
+      className={`mb-3 block font-mono text-[11px] font-medium uppercase text-mist ${className}`}
+    >
       {children}
     </label>
   )

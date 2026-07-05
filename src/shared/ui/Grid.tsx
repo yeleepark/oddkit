@@ -14,7 +14,9 @@ export default function Grid({
   className?: string
 }) {
   return (
-    <div className={`grid grid-cols-1 items-start gap-10 md:grid-cols-[1fr_1.05fr] md:gap-12 ${className}`}>
+    <div
+      className={`grid grid-cols-1 items-start gap-10 md:grid-cols-[1fr_1.05fr] md:gap-12 ${className}`}
+    >
       {children}
     </div>
   )

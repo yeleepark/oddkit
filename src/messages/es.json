@@ -422,9 +422,7 @@
       },
       {
         "heading": "Contacto",
-        "body": [
-          "Si tienes preguntas sobre esta política de privacidad, contáctanos en {email}."
-        ]
+        "body": ["Si tienes preguntas sobre esta política de privacidad, contáctanos en {email}."]
       }
     ],
     "meta": {
@@ -481,9 +479,7 @@
       },
       {
         "heading": "Contacto",
-        "body": [
-          "Las preguntas sobre estos términos pueden enviarse a {email}."
-        ]
+        "body": ["Las preguntas sobre estos términos pueden enviarse a {email}."]
       }
     ],
     "meta": {

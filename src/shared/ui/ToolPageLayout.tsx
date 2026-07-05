@@ -34,7 +34,12 @@ export default function ToolPageLayout({
   return (
     <Container>
       <div className="py-7 sm:py-10">
-        <Breadcrumb rootLabel={commonT('breadcrumb.root')} rootHref="/" items={items} currentId={toolId} />
+        <Breadcrumb
+          rootLabel={commonT('breadcrumb.root')}
+          rootHref="/"
+          items={items}
+          currentId={toolId}
+        />
         <PageHeader eyebrow={eyebrow} title={title} description={description} />
         {children}
       </div>

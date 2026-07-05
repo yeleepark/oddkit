@@ -28,9 +28,7 @@ export function getCanonicalUrl(locale: AppLocale, pathname: Pathname = ''): str
 }
 
 export function getLanguageAlternates(pathname: Pathname = ''): Record<string, string> {
-  return Object.fromEntries(
-    LOCALES.map((locale) => [locale, getLocalizedUrl(locale, pathname)])
-  )
+  return Object.fromEntries(LOCALES.map((locale) => [locale, getLocalizedUrl(locale, pathname)]))
 }
 
 export function getDefaultLocaleUrl(pathname: Pathname = ''): string {

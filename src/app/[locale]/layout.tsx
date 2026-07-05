@@ -46,7 +46,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
-  const { locale } = await params as { locale: AppLocale }
+  const { locale } = (await params) as { locale: AppLocale }
   const t = await getTranslations({ locale, namespace: 'site' })
   const title = t('meta.title')
   const description = t('meta.description')
@@ -100,7 +100,9 @@ export default async function LocaleLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${geist.variable} ${geistMono.variable} min-h-screen bg-ink font-sans text-text-main`}>
+      <body
+        className={`${geist.variable} ${geistMono.variable} min-h-screen bg-ink font-sans text-text-main`}
+      >
         <NextIntlClientProvider messages={messages}>
           <div className="flex min-h-screen flex-col">
             <header className="sticky top-0 z-10 border-b border-line bg-ink/80 px-6 py-4 backdrop-blur-md sm:px-8">
@@ -110,7 +112,9 @@ export default async function LocaleLayout({
                   className="font-mono text-[19px] font-semibold text-text-main transition-colors hover:text-acid"
                 >
                   {SITE_CONFIG.name}
-                  <span className="text-acid" style={{ animation: 'blink 1.1s step-end infinite' }}>▮</span>
+                  <span className="text-acid" style={{ animation: 'blink 1.1s step-end infinite' }}>
+                    ▮
+                  </span>
                 </Link>
                 <div className="flex items-center gap-3">
                   <LocaleSwitcher />

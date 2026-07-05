@@ -1,5 +1,8 @@
 import { getResizedFileName, getResizerMimeType } from '@/features/tools/image-resizer/lib/file'
-import type { ImageResizerOptions, ImageResizerResult } from '@/features/tools/image-resizer/model/types'
+import type {
+  ImageResizerOptions,
+  ImageResizerResult,
+} from '@/features/tools/image-resizer/model/types'
 
 function loadImage(file: File): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
@@ -35,7 +38,10 @@ function canvasToBlob(canvas: HTMLCanvasElement, mimeType: string, quality: numb
   })
 }
 
-export async function resizeImage(file: File, options: ImageResizerOptions): Promise<ImageResizerResult> {
+export async function resizeImage(
+  file: File,
+  options: ImageResizerOptions
+): Promise<ImageResizerResult> {
   const image = await loadImage(file)
   const mimeType = getResizerMimeType(file.type, options.format)
   const canvas = document.createElement('canvas')

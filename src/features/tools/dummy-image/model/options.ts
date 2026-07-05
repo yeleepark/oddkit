@@ -11,7 +11,14 @@ export const DUMMY_IMAGE_PRESETS = [
   { label: '4:3', width: 800, height: 600 },
 ] as const
 
-export const IMAGE_FORMATS = ['png', 'jpg', 'jpeg', 'webp', 'svg', 'gif'] as const satisfies readonly ImageFormat[]
+export const IMAGE_FORMATS = [
+  'png',
+  'jpg',
+  'jpeg',
+  'webp',
+  'svg',
+  'gif',
+] as const satisfies readonly ImageFormat[]
 
 export const IMAGE_FORMAT_MIME_TYPES = {
   png: 'image/png',

@@ -28,7 +28,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
-  const { locale } = await params as { locale: AppLocale }
+  const { locale } = (await params) as { locale: AppLocale }
   const t = await getTranslations({ locale, namespace: 'home' })
   const title = t('meta.title')
   const description = t('meta.description')
@@ -62,12 +62,8 @@ export async function generateMetadata({
   }
 }
 
-export default async function Home({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
-  const { locale } = await params as { locale: AppLocale }
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = (await params) as { locale: AppLocale }
   const t = await getTranslations({ locale })
   const homeT = await getTranslations({ locale, namespace: 'home' })
 
@@ -94,14 +90,21 @@ export default async function Home({
       <JsonLd data={jsonLd} />
       <section className="px-2 py-16 sm:py-[40px]">
         <PromptText>
-          ~/oddkit $ ls tools <MutedText># {homeT('promptComment', { count: tools.length })}</MutedText>
+          ~/oddkit $ ls tools{' '}
+          <MutedText># {homeT('promptComment', { count: tools.length })}</MutedText>
         </PromptText>
-        <h1 className="max-w-3xl text-[42px] font-semibold text-text-main sm:text-[56px]" style={{ lineHeight: 0.98 }}>
+        <h1
+          className="max-w-3xl text-[42px] font-semibold text-text-main sm:text-[56px]"
+          style={{ lineHeight: 0.98 }}
+        >
           {homeT('heroTitle')}
         </h1>
         <p className="mt-5 text-[16.5px] text-mist">{homeT('seoDescription')}</p>
       </section>
-      <section className="mb-14 grid grid-cols-1 gap-px overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-2" style={{ boxShadow: 'var(--theme-shadow)' }}>
+      <section
+        className="mb-14 grid grid-cols-1 gap-px overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-2"
+        style={{ boxShadow: 'var(--theme-shadow)' }}
+      >
         {tools.map(({ homeDescriptionKey, href, id, num, tag, titleKey }, index) => (
           <ToolCard
             key={id}

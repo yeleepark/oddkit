@@ -13,9 +13,5 @@ export default function StatGrid({
   children: React.ReactNode
   className?: string
 }) {
-  return (
-    <div className={`grid gap-3 text-sm sm:grid-cols-2 ${className}`}>
-      {children}
-    </div>
-  )
+  return <div className={`grid gap-3 text-sm sm:grid-cols-2 ${className}`}>{children}</div>
 }

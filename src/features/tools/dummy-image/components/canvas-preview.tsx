@@ -19,10 +19,7 @@ export default function CanvasPreview({ config, canvasRef }: CanvasPreviewProps)
 
   return (
     <Preview>
-      <canvas
-        ref={canvasRef}
-        className="max-h-96 max-w-full object-contain shadow-sm"
-      />
+      <canvas ref={canvasRef} className="max-h-96 max-w-full object-contain shadow-sm" />
     </Preview>
   )
 }

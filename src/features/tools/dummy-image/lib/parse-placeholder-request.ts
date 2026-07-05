@@ -15,8 +15,7 @@ export type PlaceholderParseError =
   | { reason: 'out-of-range'; width: number; height: number }
 
 export type PlaceholderParseResult =
-  | { ok: true; value: ParsedPlaceholderRequest }
-  | { ok: false; error: PlaceholderParseError }
+  { ok: true; value: ParsedPlaceholderRequest } | { ok: false; error: PlaceholderParseError }
 
 const SEGMENT_PATTERN = /^(\d+)x(\d+)\.([a-zA-Z0-9]+)$/
 

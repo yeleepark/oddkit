@@ -26,10 +26,7 @@ export default function DownloadButton({ canvasRef, config }: DownloadButtonProp
   }
 
   return (
-    <Button
-      onClick={handleDownload}
-      disabled={loading}
-    >
+    <Button onClick={handleDownload} disabled={loading}>
       {loading ? t('generating') : t('button', { format: config.format.toUpperCase() })}
     </Button>
   )

@@ -80,7 +80,10 @@ export default function Breadcrumb({ rootLabel, rootHref, items, currentId }: Br
   }
 
   return (
-    <div ref={containerRef} className="relative mb-7 inline-flex items-center font-mono text-xs text-mist">
+    <div
+      ref={containerRef}
+      className="relative mb-7 inline-flex items-center font-mono text-xs text-mist"
+    >
       <Link href={rootHref} className="transition-colors hover:text-acid">
         {rootLabel}
       </Link>
@@ -98,7 +101,11 @@ export default function Breadcrumb({ rootLabel, rootHref, items, currentId }: Br
       </button>
 
       {isOpen && (
-        <ul role="listbox" aria-label={currentItem.label} className="absolute left-0 top-full z-20 mt-1 min-w-[180px] overflow-hidden rounded-md border border-line-strong bg-panel py-1 shadow-lg">
+        <ul
+          role="listbox"
+          aria-label={currentItem.label}
+          className="absolute left-0 top-full z-20 mt-1 min-w-[180px] overflow-hidden rounded-md border border-line-strong bg-panel py-1 shadow-lg"
+        >
           {items.map((item) => {
             const isSelected = item.id === currentId
             return (

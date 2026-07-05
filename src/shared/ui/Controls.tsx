@@ -13,9 +13,5 @@ export default function Controls({
   children: React.ReactNode
   className?: string
 }) {
-  return (
-    <div className={`flex flex-col gap-6 text-sm ${className}`}>
-      {children}
-    </div>
-  )
+  return <div className={`flex flex-col gap-6 text-sm ${className}`}>{children}</div>
 }

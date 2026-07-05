@@ -2,7 +2,12 @@ import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { SITE_CONFIG } from '@/config/site'
 import { DummyImageTool } from '@/features/tools/dummy-image'
-import { getCanonicalUrl, getDefaultLocaleUrl, getLanguageAlternates, getSiteUrl } from '@/shared/seo/url'
+import {
+  getCanonicalUrl,
+  getDefaultLocaleUrl,
+  getLanguageAlternates,
+  getSiteUrl,
+} from '@/shared/seo/url'
 import JsonLd from '@/shared/seo/json-ld'
 import type { AppLocale } from '@/config/locales'
 import Container from '@/shared/ui/Container'
@@ -19,7 +24,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
-  const { locale } = await params as { locale: AppLocale }
+  const { locale } = (await params) as { locale: AppLocale }
   const t = await getTranslations({ locale, namespace: 'dummyImage' })
   const title = t('meta.title')
   const description = t('meta.description')
@@ -53,12 +58,8 @@ export async function generateMetadata({
   }
 }
 
-export default async function DummyImagePage({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
-  const { locale } = await params as { locale: AppLocale }
+export default async function DummyImagePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = (await params) as { locale: AppLocale }
   const t = await getTranslations({ locale, namespace: 'dummyImage' })
   const useCases = t.raw('seo.useCases') as string[]
   const faq = t.raw('seo.faq') as FaqItem[]
@@ -78,12 +79,7 @@ export default async function DummyImagePage({
         price: '0',
         priceCurrency: 'USD',
       },
-      featureList: [
-        t('seo.formats'),
-        t('seo.privacy'),
-        t('seo.embed'),
-        ...useCases,
-      ],
+      featureList: [t('seo.formats'), t('seo.privacy'), t('seo.embed'), ...useCases],
       inLanguage: locale,
       isPartOf: {
         '@type': 'WebSite',
@@ -109,62 +105,70 @@ export default async function DummyImagePage({
     <>
       <JsonLd data={jsonLd} />
       <DummyImageTool />
-      <Container><section>
-        <div>
-          <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-base font-semibold text-text-main">{t('seo.overviewTitle')}</h2>
-                <p className="mt-2 text-sm text-mist">{t('seo.overview')}</p>
-                <p className="mt-2 text-sm text-mist">{t('seo.privacy')}</p>
+      <Container>
+        <section>
+          <div>
+            <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-base font-semibold text-text-main">
+                    {t('seo.overviewTitle')}
+                  </h2>
+                  <p className="mt-2 text-sm text-mist">{t('seo.overview')}</p>
+                  <p className="mt-2 text-sm text-mist">{t('seo.privacy')}</p>
+                </div>
+                <div>
+                  <h2 className="text-base font-semibold text-text-main">
+                    {t('seo.useCasesTitle')}
+                  </h2>
+                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-mist">
+                    {useCases.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div>
-                <h2 className="text-base font-semibold text-text-main">{t('seo.useCasesTitle')}</h2>
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-mist">
-                  {useCases.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-base font-semibold text-text-main">{t('seo.formatsTitle')}</h2>
-                <p className="mt-2 text-sm text-mist">{t('seo.formats')}</p>
-              </div>
-              <div>
-                <h2 className="text-base font-semibold text-text-main">{t('seo.faqTitle')}</h2>
-                <div className="mt-2 space-y-3">
-                  {faq.map((item) => (
-                    <div key={item.question}>
-                      <h3 className="text-sm font-medium text-text-sub">{item.question}</h3>
-                      <p className="mt-1 text-sm text-mist">{item.answer}</p>
-                    </div>
-                  ))}
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-base font-semibold text-text-main">
+                    {t('seo.formatsTitle')}
+                  </h2>
+                  <p className="mt-2 text-sm text-mist">{t('seo.formats')}</p>
+                </div>
+                <div>
+                  <h2 className="text-base font-semibold text-text-main">{t('seo.faqTitle')}</h2>
+                  <div className="mt-2 space-y-3">
+                    {faq.map((item) => (
+                      <div key={item.question}>
+                        <h3 className="text-sm font-medium text-text-sub">{item.question}</h3>
+                        <p className="mt-1 text-sm text-mist">{item.answer}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="mt-8 border-t border-line pt-8">
-            <h2 className="text-base font-semibold text-text-main">{t('seo.embedTitle')}</h2>
-            <p className="mt-2 text-sm text-mist">{t('seo.embed')}</p>
-            <p className="mt-1 text-sm text-mist">{t('seo.embedHint')}</p>
-            <div className="mt-4 space-y-2 font-mono text-xs">
-              {(['600x400.png', '1080x1080.webp', '300x200.jpg'] as const).map((example) => (
-                <a
-                  key={example}
-                  href={`/placeholder/${example}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block overflow-x-auto rounded-md border border-line-strong bg-panel px-3 py-2 text-text-main transition-colors hover:border-acid/70 hover:text-acid"
-                >
-                  {getSiteUrl(`/placeholder/${example}`)}
-                </a>
-              ))}
+            <div className="mt-8 border-t border-line pt-8">
+              <h2 className="text-base font-semibold text-text-main">{t('seo.embedTitle')}</h2>
+              <p className="mt-2 text-sm text-mist">{t('seo.embed')}</p>
+              <p className="mt-1 text-sm text-mist">{t('seo.embedHint')}</p>
+              <div className="mt-4 space-y-2 font-mono text-xs">
+                {(['600x400.png', '1080x1080.webp', '300x200.jpg'] as const).map((example) => (
+                  <a
+                    key={example}
+                    href={`/placeholder/${example}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block overflow-x-auto rounded-md border border-line-strong bg-panel px-3 py-2 text-text-main transition-colors hover:border-acid/70 hover:text-acid"
+                  >
+                    {getSiteUrl(`/placeholder/${example}`)}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section></Container>
+        </section>
+      </Container>
     </>
   )
 }
