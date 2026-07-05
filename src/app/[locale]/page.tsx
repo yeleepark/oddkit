@@ -90,8 +90,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <JsonLd data={jsonLd} />
       <section className="px-2 py-16 sm:py-[40px]">
         <PromptText>
-          ~/oddkit $ ls tools{' '}
-          <MutedText># {homeT('promptComment', { count: tools.length })}</MutedText>
+          <span className="terminal-type" style={{ '--type-steps': 19 } as React.CSSProperties}>
+            ~/oddkit $ ls tools
+          </span>{' '}
+          <MutedText className="terminal-fade-in">
+            # {homeT('promptComment', { count: tools.length })}
+          </MutedText>
         </PromptText>
         <h1
           className="max-w-3xl text-[42px] font-semibold text-text-main sm:text-[56px]"

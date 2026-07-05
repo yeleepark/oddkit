@@ -18,7 +18,7 @@ export default function PageHeader({
 }) {
   return (
     <div className="mb-8">
-      {eyebrow && <div className="mb-2 font-mono text-xs text-acid">{eyebrow}</div>}
+      {eyebrow && <div className="terminal-glow mb-2 font-mono text-xs text-acid">{eyebrow}</div>}
       <h1 className="mb-2 text-[30px] font-semibold text-text-main">{title}</h1>
       {description && <p className="max-w-2xl text-[14.5px] text-mist">{description}</p>}
     </div>

@@ -75,15 +75,28 @@ export default async function LocaleLayout({
       <div className="flex min-h-screen flex-col">
         <header className="sticky top-0 z-10 border-b border-line bg-ink/80 px-6 py-4 backdrop-blur-md sm:px-8">
           <div className="mx-auto flex max-w-[1180px] items-center justify-between">
-            <Link
-              href="/"
-              className="font-mono text-[19px] font-semibold text-text-main transition-colors hover:text-acid"
-            >
-              {SITE_CONFIG.name}
-              <span className="text-acid" style={{ animation: 'blink 1.1s step-end infinite' }}>
-                ▮
+            <div className="flex items-center gap-3.5">
+              <span aria-hidden="true" className="flex items-center gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57] opacity-80" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e] opacity-80" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#28c840] opacity-80" />
               </span>
-            </Link>
+              <Link
+                href="/"
+                className="font-mono text-[19px] font-semibold text-text-main transition-colors hover:text-acid"
+              >
+                {SITE_CONFIG.name}
+                <span
+                  className="terminal-glow text-acid"
+                  style={{ animation: 'blink 1.1s step-end infinite' }}
+                >
+                  ▮
+                </span>
+              </Link>
+              <span aria-hidden="true" className="font-mono text-xs text-faint">
+                — zsh
+              </span>
+            </div>
             <div className="flex items-center gap-3">
               <LocaleSwitcher />
               <ThemeToggle />

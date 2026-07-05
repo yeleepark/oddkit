@@ -13,5 +13,5 @@ export default function PromptText({
   children: React.ReactNode
   className?: string
 }) {
-  return <span className={`font-mono text-xs text-acid ${className}`}>{children}</span>
+  return <span className={`terminal-glow font-mono text-xs text-acid ${className}`}>{children}</span>
 }

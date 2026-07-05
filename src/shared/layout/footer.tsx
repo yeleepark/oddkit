@@ -9,6 +9,10 @@ export default async function Footer() {
     <footer className="mt-auto border-t border-line px-6 py-3 sm:px-8">
       <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-x-4 gap-y-1 font-mono text-xs text-faint">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span aria-hidden="true" className="text-acid">
+            exit 0
+          </span>
+          <span aria-hidden="true">·</span>
           <span>{t('footer', { name: SITE_CONFIG.name })}</span>
           <span aria-hidden="true">·</span>
           <span>{t('copyright', { year: new Date().getFullYear(), name: SITE_CONFIG.name })}</span>
