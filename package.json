@@ -2,6 +2,7 @@
   "name": "oddkit",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.28.2",
   "description": "Browser-based toolkit for small design, development, and content workflows.",
   "keywords": [
     "image-tools",
