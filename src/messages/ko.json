@@ -1,0 +1,508 @@
+{
+  "site": {
+    "meta": {
+      "title": "oddkit",
+      "description": "작업자를 위한 작은 툴킷. 일하다 필요한 이미지 도구와 유틸리티를 브라우저에서 빠르게 사용하세요.",
+      "keywords": [
+        "oddkit",
+        "웹 도구",
+        "브라우저 도구",
+        "작업 툴킷",
+        "이미지 도구",
+        "유틸리티 도구"
+      ]
+    }
+  },
+  "home": {
+    "seoDescription": "가끔 필요하지만 꼭 필요한 도구들을 한곳에 모았습니다.",
+    "dummyImage": {
+      "description": "목업과 테스트에 필요한 임시 이미지를 만듭니다."
+    },
+    "imageCompressor": {
+      "description": "업로드와 로딩을 위해 이미지 용량을 줄입니다."
+    },
+    "imageConverter": {
+      "description": "필요한 환경에 맞춰 이미지 포맷을 바꿉니다."
+    },
+    "imageResizer": {
+      "description": "정해진 규격에 맞게 이미지 크기를 조정합니다."
+    },
+    "promptComment": "로컬 브라우저 도구 {count}개",
+    "heroTitle": "작업자를 위한 작은 툴킷.",
+    "meta": {
+      "title": "oddkit - 작업자를 위한 작은 툴킷",
+      "description": "이미지 생성, 압축, 변환, 리사이즈처럼 일하다 필요한 작은 웹 도구를 한곳에서 빠르게 사용하세요.",
+      "keywords": [
+        "oddkit",
+        "웹 도구",
+        "작업 도구",
+        "이미지 도구",
+        "더미 이미지 생성",
+        "이미지 압축",
+        "이미지 변환",
+        "이미지 리사이즈"
+      ]
+    }
+  },
+  "dummyImage": {
+    "title": "더미 이미지 생성기",
+    "description": "단색, 그라디언트, 패턴 이미지를 만들고 원하는 포맷으로 저장하세요.",
+    "preview": "미리보기",
+    "controls": {
+      "type": "타입",
+      "solid": "단색",
+      "gradient": "그라디언트",
+      "pattern": "패턴",
+      "size": "크기",
+      "bgColor": "배경색",
+      "startColor": "시작 색상",
+      "endColor": "끝 색상",
+      "fgColor": "전경색",
+      "direction": "방향",
+      "vertical": "상하",
+      "horizontal": "좌우",
+      "diagonal": "대각선",
+      "patternStyle": "패턴",
+      "grid": "격자",
+      "dots": "점",
+      "stripes": "사선",
+      "text": "텍스트 (기본: 크기)",
+      "fontSize": "폰트 크기: {size}px",
+      "format": "다운로드 포맷"
+    },
+    "download": {
+      "generating": "생성 중...",
+      "button": "{format}로 다운로드"
+    },
+    "seo": {
+      "overviewTitle": "브라우저 기반 더미 이미지 생성기",
+      "overview": "목업, 레이아웃, 테스트, 디자인 초안에 사용할 플레이스홀더 이미지를 브라우저에서 바로 만듭니다. 단색, 그라디언트, 패턴을 선택하고 크기와 텍스트를 조정한 뒤 원하는 포맷으로 다운로드할 수 있습니다.",
+      "privacy": "이미지는 브라우저에서 로컬로 생성됩니다. 선택한 색상, 크기, 텍스트, 생성된 파일은 서버로 업로드되지 않습니다.",
+      "formatsTitle": "지원 포맷",
+      "formats": "PNG, JPG, JPEG, WebP, SVG, GIF 다운로드를 지원합니다.",
+      "embedTitle": "어디든 바로 삽입",
+      "embed": "모든 크기·포맷은 다운로드나 툴 화면 없이도 이미지 URL 하나로 바로 쓸 수 있습니다. img 태그, README, 목업에 그대로 삽입하세요.",
+      "embedHint": "크기: 한 변당 1~4000px. 포맷: png, jpg, webp. 같은 요청은 캐시에서 즉시 응답됩니다.",
+      "useCasesTitle": "주요 사용 사례",
+      "useCases": [
+        "웹사이트와 앱 레이아웃용 플레이스홀더 이미지",
+        "디자인 초안용 목업 이미지",
+        "개발 워크플로우 테스트 이미지"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "생성한 이미지를 상업 프로젝트에 사용할 수 있나요?",
+          "answer": "네. 생성 이미지는 사용자가 선택한 설정으로 만들어지며 본인 프로젝트에 사용할 수 있습니다."
+        },
+        {
+          "question": "이미지가 oddkit 서버로 업로드되나요?",
+          "answer": "아니요. 이미지 생성과 다운로드는 브라우저에서 실행됩니다."
+        },
+        {
+          "question": "어떤 이미지 포맷으로 다운로드할 수 있나요?",
+          "answer": "PNG, JPG, JPEG, WebP, SVG, GIF 파일로 다운로드할 수 있습니다."
+        },
+        {
+          "question": "툴을 열지 않고도 플레이스홀더 이미지를 쓸 수 있나요?",
+          "answer": "네. /placeholder/{width}x{height}.{format} URL을 <img> 태그에 바로 쓰면 됩니다 — 요청 시점에 이미지를 렌더링하므로 페이지 방문이 필요 없습니다."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 플레이스홀더 공장",
+      "captionAction": "{type}"
+    },
+    "meta": {
+      "title": "더미 이미지 생성기 - oddkit",
+      "description": "단색, 그라디언트, 패턴, 텍스트가 들어간 플레이스홀더 이미지를 브라우저에서 만들고 PNG, JPG, WebP, SVG, GIF로 저장하세요.",
+      "keywords": [
+        "더미 이미지 생성",
+        "플레이스홀더 이미지",
+        "목업 이미지",
+        "이미지 생성기",
+        "브라우저 이미지 도구",
+        "oddkit"
+      ]
+    }
+  },
+  "imageCompressor": {
+    "title": "이미지 압축기",
+    "description": "이미지 용량을 브라우저에서 로컬로 줄입니다. 품질, 최대 크기, 출력 포맷을 조정한 뒤 최적화된 이미지를 다운로드할 수 있습니다.",
+    "controls": {
+      "image": "이미지",
+      "supported": "JPG, PNG, WebP 이미지를 지원합니다.",
+      "mode": "압축 모드",
+      "targetSize": "목표 용량",
+      "targetHint": "{size} 이하에서 가장 좋은 결과를 찾습니다.",
+      "pngTargetWarning": "PNG는 무손실 포맷이라 목표 용량에 안정적으로 맞추기 어렵습니다. WebP 또는 JPG를 권장합니다.",
+      "quality": "품질: {quality}%",
+      "maxSize": "최대 크기",
+      "format": "출력 포맷"
+    },
+    "modes": {
+      "manual": "수동 품질",
+      "target": "목표 용량"
+    },
+    "formats": {
+      "original": "원본 포맷",
+      "jpeg": "JPG",
+      "png": "PNG",
+      "webp": "WebP"
+    },
+    "actions": {
+      "compress": "이미지 압축",
+      "compressing": "압축 중...",
+      "download": "압축 이미지 다운로드"
+    },
+    "preview": {
+      "empty": "이미지를 업로드하면 여기에 미리보기가 표시됩니다.",
+      "alt": "선택한 이미지 미리보기"
+    },
+    "stats": {
+      "original": "원본",
+      "compressed": "압축 후",
+      "saved": "절감",
+      "output": "출력",
+      "quality": "품질",
+      "target": "목표",
+      "targetReached": "달성",
+      "targetMissed": "가장 가까운 결과"
+    },
+    "errors": {
+      "unsupported": "지원하지 않는 파일 형식입니다. JPG, PNG, WebP 이미지를 선택하세요.",
+      "compress": "이미지를 압축할 수 없습니다. 다른 파일이나 포맷을 시도하세요."
+    },
+    "seo": {
+      "overviewTitle": "브라우저 기반 이미지 압축 도구",
+      "overview": "웹사이트, 앱, 이메일, 콘텐츠 작업에 사용할 이미지를 서버 업로드 없이 압축합니다. 이미지 품질을 조정하고 최대 크기를 지정하며 JPG, PNG, WebP로 변환할 수 있습니다.",
+      "privacy": "이미지는 브라우저에서 로컬로 처리됩니다. 선택한 파일과 압축 결과는 oddkit 서버로 업로드되지 않습니다.",
+      "formatsTitle": "지원 포맷",
+      "formats": "JPG, PNG, WebP 입력 이미지를 지원합니다. 출력은 원본 포맷을 유지하거나 JPG, PNG, WebP로 변환할 수 있습니다.",
+      "useCasesTitle": "주요 사용 사례",
+      "useCases": [
+        "게시 전 웹사이트 이미지 용량 줄이기",
+        "스크린샷과 콘텐츠 이미지 최적화",
+        "프로토타입과 문서용 작은 이미지 만들기"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "이미지가 oddkit 서버로 업로드되나요?",
+          "answer": "아니요. 압축은 Canvas를 사용해 브라우저에서 로컬로 실행됩니다."
+        },
+        {
+          "question": "어떤 포맷을 압축할 수 있나요?",
+          "answer": "JPG, PNG, WebP 이미지를 압축하고 JPG, PNG, WebP 출력으로 다운로드할 수 있습니다."
+        },
+        {
+          "question": "PNG 출력이 원본보다 커질 수 있나요?",
+          "answer": "PNG는 무손실 포맷이라 품질 값을 낮춰도 JPG나 WebP처럼 줄어들지 않을 수 있습니다. 더 강한 압축에는 WebP나 JPG를 사용하세요."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 더 가볍게",
+      "captionAction": "압축"
+    },
+    "meta": {
+      "title": "이미지 압축기 - oddkit",
+      "description": "JPG, PNG, WebP 이미지를 브라우저에서 압축하세요. 목표 용량, 품질, 출력 포맷을 설정하고 업로드 없이 최적화된 이미지를 다운로드할 수 있습니다.",
+      "keywords": [
+        "이미지 압축",
+        "이미지 용량 줄이기",
+        "사진 용량 줄이기",
+        "목표 용량 압축",
+        "WebP 압축",
+        "브라우저 이미지 도구",
+        "oddkit"
+      ]
+    }
+  },
+  "imageConverter": {
+    "title": "이미지 포맷 변환기",
+    "description": "JPG, PNG, WebP 이미지를 브라우저에서 로컬로 변환합니다. 출력 포맷과 품질을 선택한 뒤 변환된 파일을 다운로드하세요.",
+    "controls": {
+      "image": "이미지",
+      "supported": "JPG, PNG, WebP 이미지를 지원합니다.",
+      "format": "출력 포맷",
+      "quality": "품질: {quality}%"
+    },
+    "formats": {
+      "jpeg": "JPG",
+      "png": "PNG",
+      "webp": "WebP"
+    },
+    "actions": {
+      "convert": "이미지 변환",
+      "converting": "변환 중...",
+      "download": "변환된 이미지 다운로드"
+    },
+    "preview": {
+      "empty": "이미지를 업로드하면 여기에서 미리 볼 수 있습니다.",
+      "alt": "선택한 이미지 미리보기"
+    },
+    "stats": {
+      "original": "원본",
+      "output": "출력",
+      "format": "포맷",
+      "dimensions": "크기"
+    },
+    "errors": {
+      "unsupported": "지원하지 않는 파일 형식입니다. JPG, PNG, WebP 이미지를 선택하세요.",
+      "convert": "이미지를 변환할 수 없습니다. 다른 파일이나 포맷을 시도하세요."
+    },
+    "seo": {
+      "overviewTitle": "브라우저 기반 이미지 포맷 변환기",
+      "overview": "웹사이트, 앱, 문서, 콘텐츠 작업에 필요한 이미지를 서버 업로드 없이 변환합니다. JPG, PNG, WebP 출력 포맷을 선택하고 지원 포맷에서는 품질도 조정할 수 있습니다.",
+      "privacy": "이미지는 브라우저에서 로컬로 변환됩니다. 선택한 파일과 변환 결과는 oddkit 서버로 업로드되지 않습니다.",
+      "formatsTitle": "지원 포맷",
+      "formats": "JPG, PNG, WebP 입력 이미지를 지원하며 JPG, PNG, WebP로 다운로드할 수 있습니다.",
+      "useCasesTitle": "주요 사용 사례",
+      "useCases": [
+        "빠른 웹 페이지를 위한 WebP 이미지 생성",
+        "스크린샷과 디자인 에셋을 JPG 또는 PNG로 변환",
+        "폼과 문서에 맞는 호환 이미지 준비"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "이미지가 oddkit에 업로드되나요?",
+          "answer": "아니요. 변환은 Canvas를 사용해 브라우저에서 로컬로 실행됩니다."
+        },
+        {
+          "question": "어떤 포맷을 변환할 수 있나요?",
+          "answer": "JPG, PNG, WebP 이미지를 열고 JPG, PNG, WebP로 다운로드할 수 있습니다."
+        },
+        {
+          "question": "PNG에는 왜 품질 슬라이더가 없나요?",
+          "answer": "브라우저 Canvas API의 PNG 출력은 무손실이라 품질 설정은 주로 JPG와 WebP에 적용됩니다."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 로컬에서 다시 인코딩",
+      "captionAction": "변환"
+    },
+    "meta": {
+      "title": "이미지 포맷 변환기 - oddkit",
+      "description": "JPG, PNG, WebP 이미지를 브라우저에서 바로 변환하세요. 출력 포맷과 품질을 선택하고 업로드 없이 변환된 파일을 다운로드할 수 있습니다.",
+      "keywords": [
+        "이미지 변환",
+        "이미지 포맷 변환",
+        "JPG WebP 변환",
+        "PNG WebP 변환",
+        "WebP 변환기",
+        "브라우저 이미지 도구",
+        "oddkit"
+      ]
+    }
+  },
+  "imageResizer": {
+    "title": "이미지 크기 조정기",
+    "description": "JPG, PNG, WebP 이미지를 브라우저에서 로컬로 리사이즈합니다. 직접 크기를 입력하고 비율 유지와 출력 포맷을 선택하세요.",
+    "controls": {
+      "image": "이미지",
+      "supported": "JPG, PNG, WebP 이미지를 지원합니다.",
+      "size": "크기",
+      "keepAspectRatio": "비율 유지",
+      "format": "출력 포맷",
+      "quality": "품질: {quality}%"
+    },
+    "formats": {
+      "original": "원본 포맷",
+      "jpeg": "JPG",
+      "png": "PNG",
+      "webp": "WebP"
+    },
+    "actions": {
+      "resize": "이미지 리사이즈",
+      "resizing": "리사이즈 중...",
+      "download": "리사이즈된 이미지 다운로드"
+    },
+    "preview": {
+      "empty": "이미지를 업로드하면 여기에서 미리 볼 수 있습니다.",
+      "alt": "선택한 이미지 미리보기"
+    },
+    "stats": {
+      "original": "원본",
+      "output": "출력",
+      "originalSize": "원본 크기",
+      "outputSize": "출력 크기"
+    },
+    "errors": {
+      "unsupported": "지원하지 않는 파일 형식입니다. JPG, PNG, WebP 이미지를 선택하세요.",
+      "read": "이미지를 읽을 수 없습니다. 다른 파일을 시도하세요.",
+      "resize": "이미지를 리사이즈할 수 없습니다. 다른 파일이나 더 작은 크기를 시도하세요."
+    },
+    "seo": {
+      "overviewTitle": "브라우저 기반 이미지 리사이저",
+      "overview": "웹 페이지, 프로필, 문서, 썸네일, 게시 작업에 필요한 이미지를 서버 업로드 없이 리사이즈합니다. 정확한 크기를 입력하거나 비율 프리셋을 사용할 수 있습니다.",
+      "privacy": "이미지는 브라우저에서 로컬로 리사이즈됩니다. 선택한 파일과 결과물은 oddkit 서버로 업로드되지 않습니다.",
+      "formatsTitle": "지원 포맷",
+      "formats": "JPG, PNG, WebP 입력 이미지를 지원하며 원본 포맷을 유지하거나 JPG, PNG, WebP로 변환할 수 있습니다.",
+      "useCasesTitle": "주요 사용 사례",
+      "useCases": [
+        "썸네일과 미리보기 이미지 생성",
+        "프로필, 배너, 문서 이미지 크기 조정",
+        "온라인 게시 전 이미지 해상도 축소"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "이미지가 oddkit에 업로드되나요?",
+          "answer": "아니요. 리사이즈는 Canvas를 사용해 브라우저에서 로컬로 실행됩니다."
+        },
+        {
+          "question": "원본 비율을 유지할 수 있나요?",
+          "answer": "네. 비율 유지는 기본으로 켜져 있으며 한쪽 크기를 바꾸면 다른 쪽도 자동으로 조정됩니다."
+        },
+        {
+          "question": "리사이즈하면 파일 용량도 줄어드나요?",
+          "answer": "대부분 줄어듭니다. 특히 JPG나 WebP 출력에서는 이미지 크기가 작을수록 파일 용량도 줄어드는 경우가 많습니다."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 썸네일 계산",
+      "captionAction": "리사이즈"
+    },
+    "meta": {
+      "title": "이미지 크기 조정기 - oddkit",
+      "description": "JPG, PNG, WebP 이미지의 너비와 높이를 브라우저에서 조정하세요. 비율 유지, 퍼센트 조절, 출력 포맷 선택을 업로드 없이 처리합니다.",
+      "keywords": [
+        "이미지 리사이즈",
+        "이미지 크기 조절",
+        "사진 크기 줄이기",
+        "이미지 비율 유지",
+        "이미지 사이즈 변경",
+        "브라우저 이미지 도구",
+        "oddkit"
+      ]
+    }
+  },
+  "privacy": {
+    "title": "개인정보처리방침",
+    "updated": "최종 수정일: 2026년 7월 5일",
+    "intro": "oddkit은 브라우저에서 실행되는 이미지 생성·편집 도구를 제공합니다. 대부분의 작업은 사용자의 기기 내에서 처리되며 서버로 업로드되지 않습니다. 이 방침은 oddkit이 실제로 수집하는 데이터와 그 사용 방식을 설명합니다.",
+    "sections": [
+      {
+        "heading": "수집하는 데이터",
+        "body": [
+          "oddkit의 도구(더미 이미지 생성기, 이미지 압축, 이미지 변환, 이미지 리사이저)는 클라이언트 측 JavaScript와 Canvas API를 사용해 전적으로 브라우저에서 실행됩니다. 사용자가 업로드, 생성, 편집하는 이미지는 oddkit 서버로 전송되지 않습니다.",
+          "oddkit은 도구 사용을 위해 계정을 요구하지 않으며 이름, 이메일 주소 등 개인정보를 수집하지 않습니다.",
+          "호스팅 제공업체는 보안 및 안정성 목적으로 IP 주소, 브라우저 종류, 요청 시각 같은 표준 기술 정보를 일시적으로 기록할 수 있습니다."
+        ]
+      },
+      {
+        "heading": "로컬 저장소와 쿠키",
+        "body": [
+          "oddkit은 테마 설정(라이트/다크 모드)을 브라우저의 로컬 저장소에 저장합니다. 이 데이터는 사용자의 기기에만 남으며 oddkit으로 전송되지 않습니다.",
+          "oddkit이 광고를 표시하는 경우, Google을 포함한 광고 파트너가 이 사이트 또는 다른 사이트에 대한 이전 방문 기록을 바탕으로 광고를 게재하기 위해 쿠키를 사용할 수 있습니다."
+        ]
+      },
+      {
+        "heading": "광고 및 제3자 서비스",
+        "body": [
+          "Google을 포함한 제3자 공급업체는 사용자가 이 웹사이트 또는 다른 웹사이트를 방문한 기록을 바탕으로 광고를 게재하기 위해 쿠키를 사용합니다. Google의 광고 쿠키 사용을 통해 Google과 그 파트너는 사용자가 oddkit 및/또는 인터넷상의 다른 사이트를 방문한 기록을 바탕으로 광고를 게재할 수 있습니다.",
+          "Google 광고 설정(https://adssettings.google.com)에서 맞춤 광고를 거부할 수 있습니다. 또한 www.aboutads.info/choices 에서 제3자 공급업체의 맞춤 광고용 쿠키 사용을 거부할 수 있습니다."
+        ]
+      },
+      {
+        "heading": "아동의 개인정보",
+        "body": [
+          "oddkit의 도구는 13세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 고의로 수집하지 않습니다."
+        ]
+      },
+      {
+        "heading": "방침 변경",
+        "body": [
+          "이 개인정보처리방침은 수시로 업데이트될 수 있습니다. 변경 사항은 이 페이지에 새로운 수정일과 함께 게시됩니다."
+        ]
+      },
+      {
+        "heading": "문의",
+        "body": [
+          "이 개인정보처리방침에 대해 문의사항이 있으면 {email}으로 연락해 주세요."
+        ]
+      }
+    ],
+    "meta": {
+      "title": "개인정보처리방침 - oddkit",
+      "description": "oddkit이 로컬 처리, 쿠키, 제3자 광고를 포함해 데이터를 수집·저장·사용하는 방식을 설명합니다."
+    }
+  },
+  "terms": {
+    "title": "이용약관",
+    "updated": "최종 수정일: 2026년 7월 5일",
+    "intro": "oddkit을 이용함으로써 다음 약관에 동의하는 것으로 간주됩니다. 동의하지 않는 경우 사이트를 이용하지 마세요.",
+    "sections": [
+      {
+        "heading": "서비스 설명",
+        "body": [
+          "oddkit은 이미지 생성, 압축, 변환, 리사이즈를 위한 무료 브라우저 기반 도구를 제공합니다. 처리는 브라우저에서 로컬로 이루어지며, 도구가 명시적으로 다르게 안내하지 않는 한 파일은 서버로 업로드되지 않습니다."
+        ]
+      },
+      {
+        "heading": "허용되는 사용",
+        "body": [
+          "사용자는 oddkit을 이용해 불법적이거나 침해적이거나 유해한 콘텐츠를 만들거나 업로드, 처리하지 않으며, 서비스를 방해하거나 리버스 엔지니어링하거나 악용하려 시도하지 않는 데 동의합니다."
+        ]
+      },
+      {
+        "heading": "사용자 콘텐츠",
+        "body": [
+          "oddkit의 도구로 만들거나 처리한 이미지의 모든 권리는 상업적 이용을 포함해 사용자에게 있습니다. oddkit은 사용자가 생성하거나 업로드한 파일에 대해 어떠한 권리도 주장하지 않습니다."
+        ]
+      },
+      {
+        "heading": "보증 부인",
+        "body": [
+          "oddkit은 명시적이든 묵시적이든 특정 목적에의 적합성이나 비침해를 포함한 어떠한 보증 없이 \"있는 그대로\" 제공됩니다. 서비스가 중단 없이, 오류 없이, 항상 이용 가능할 것이라고 보장하지 않습니다."
+        ]
+      },
+      {
+        "heading": "책임의 제한",
+        "body": [
+          "관련 법률이 허용하는 최대 범위 내에서, oddkit과 운영자는 서비스 이용으로 발생하는 간접적, 부수적, 결과적 손해에 대해 책임지지 않습니다."
+        ]
+      },
+      {
+        "heading": "광고",
+        "body": [
+          "oddkit은 서비스 운영 비용을 충당하기 위해 Google 애드센스 등을 통한 광고를 표시할 수 있습니다. 광고는 개인정보처리방침에 설명된 방식을 따릅니다."
+        ]
+      },
+      {
+        "heading": "약관 변경",
+        "body": [
+          "이 약관은 수시로 업데이트될 수 있습니다. 변경 사항 게시 이후 oddkit을 계속 이용하면 변경된 약관에 동의한 것으로 간주됩니다."
+        ]
+      },
+      {
+        "heading": "문의",
+        "body": [
+          "이 약관에 대한 문의는 {email}으로 보내주세요."
+        ]
+      }
+    ],
+    "meta": {
+      "title": "이용약관 - oddkit",
+      "description": "oddkit의 브라우저 기반 이미지 도구 이용에 관한 약관입니다."
+    }
+  },
+  "common": {
+    "breadcrumb": {
+      "root": "~/oddkit/tools"
+    },
+    "footer": "oddkit - 서버 없이, 브라우저에서 끝내는 작업",
+    "copyright": "© {year} {name}. All rights reserved.",
+    "contact": "문의",
+    "language": "언어",
+    "noServerUpload": "서버 업로드 없음",
+    "legal": {
+      "privacy": "개인정보처리방침",
+      "terms": "이용약관"
+    }
+  }
+}

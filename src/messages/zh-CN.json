@@ -1,0 +1,508 @@
+{
+  "site": {
+    "meta": {
+      "title": "oddkit",
+      "description": "为工作准备的小工具集。在浏览器中快速使用图片工具和日常实用工具。",
+      "keywords": [
+        "oddkit",
+        "网页工具",
+        "浏览器工具",
+        "工作工具集",
+        "图片工具",
+        "实用工具"
+      ]
+    }
+  },
+  "home": {
+    "seoDescription": "oddkit 是一个可直接在浏览器中使用的小型工具集，适合设计、开发和内容工作。无需将文件上传到服务器，即可创建占位图片、压缩图片并处理小型工具任务。",
+    "dummyImage": {
+      "description": "创建纯色、渐变或图案图片，并保存为 PNG/JPG/SVG/GIF"
+    },
+    "imageCompressor": {
+      "description": "在浏览器中减小图片体积，并下载优化后的 JPG/PNG/WebP 文件"
+    },
+    "imageConverter": {
+      "description": "在浏览器中转换 JPG、PNG 和 WebP 图片"
+    },
+    "imageResizer": {
+      "description": "无需上传即可调整图片宽高或比例"
+    },
+    "promptComment": "{count} 个本地浏览器工具",
+    "heroTitle": "只在需要时出现的实用工具。",
+    "meta": {
+      "title": "oddkit - 为工作准备的小工具集",
+      "description": "在浏览器中使用图片生成、压缩、转换、尺寸调整等工作中常用的小型网页工具。",
+      "keywords": [
+        "oddkit",
+        "网页工具",
+        "浏览器工具",
+        "图片工具",
+        "占位图片生成器",
+        "图片压缩",
+        "图片转换",
+        "图片尺寸调整"
+      ]
+    }
+  },
+  "dummyImage": {
+    "title": "占位图片生成器",
+    "description": "创建纯色、渐变或图案图片，并保存为你喜欢的格式。",
+    "preview": "预览",
+    "controls": {
+      "type": "类型",
+      "solid": "纯色",
+      "gradient": "渐变",
+      "pattern": "图案",
+      "size": "尺寸",
+      "bgColor": "背景色",
+      "startColor": "起始颜色",
+      "endColor": "结束颜色",
+      "fgColor": "前景色",
+      "direction": "方向",
+      "vertical": "垂直",
+      "horizontal": "水平",
+      "diagonal": "对角线",
+      "patternStyle": "样式",
+      "grid": "网格",
+      "dots": "点状",
+      "stripes": "条纹",
+      "text": "文本（默认：尺寸）",
+      "fontSize": "字体大小：{size}px",
+      "format": "下载格式"
+    },
+    "download": {
+      "generating": "生成中...",
+      "button": "下载为 {format}"
+    },
+    "seo": {
+      "overviewTitle": "浏览器中的占位图片生成器",
+      "overview": "直接在浏览器中为原型、布局、测试和设计草稿创建占位图片。选择纯色、渐变或图案，调整尺寸和文字，然后以你需要的格式下载。",
+      "privacy": "图片会在浏览器本地生成。你选择的颜色、尺寸、文字和生成的文件不会上传到服务器。",
+      "formatsTitle": "支持格式",
+      "formats": "支持下载 PNG、JPG、JPEG、WebP、SVG 和 GIF。",
+      "embedTitle": "随处嵌入",
+      "embed": "每种尺寸和格式都可以直接作为图片 URL 使用，无需下载或打开工具页面。可以直接放进 img 标签、README 或原型中。",
+      "embedHint": "尺寸：每边 1-4000px。格式：png、jpg、webp。相同请求会直接命中缓存，立即返回。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "网站和应用布局的占位图片",
+        "设计草稿中的原型素材",
+        "开发流程中的测试图片"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "生成的图片可以用于商业项目吗？",
+          "answer": "可以。生成图片来自你选择的设置，可用于你自己的项目。"
+        },
+        {
+          "question": "我的图片会上传到 oddkit 吗？",
+          "answer": "不会。图片生成和下载都在浏览器中执行。"
+        },
+        {
+          "question": "可以下载哪些图片格式？",
+          "answer": "可以下载 PNG、JPG、JPEG、WebP、SVG 和 GIF 文件。"
+        },
+        {
+          "question": "不打开工具页面也能使用占位图片吗？",
+          "answer": "可以。直接在 <img> 标签中使用 /placeholder/{width}x{height}.{format} 这个 URL 即可 —— 请求时即时生成图片，无需访问页面。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 占位图工厂",
+      "captionAction": "{type}"
+    },
+    "meta": {
+      "title": "占位图片生成器 - oddkit",
+      "description": "在浏览器中创建纯色、渐变、图案和文字占位图片，并下载为 PNG、JPG、WebP、SVG 或 GIF。",
+      "keywords": [
+        "占位图片生成器",
+        "占位图片",
+        "mockup 图片",
+        "图片生成工具",
+        "浏览器图片工具",
+        "oddkit"
+      ]
+    }
+  },
+  "imageCompressor": {
+    "title": "图片压缩",
+    "description": "在浏览器本地减小图片文件大小。下载优化图片前，可以调整质量、最大尺寸和输出格式。",
+    "controls": {
+      "image": "图片",
+      "supported": "支持 JPG、PNG 和 WebP 图片。",
+      "mode": "压缩模式",
+      "targetSize": "目标文件大小",
+      "targetHint": "oddkit 会尝试生成小于 {size} 的最佳图片。",
+      "pngTargetWarning": "PNG 是无损格式，目标大小模式可能无法稳定减小体积。建议使用 WebP 或 JPG。",
+      "quality": "质量：{quality}%",
+      "maxSize": "最大尺寸",
+      "format": "输出格式"
+    },
+    "modes": {
+      "manual": "手动质量",
+      "target": "目标大小"
+    },
+    "formats": {
+      "original": "原始格式",
+      "jpeg": "JPG",
+      "png": "PNG",
+      "webp": "WebP"
+    },
+    "actions": {
+      "compress": "压缩图片",
+      "compressing": "压缩中...",
+      "download": "下载压缩图片"
+    },
+    "preview": {
+      "empty": "上传图片后会在这里显示预览。",
+      "alt": "所选图片预览"
+    },
+    "stats": {
+      "original": "原始",
+      "compressed": "压缩后",
+      "saved": "节省",
+      "output": "输出",
+      "quality": "质量",
+      "target": "目标",
+      "targetReached": "已达到",
+      "targetMissed": "最接近结果"
+    },
+    "errors": {
+      "unsupported": "不支持此文件类型。请选择 JPG、PNG 或 WebP 图片。",
+      "compress": "无法压缩此图片。请尝试其他文件或格式。"
+    },
+    "seo": {
+      "overviewTitle": "浏览器中的图片压缩工具",
+      "overview": "无需将文件上传到服务器，即可压缩用于网站、应用、邮件和内容工作流的图片。你可以调整图片质量、设置最大尺寸，并将输出转换为 JPG、PNG 或 WebP。",
+      "privacy": "图片会在浏览器本地处理。所选文件和压缩结果不会上传到 oddkit。",
+      "formatsTitle": "支持格式",
+      "formats": "支持 JPG、PNG 和 WebP 输入图片。输出可以保持原始格式，也可以转换为 JPG、PNG 或 WebP。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "发布前减小网站图片体积",
+        "优化截图和内容图片",
+        "为原型和文档创建更小的素材"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "我的图片会上传到 oddkit 吗？",
+          "answer": "不会。压缩使用 Canvas 在浏览器中本地执行。"
+        },
+        {
+          "question": "可以压缩哪些格式？",
+          "answer": "可以压缩 JPG、PNG 和 WebP 图片，并下载 JPG、PNG 或 WebP 输出。"
+        },
+        {
+          "question": "为什么 PNG 输出可能比原图更大？",
+          "answer": "PNG 是无损格式，降低质量可能不会像 JPG 或 WebP 那样减小体积。需要更强压缩时请使用 WebP 或 JPG。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 让它更轻",
+      "captionAction": "压缩"
+    },
+    "meta": {
+      "title": "图片压缩 - oddkit",
+      "description": "在浏览器中压缩 JPG、PNG 和 WebP 图片。设置目标大小、质量和输出格式，无需上传即可下载优化图片。",
+      "keywords": [
+        "图片压缩",
+        "压缩图片",
+        "减小图片体积",
+        "目标大小压缩",
+        "WebP 压缩",
+        "浏览器图片工具",
+        "oddkit"
+      ]
+    }
+  },
+  "imageConverter": {
+    "title": "图片格式转换器",
+    "description": "在浏览器中转换 JPG、PNG 和 WebP 图片",
+    "controls": {
+      "image": "图片",
+      "supported": "支持 JPG、PNG 和 WebP 图片。",
+      "format": "输出格式",
+      "quality": "质量：{quality}%"
+    },
+    "formats": {
+      "jpeg": "JPG",
+      "png": "PNG",
+      "webp": "WebP"
+    },
+    "actions": {
+      "convert": "转换图片",
+      "converting": "转换中...",
+      "download": "下载转换后的图片"
+    },
+    "preview": {
+      "empty": "上传图片后会在这里显示预览。",
+      "alt": "所选图片预览"
+    },
+    "stats": {
+      "original": "原始",
+      "output": "输出",
+      "format": "格式",
+      "dimensions": "尺寸"
+    },
+    "errors": {
+      "unsupported": "不支持此文件类型。请选择 JPG、PNG 或 WebP 图片。",
+      "convert": "无法转换此图片。请尝试其他文件或格式。"
+    },
+    "seo": {
+      "overviewTitle": "浏览器中的图片格式转换工具",
+      "overview": "无需将文件上传到服务器，即可转换用于网站、应用、文档和内容工作流的图片。选择 JPG、PNG 或 WebP 输出，支持的格式还可以调整质量。",
+      "privacy": "图片会在浏览器本地转换。所选文件和转换结果不会上传到 oddkit。",
+      "formatsTitle": "支持格式",
+      "formats": "支持 JPG、PNG 和 WebP 输入图片。输出可以是 JPG、PNG 或 WebP。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "创建 WebP 图片以加快网页加载速度",
+        "将截图和设计素材转换为 JPG 或 PNG",
+        "为表单和文档准备兼容的图片文件"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "我的图片会上传到 oddkit 吗？",
+          "answer": "不会。转换使用 Canvas 在浏览器中本地执行。"
+        },
+        {
+          "question": "可以转换哪些格式？",
+          "answer": "可以打开 JPG、PNG 和 WebP 图片，并输出为 JPG、PNG 或 WebP。"
+        },
+        {
+          "question": "为什么 PNG 没有质量滑块？",
+          "answer": "浏览器 Canvas API 的 PNG 输出是无损的，因此质量设置主要适用于 JPG 和 WebP。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 本地重新编码",
+      "captionAction": "转换"
+    },
+    "meta": {
+      "title": "图片格式转换器 - oddkit",
+      "description": "在浏览器中转换 JPG、PNG 和 WebP 图片。选择输出格式和质量，无需上传即可下载转换后的文件。",
+      "keywords": [
+        "图片转换",
+        "图片格式转换",
+        "JPG 转 WebP",
+        "PNG 转 WebP",
+        "WebP 转换器",
+        "浏览器图片工具",
+        "oddkit"
+      ]
+    }
+  },
+  "imageResizer": {
+    "title": "图片尺寸调整器",
+    "description": "无需上传即可调整图片宽高或比例",
+    "controls": {
+      "image": "图片",
+      "supported": "支持 JPG、PNG 和 WebP 图片。",
+      "size": "尺寸",
+      "keepAspectRatio": "保持宽高比",
+      "format": "输出格式",
+      "quality": "质量：{quality}%"
+    },
+    "formats": {
+      "original": "原始格式",
+      "jpeg": "JPG",
+      "png": "PNG",
+      "webp": "WebP"
+    },
+    "actions": {
+      "resize": "调整图片尺寸",
+      "resizing": "调整中...",
+      "download": "下载调整后的图片"
+    },
+    "preview": {
+      "empty": "上传图片后会在这里显示预览。",
+      "alt": "所选图片预览"
+    },
+    "stats": {
+      "original": "原始",
+      "output": "输出",
+      "originalSize": "原始尺寸",
+      "outputSize": "输出尺寸"
+    },
+    "errors": {
+      "unsupported": "不支持此文件类型。请选择 JPG、PNG 或 WebP 图片。",
+      "read": "无法读取此图片。请尝试其他文件。",
+      "resize": "无法调整此图片尺寸。请尝试其他文件或更小的尺寸。"
+    },
+    "seo": {
+      "overviewTitle": "浏览器中的图片尺寸调整工具",
+      "overview": "无需将文件上传到服务器，即可调整用于网页、个人资料、文档、缩略图和发布工作流的图片尺寸。可以输入精确尺寸，也可以使用百分比预设。",
+      "privacy": "图片会在浏览器本地调整尺寸。所选文件和结果不会上传到 oddkit。",
+      "formatsTitle": "支持格式",
+      "formats": "支持 JPG、PNG 和 WebP 输入图片。输出可以保持原始格式，也可以转换为 JPG、PNG 或 WebP。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "创建缩略图和预览图片",
+        "调整个人资料、横幅和文档图片的尺寸",
+        "发布前缩小图片尺寸"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "我的图片会上传到 oddkit 吗？",
+          "answer": "不会。调整尺寸使用 Canvas 在浏览器中本地执行。"
+        },
+        {
+          "question": "可以保持原始宽高比吗？",
+          "answer": "可以。保持宽高比默认开启，修改一边尺寸时另一边会自动同步调整。"
+        },
+        {
+          "question": "调整尺寸也能减小文件大小吗？",
+          "answer": "通常可以。尺寸越小，文件大小通常也越小，尤其是 JPG 或 WebP 输出。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 缩略图计算",
+      "captionAction": "调整尺寸"
+    },
+    "meta": {
+      "title": "图片尺寸调整器 - oddkit",
+      "description": "在浏览器中调整 JPG、PNG 和 WebP 图片的宽度和高度。支持保持比例、百分比调整和输出格式选择。",
+      "keywords": [
+        "图片尺寸调整",
+        "调整图片大小",
+        "修改图片尺寸",
+        "图片尺寸",
+        "图片比例",
+        "浏览器图片工具",
+        "oddkit"
+      ]
+    }
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "updated": "最后更新：2026 年 7 月 5 日",
+    "intro": "oddkit 提供在浏览器中运行的图片生成与编辑工具。你在这些工具中的大部分操作都保留在你的设备上，不会上传到我们的服务器。本政策说明我们实际收集哪些数据，以及这些数据的使用方式。",
+    "sections": [
+      {
+        "heading": "我们收集的数据",
+        "body": [
+          "oddkit 的工具（占位图片生成器、图片压缩、图片格式转换器、图片尺寸调整器）完全使用客户端 JavaScript 和 Canvas API，在你的浏览器中运行。你上传、生成或编辑的图片不会传输到 oddkit 的服务器。",
+          "使用这些工具无需注册账户，oddkit 也不会收集姓名、邮箱地址等个人信息。",
+          "出于安全和稳定性考虑，我们的托管服务商可能会临时记录 IP 地址、浏览器类型、请求时间等标准技术信息。"
+        ]
+      },
+      {
+        "heading": "本地存储与 Cookie",
+        "body": [
+          "oddkit 会将你的主题偏好（浅色或深色模式）保存在浏览器的本地存储中。这些数据只保留在你的设备上，不会发送给我们。",
+          "如果 oddkit 展示广告，包括 Google 在内的广告合作伙伴可能会使用 Cookie，根据你此前访问本网站或其他网站的记录来投放广告。"
+        ]
+      },
+      {
+        "heading": "广告与第三方供应商",
+        "body": [
+          "包括 Google 在内的第三方供应商会使用 Cookie，根据用户此前访问本网站或其他网站的记录来投放广告。Google 使用广告 Cookie 使其及其合作伙伴能够根据用户对 oddkit 及/或互联网上其他网站的访问情况投放广告。",
+          "你可以在 Google 广告设置（https://adssettings.google.com）中选择停用个性化广告。你也可以访问 www.aboutads.info/choices，选择停用第三方供应商用于个性化广告的 Cookie。"
+        ]
+      },
+      {
+        "heading": "儿童隐私",
+        "body": [
+          "oddkit 的工具并非面向 13 岁以下儿童，我们不会故意收集儿童的个人信息。"
+        ]
+      },
+      {
+        "heading": "政策变更",
+        "body": [
+          "我们可能会不时更新本隐私政策。变更内容将连同新的修订日期一起发布在本页面上。"
+        ]
+      },
+      {
+        "heading": "联系我们",
+        "body": [
+          "如果你对本隐私政策有任何疑问，请通过 {email} 联系我们。"
+        ]
+      }
+    ],
+    "meta": {
+      "title": "隐私政策 - oddkit",
+      "description": "了解 oddkit 如何收集、存储和使用数据，包括本地处理、Cookie 和第三方广告。"
+    }
+  },
+  "terms": {
+    "title": "服务条款",
+    "updated": "最后更新：2026 年 7 月 5 日",
+    "intro": "使用 oddkit 即表示你同意以下条款。如果你不同意，请不要使用本网站。",
+    "sections": [
+      {
+        "heading": "服务说明",
+        "body": [
+          "oddkit 提供免费的浏览器端图片生成、压缩、转换和尺寸调整工具。处理过程在你的浏览器本地完成；除非工具另有明确说明，否则文件不会上传到我们的服务器。"
+        ]
+      },
+      {
+        "heading": "可接受的使用方式",
+        "body": [
+          "你同意不使用 oddkit 创建、上传或处理违法、侵权或有害内容，也不会尝试干扰、逆向工程或滥用本服务。"
+        ]
+      },
+      {
+        "heading": "你的内容",
+        "body": [
+          "你对使用 oddkit 工具创建或处理的任何图片拥有完整所有权，包括商业用途。oddkit 不对你生成或上传的文件主张任何权利。"
+        ]
+      },
+      {
+        "heading": "不提供保证",
+        "body": [
+          "oddkit 按“现状”提供，不作任何明示或暗示的保证，包括适用于特定用途或不侵权的保证。我们不保证服务不间断、无错误或始终可用。"
+        ]
+      },
+      {
+        "heading": "责任限制",
+        "body": [
+          "在法律允许的最大范围内，oddkit 及其运营者对因使用本服务而产生的任何间接、附带或后果性损害不承担责任。"
+        ]
+      },
+      {
+        "heading": "广告",
+        "body": [
+          "为支持服务运营成本，oddkit 可能会通过 Google AdSense 等方式展示广告。广告须遵循我们隐私政策中描述的做法。"
+        ]
+      },
+      {
+        "heading": "条款变更",
+        "body": [
+          "我们可能会不时更新本条款。条款变更发布后继续使用 oddkit，即表示你接受修订后的条款。"
+        ]
+      },
+      {
+        "heading": "联系我们",
+        "body": [
+          "有关本条款的问题，可发送至 {email}。"
+        ]
+      }
+    ],
+    "meta": {
+      "title": "服务条款 - oddkit",
+      "description": "使用 oddkit 浏览器端图片工具的条款和条件。"
+    }
+  },
+  "common": {
+    "breadcrumb": {
+      "root": "~/oddkit/tools"
+    },
+    "footer": "oddkit - 奇怪但有用的工具箱",
+    "copyright": "© {year} {name}. All rights reserved.",
+    "contact": "联系我们",
+    "language": "语言",
+    "noServerUpload": "不上传到服务器",
+    "legal": {
+      "privacy": "隐私政策",
+      "terms": "服务条款"
+    }
+  }
+}

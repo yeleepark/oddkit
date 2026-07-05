@@ -1,0 +1,508 @@
+{
+  "site": {
+    "meta": {
+      "title": "oddkit",
+      "description": "A small toolkit for work. Use useful browser-based tools for image tasks and everyday utility workflows.",
+      "keywords": [
+        "oddkit",
+        "web tools",
+        "browser tools",
+        "work toolkit",
+        "image tools",
+        "utility tools"
+      ]
+    }
+  },
+  "home": {
+    "seoDescription": "oddkit is a browser-based toolkit for quick design, development, and content tasks. Create dummy images, compress images, and handle small utility workflows without uploading files to a server.",
+    "dummyImage": {
+      "description": "Create solid, gradient, or pattern images and save as PNG/JPG/SVG/GIF"
+    },
+    "imageCompressor": {
+      "description": "Reduce image file size in your browser and download optimized JPG/PNG/WebP files"
+    },
+    "imageConverter": {
+      "description": "Convert images between JPG, PNG, and WebP directly in your browser"
+    },
+    "imageResizer": {
+      "description": "Resize images by width, height, or percentage without uploading files"
+    },
+    "promptComment": "{count} local browser tools",
+    "heroTitle": "Useful tools, only when you need them.",
+    "meta": {
+      "title": "oddkit - A small toolkit for work",
+      "description": "Use small browser-based tools for image generation, compression, conversion, resizing, and everyday work tasks.",
+      "keywords": [
+        "oddkit",
+        "web tools",
+        "browser tools",
+        "image tools",
+        "dummy image generator",
+        "image compressor",
+        "image converter",
+        "image resizer"
+      ]
+    }
+  },
+  "dummyImage": {
+    "title": "Dummy Image Generator",
+    "description": "Create solid, gradient, or pattern images and save in your preferred format.",
+    "preview": "Preview",
+    "controls": {
+      "type": "Type",
+      "solid": "Solid",
+      "gradient": "Gradient",
+      "pattern": "Pattern",
+      "size": "Size",
+      "bgColor": "Background",
+      "startColor": "Start color",
+      "endColor": "End color",
+      "fgColor": "Foreground",
+      "direction": "Direction",
+      "vertical": "Vertical",
+      "horizontal": "Horizontal",
+      "diagonal": "Diagonal",
+      "patternStyle": "Style",
+      "grid": "Grid",
+      "dots": "Dots",
+      "stripes": "Stripes",
+      "text": "Text (default: size)",
+      "fontSize": "Font size: {size}px",
+      "format": "Download format"
+    },
+    "download": {
+      "generating": "Generating...",
+      "button": "Download as {format}"
+    },
+    "seo": {
+      "overviewTitle": "Browser-based dummy image generator",
+      "overview": "Create placeholder images for mockups, layouts, tests, and design drafts directly in your browser. Choose a solid color, gradient, or pattern, adjust the size and text, then download the result in your preferred format.",
+      "privacy": "Images are generated locally in the browser. The selected colors, dimensions, text, and generated files are not uploaded to a server.",
+      "formatsTitle": "Supported formats",
+      "formats": "PNG, JPG, JPEG, WebP, SVG, and GIF downloads are supported.",
+      "embedTitle": "Embed anywhere",
+      "embed": "Every size and format is also available as a direct image URL — no download or interactive tool needed. Drop it straight into an img tag, README, or mockup.",
+      "embedHint": "Size: 1–4000px per side. Format: png, jpg, or webp. Cached and served instantly on repeat requests.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Placeholder images for website and app layouts",
+        "Mockup assets for design drafts",
+        "Test images for development workflows"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Can I use the generated images in commercial projects?",
+          "answer": "Yes. The generated dummy images are created from your selected settings and can be used in your own projects."
+        },
+        {
+          "question": "Are my images uploaded to oddkit?",
+          "answer": "No. Image generation and downloads run in your browser."
+        },
+        {
+          "question": "Which image formats can I download?",
+          "answer": "You can download PNG, JPG, JPEG, WebP, SVG, and GIF files."
+        },
+        {
+          "question": "Can I use a placeholder image without opening the tool?",
+          "answer": "Yes. Use the /placeholder/{width}x{height}.{format} URL directly in an <img> tag — it renders the image on request, no page visit required."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// placeholder factory",
+      "captionAction": "{type}"
+    },
+    "meta": {
+      "title": "Dummy Image Generator - oddkit",
+      "description": "Create placeholder images with solid colors, gradients, patterns, and text. Download PNG, JPG, WebP, SVG, or GIF files in your browser.",
+      "keywords": [
+        "dummy image generator",
+        "placeholder image generator",
+        "image placeholder",
+        "mockup image",
+        "browser image tool",
+        "oddkit"
+      ]
+    }
+  },
+  "imageCompressor": {
+    "title": "Image Compressor",
+    "description": "Reduce image file size locally in your browser. Adjust quality, max dimensions, and output format before downloading the optimized image.",
+    "controls": {
+      "image": "Image",
+      "supported": "Supports JPG, PNG, and WebP images.",
+      "mode": "Compression mode",
+      "targetSize": "Target file size",
+      "targetHint": "oddkit will try to create the best image under {size}.",
+      "pngTargetWarning": "PNG is lossless, so target size mode may not reduce it reliably. WebP or JPG is recommended.",
+      "quality": "Quality: {quality}%",
+      "maxSize": "Max dimensions",
+      "format": "Output format"
+    },
+    "modes": {
+      "manual": "Manual quality",
+      "target": "Target size"
+    },
+    "formats": {
+      "original": "Original format",
+      "jpeg": "JPG",
+      "png": "PNG",
+      "webp": "WebP"
+    },
+    "actions": {
+      "compress": "Compress image",
+      "compressing": "Compressing...",
+      "download": "Download compressed image"
+    },
+    "preview": {
+      "empty": "Upload an image to preview it here.",
+      "alt": "Selected image preview"
+    },
+    "stats": {
+      "original": "Original",
+      "compressed": "Compressed",
+      "saved": "Saved",
+      "output": "Output",
+      "quality": "Quality",
+      "target": "Target",
+      "targetReached": "Reached",
+      "targetMissed": "Closest result"
+    },
+    "errors": {
+      "unsupported": "This file type is not supported. Please choose a JPG, PNG, or WebP image.",
+      "compress": "Unable to compress this image. Try another file or format."
+    },
+    "seo": {
+      "overviewTitle": "Browser-based image compressor",
+      "overview": "Compress images for websites, apps, emails, and content workflows without uploading files to a server. Choose image quality, set maximum dimensions, and convert the output to JPG, PNG, or WebP.",
+      "privacy": "Images are processed locally in your browser. The selected file and compressed result are not uploaded to oddkit.",
+      "formatsTitle": "Supported formats",
+      "formats": "JPG, PNG, and WebP input images are supported. Output can keep the original format or be converted to JPG, PNG, or WebP.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Reduce website image weight before publishing",
+        "Optimize screenshots and content images",
+        "Create smaller assets for prototypes and documentation"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Are my images uploaded to oddkit?",
+          "answer": "No. Compression runs locally in your browser using Canvas."
+        },
+        {
+          "question": "Which formats can I compress?",
+          "answer": "You can compress JPG, PNG, and WebP images, then download JPG, PNG, or WebP output."
+        },
+        {
+          "question": "Why can PNG output be larger than the original?",
+          "answer": "PNG is lossless, so reducing quality may not shrink it like JPG or WebP. Use WebP or JPG for stronger compression."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// make it lighter",
+      "captionAction": "compress"
+    },
+    "meta": {
+      "title": "Image Compressor - oddkit",
+      "description": "Compress JPG, PNG, and WebP images in your browser. Reduce file size, set a target size, and download optimized images without uploading files.",
+      "keywords": [
+        "image compressor",
+        "compress image",
+        "reduce image size",
+        "target image size",
+        "webp compressor",
+        "browser image tool",
+        "oddkit"
+      ]
+    }
+  },
+  "imageConverter": {
+    "title": "Image Converter",
+    "description": "Convert JPG, PNG, and WebP images locally in your browser. Choose the output format and quality, then download the converted file.",
+    "controls": {
+      "image": "Image",
+      "supported": "Supports JPG, PNG, and WebP images.",
+      "format": "Output format",
+      "quality": "Quality: {quality}%"
+    },
+    "formats": {
+      "jpeg": "JPG",
+      "png": "PNG",
+      "webp": "WebP"
+    },
+    "actions": {
+      "convert": "Convert image",
+      "converting": "Converting...",
+      "download": "Download converted image"
+    },
+    "preview": {
+      "empty": "Upload an image to preview it here.",
+      "alt": "Selected image preview"
+    },
+    "stats": {
+      "original": "Original",
+      "output": "Output",
+      "format": "Format",
+      "dimensions": "Dimensions"
+    },
+    "errors": {
+      "unsupported": "This file type is not supported. Please choose a JPG, PNG, or WebP image.",
+      "convert": "Unable to convert this image. Try another file or format."
+    },
+    "seo": {
+      "overviewTitle": "Browser-based image converter",
+      "overview": "Convert images for websites, apps, documents, and content workflows without uploading files to a server. Choose JPG, PNG, or WebP output and tune quality when the format supports it.",
+      "privacy": "Images are converted locally in your browser. The selected file and converted result are not uploaded to oddkit.",
+      "formatsTitle": "Supported formats",
+      "formats": "JPG, PNG, and WebP input images are supported. Output can be JPG, PNG, or WebP.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Create WebP images for faster web pages",
+        "Convert screenshots and design assets to JPG or PNG",
+        "Prepare compatible image files for forms and documents"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Are my images uploaded to oddkit?",
+          "answer": "No. Conversion runs locally in your browser using Canvas."
+        },
+        {
+          "question": "Which formats can I convert?",
+          "answer": "You can open JPG, PNG, and WebP images, then download JPG, PNG, or WebP output."
+        },
+        {
+          "question": "Why does PNG not have a quality slider?",
+          "answer": "PNG output is lossless in the browser Canvas API, so quality settings mainly apply to JPG and WebP."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// re-encode, locally",
+      "captionAction": "convert"
+    },
+    "meta": {
+      "title": "Image Converter - oddkit",
+      "description": "Convert JPG, PNG, and WebP images directly in your browser. Choose output format and quality, then download the converted file.",
+      "keywords": [
+        "image converter",
+        "convert image",
+        "jpg to webp",
+        "png to webp",
+        "webp converter",
+        "browser image tool",
+        "oddkit"
+      ]
+    }
+  },
+  "imageResizer": {
+    "title": "Image Resizer",
+    "description": "Resize JPG, PNG, and WebP images locally in your browser. Set custom dimensions, keep aspect ratio, and choose the output format.",
+    "controls": {
+      "image": "Image",
+      "supported": "Supports JPG, PNG, and WebP images.",
+      "size": "Size",
+      "keepAspectRatio": "Keep aspect ratio",
+      "format": "Output format",
+      "quality": "Quality: {quality}%"
+    },
+    "formats": {
+      "original": "Original format",
+      "jpeg": "JPG",
+      "png": "PNG",
+      "webp": "WebP"
+    },
+    "actions": {
+      "resize": "Resize image",
+      "resizing": "Resizing...",
+      "download": "Download resized image"
+    },
+    "preview": {
+      "empty": "Upload an image to preview it here.",
+      "alt": "Selected image preview"
+    },
+    "stats": {
+      "original": "Original",
+      "output": "Output",
+      "originalSize": "Original size",
+      "outputSize": "Output size"
+    },
+    "errors": {
+      "unsupported": "This file type is not supported. Please choose a JPG, PNG, or WebP image.",
+      "read": "Unable to read this image. Try another file.",
+      "resize": "Unable to resize this image. Try another file or smaller dimensions."
+    },
+    "seo": {
+      "overviewTitle": "Browser-based image resizer",
+      "overview": "Resize images for web pages, profiles, documents, thumbnails, and publishing workflows without uploading files to a server. Enter exact dimensions or use percentage presets.",
+      "privacy": "Images are resized locally in your browser. The selected file and resized result are not uploaded to oddkit.",
+      "formatsTitle": "Supported formats",
+      "formats": "JPG, PNG, and WebP input images are supported. Output can keep the original format or be converted to JPG, PNG, or WebP.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Create thumbnails and preview images",
+        "Resize profile, banner, and document images",
+        "Reduce dimensions before publishing images online"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Are my images uploaded to oddkit?",
+          "answer": "No. Resizing runs locally in your browser using Canvas."
+        },
+        {
+          "question": "Can I keep the original aspect ratio?",
+          "answer": "Yes. Keep aspect ratio is enabled by default and updates the paired dimension automatically."
+        },
+        {
+          "question": "Can resizing also reduce file size?",
+          "answer": "Often yes. Smaller dimensions usually reduce file size, especially with JPG or WebP output."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// thumbnail math",
+      "captionAction": "resize"
+    },
+    "meta": {
+      "title": "Image Resizer - oddkit",
+      "description": "Resize JPG, PNG, and WebP images in your browser. Set width, height, percentage, aspect ratio, and output format without uploading files.",
+      "keywords": [
+        "image resizer",
+        "resize image",
+        "change image size",
+        "image dimensions",
+        "aspect ratio image",
+        "browser image tool",
+        "oddkit"
+      ]
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "updated": "Last updated: July 5, 2026",
+    "intro": "oddkit provides browser-based tools for image generation and editing. Most of what you do in these tools stays on your device — nothing is uploaded to our servers. This policy explains what data we do collect and how it may be used.",
+    "sections": [
+      {
+        "heading": "Data We Collect",
+        "body": [
+          "oddkit's tools (dummy image generator, image compressor, image converter, image resizer) run entirely in your browser using client-side JavaScript and the Canvas API. Images you upload, generate, or edit are never transmitted to oddkit's servers.",
+          "oddkit does not require an account and does not collect names, email addresses, or other personal information to use the tools.",
+          "Our hosting provider may temporarily log standard technical data, such as IP address, browser type, and request timestamps, for security and reliability purposes."
+        ]
+      },
+      {
+        "heading": "Local Storage and Cookies",
+        "body": [
+          "oddkit stores your theme preference (light or dark mode) in your browser's local storage. This data stays on your device and is never sent to us.",
+          "If oddkit displays advertising, our advertising partners, including Google, may use cookies to serve ads based on your prior visits to this or other websites."
+        ]
+      },
+      {
+        "heading": "Advertising and Third-Party Vendors",
+        "body": [
+          "Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to oddkit and/or other sites on the internet.",
+          "You may opt out of personalized advertising by visiting Google Ads Settings (https://adssettings.google.com). You can also opt out of third-party vendors' use of cookies for personalized advertising by visiting www.aboutads.info/choices."
+        ]
+      },
+      {
+        "heading": "Children's Privacy",
+        "body": [
+          "oddkit's tools are not directed at children under 13, and we do not knowingly collect personal information from children."
+        ]
+      },
+      {
+        "heading": "Changes to This Policy",
+        "body": [
+          "We may update this privacy policy from time to time. Changes will be posted on this page with a new revision date."
+        ]
+      },
+      {
+        "heading": "Contact",
+        "body": [
+          "If you have questions about this privacy policy, contact us at {email}."
+        ]
+      }
+    ],
+    "meta": {
+      "title": "Privacy Policy - oddkit",
+      "description": "How oddkit collects, stores, and uses data, including local processing, cookies, and third-party advertising."
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "updated": "Last updated: July 5, 2026",
+    "intro": "By using oddkit, you agree to the following terms. If you do not agree, please do not use the site.",
+    "sections": [
+      {
+        "heading": "Description of Service",
+        "body": [
+          "oddkit provides free, browser-based tools for image generation, compression, conversion, and resizing. Processing happens locally in your browser; files are not uploaded to our servers unless a tool explicitly states otherwise."
+        ]
+      },
+      {
+        "heading": "Acceptable Use",
+        "body": [
+          "You agree not to use oddkit to create, upload, or process unlawful, infringing, or harmful content, and not to attempt to disrupt, reverse engineer, or abuse the service."
+        ]
+      },
+      {
+        "heading": "Your Content",
+        "body": [
+          "You retain full ownership of any images you create or process using oddkit's tools, including for commercial use. oddkit claims no rights to files you generate or upload."
+        ]
+      },
+      {
+        "heading": "No Warranty",
+        "body": [
+          "oddkit is provided \"as is\" without warranties of any kind, express or implied, including fitness for a particular purpose or non-infringement. We do not guarantee the service will be uninterrupted, error-free, or available at all times."
+        ]
+      },
+      {
+        "heading": "Limitation of Liability",
+        "body": [
+          "To the fullest extent permitted by law, oddkit and its operator are not liable for any indirect, incidental, or consequential damages arising from your use of the service."
+        ]
+      },
+      {
+        "heading": "Advertising",
+        "body": [
+          "oddkit may display advertising, including through Google AdSense, to support the cost of running the service. Advertising is subject to the practices described in our Privacy Policy."
+        ]
+      },
+      {
+        "heading": "Changes to These Terms",
+        "body": [
+          "We may update these terms from time to time. Continued use of oddkit after changes are posted means you accept the revised terms."
+        ]
+      },
+      {
+        "heading": "Contact",
+        "body": [
+          "Questions about these terms can be sent to {email}."
+        ]
+      }
+    ],
+    "meta": {
+      "title": "Terms of Service - oddkit",
+      "description": "The terms and conditions for using oddkit's browser-based image tools."
+    }
+  },
+  "common": {
+    "breadcrumb": {
+      "root": "~/oddkit/tools"
+    },
+    "footer": "oddkit - odd, useful kit",
+    "copyright": "© {year} {name}. All rights reserved.",
+    "contact": "Contact",
+    "language": "Language",
+    "noServerUpload": "no server upload",
+    "legal": {
+      "privacy": "Privacy",
+      "terms": "Terms"
+    }
+  }
+}
