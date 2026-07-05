@@ -33,6 +33,9 @@
     "encoderDecoder": {
       "description": "URLエンコード、Base64、HTMLエンティティでテキストを変換"
     },
+    "jsonFormatter": {
+      "description": "ブラウザ内でローカルにJSONを整形、圧縮、検証"
+    },
     "promptComment": "ローカルブラウザツール {count} 個",
     "heroTitle": "必要な時だけ使う、ちょうどいいツール。",
     "meta": {
@@ -530,6 +533,78 @@
         "HTMLエンティティデコード",
         "テキストエンコーダー",
         "ブラウザテキストツール",
+        "oddkit"
+      ]
+    }
+  },
+  "jsonFormatter": {
+    "title": "JSONフォーマッター＆バリデーター",
+    "description": "ブラウザ内でローカルにJSONを整形、圧縮、検証します。インデントを整えたり1行に圧縮したり、行・列情報付きで構文エラーを見つけられます。",
+    "controls": {
+      "inputLabel": "入力",
+      "outputLabel": "出力",
+      "placeholder": "JSONを貼り付けるか入力してください…",
+      "outputPlaceholder": "整形されたJSONがここに表示されます。",
+      "charCount": "{count}文字"
+    },
+    "modes": {
+      "format": "整形",
+      "minify": "圧縮"
+    },
+    "actions": {
+      "clear": "クリア",
+      "copy": "出力をコピー",
+      "copied": "コピーしました！"
+    },
+    "status": {
+      "empty": "入力待ち",
+      "valid": "有効なJSON",
+      "invalid": "無効なJSON"
+    },
+    "errors": {
+      "at": "{message}（{line}行目、{column}列目）",
+      "atPosition": "{message}（位置 {position}）",
+      "plain": "{message}"
+    },
+    "seo": {
+      "overviewTitle": "ブラウザで使えるJSONフォーマッター",
+      "overview": "APIレスポンス、設定ファイル、ログを一貫したインデントで整形したり、保存や転送のために1行に圧縮できます。解析はブラウザ標準のJSONエンジンを使ってローカルで行われます。",
+      "privacy": "貼り付けたJSONはブラウザ内でローカルに処理されます。oddkitのサーバーにアップロードされることはありません。",
+      "useCasesTitle": "主な用途",
+      "useCases": [
+        "デバッグ用にAPIレスポンスを整形",
+        "公開前にJSON設定ファイルを圧縮",
+        "JSON構文エラーの発生行を特定"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "JSONはどこかにアップロードされますか？",
+          "answer": "いいえ。解析、整形、圧縮はすべてJSON.parseとJSON.stringifyを使ってブラウザ内でローカルに実行されます。"
+        },
+        {
+          "question": "JSONが無効な場合はどうなりますか？",
+          "answer": "解析に失敗したおおよその行と列を示す検証エラーが表示され、アプリがクラッシュすることはありません。"
+        },
+        {
+          "question": "結果をコピーできますか？",
+          "answer": "はい。「出力をコピー」ボタンで整形または圧縮されたJSONをクリップボードにコピーできます。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// カンマ探偵"
+    },
+    "meta": {
+      "title": "JSONフォーマッター＆バリデーター - oddkit",
+      "description": "ブラウザでJSONを整形、圧縮、検証できます。インデント整形、出力の圧縮、行・列情報付きの構文エラー検出に対応。サーバーへのアップロードはありません。",
+      "keywords": [
+        "jsonフォーマッター",
+        "jsonバリデーター",
+        "json圧縮",
+        "json整形",
+        "jsonリンター",
+        "ブラウザjsonツール",
         "oddkit"
       ]
     }
