@@ -105,7 +105,7 @@ export default async function ImageResizerPage({
       <JsonLd data={jsonLd} />
       <ImageResizerTool />
       <Container>
-        <section>
+        <section className="pb-14">
           <div>
             <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
               <div className="space-y-6">
