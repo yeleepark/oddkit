@@ -23,6 +23,9 @@
     "colorConverter": {
       "description": "在瀏覽器中轉換 HEX、RGB、HSL 與 OKLCH 顏色"
     },
+    "encoderDecoder": {
+      "description": "使用 URL 編碼、Base64 和 HTML 實體在瀏覽器中編碼與解碼文字"
+    },
     "promptComment": "{count} 個本機瀏覽器工具",
     "heroTitle": "只在需要時使用的實用工具。",
     "meta": {
@@ -435,6 +438,83 @@
         "oklch 轉換",
         "css 顏色工具",
         "瀏覽器顏色工具",
+        "oddkit"
+      ]
+    }
+  },
+  "encoderDecoder": {
+    "title": "編碼器 / 解碼器",
+    "description": "使用 URL 編碼、Base64 或 HTML 實體在瀏覽器本機編碼與解碼文字。",
+    "controls": {
+      "mode": "模式",
+      "direction": "方向",
+      "input": "輸入",
+      "inputPlaceholder": "在此貼上或輸入文字…",
+      "output": "輸出",
+      "outputPlaceholder": "結果會顯示在這裡"
+    },
+    "modes": {
+      "url": "URL",
+      "base64": "Base64",
+      "html": "HTML 實體"
+    },
+    "directions": {
+      "encode": "編碼",
+      "decode": "解碼"
+    },
+    "actions": {
+      "copy": "複製輸出",
+      "copied": "已複製！"
+    },
+    "errors": {
+      "invalidUrl": "這不是有效的 URL 編碼文字。請確認是否有不完整或格式錯誤的 % 序列。",
+      "invalidBase64": "這不是有效的 Base64 文字。只能使用英數字、+、/ 和 =，且長度須為 4 的倍數。",
+      "invalidHtmlEntity": "無法辨識的 HTML 實體：{token}",
+      "generic": "無法處理這段文字，請嘗試其他輸入。"
+    },
+    "seo": {
+      "overviewTitle": "瀏覽器中的文字編碼／解碼工具",
+      "overview": "不需要將內容上傳到伺服器，即可為 URL、查詢字串、嵌入內容和 API 資料編碼與解碼小段文字。在 URL 編碼、Base64 和 HTML 實體之間切換，結果會即時更新。",
+      "privacy": "文字會在瀏覽器本機編碼與解碼。你輸入的內容不會上傳到 oddkit。",
+      "modesTitle": "支援的模式",
+      "modes": "支援 URL 編碼、Base64 和 HTML 實體編碼的雙向轉換。",
+      "useCasesTitle": "常見用途",
+      "useCases": [
+        "為 URL 和 API 請求準備查詢字串值",
+        "解碼來自權杖、記錄檔或設定檔的 Base64 資料",
+        "在嵌入標記前逸出或還原 HTML 實體"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "我輸入的文字會上傳到 oddkit 嗎？",
+          "answer": "不會。編碼與解碼都在瀏覽器本機執行。"
+        },
+        {
+          "question": "貼上無效輸入會怎樣？",
+          "answer": "工具會顯示清楚的錯誤訊息，說明為什麼無法解碼，而不是悄悄失敗。"
+        },
+        {
+          "question": "可以複製結果嗎？",
+          "answer": "可以。使用複製按鈕即可將輸出結果複製到剪貼簿。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 讓文字安全上路"
+    },
+    "meta": {
+      "title": "編碼器 / 解碼器 - oddkit",
+      "description": "直接在瀏覽器中使用 URL 編碼、Base64 和 HTML 實體編碼與解碼文字，一鍵複製結果。",
+      "keywords": [
+        "URL 編碼",
+        "URL 解碼",
+        "Base64 編碼",
+        "Base64 解碼",
+        "HTML 實體編碼",
+        "HTML 實體解碼",
+        "文字編碼器",
+        "瀏覽器文字工具",
         "oddkit"
       ]
     }
