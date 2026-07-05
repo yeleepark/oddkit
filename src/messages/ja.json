@@ -27,6 +27,9 @@
     "imageResizer": {
       "description": "アップロードせずに画像サイズを変更"
     },
+    "colorConverter": {
+      "description": "ブラウザ内でHEX、RGB、HSL、OKLCHの色を変換"
+    },
     "promptComment": "ローカルブラウザツール {count} 個",
     "heroTitle": "必要な時だけ使う、ちょうどいいツール。",
     "meta": {
@@ -377,6 +380,76 @@
         "画像の寸法",
         "アスペクト比",
         "ブラウザ画像ツール",
+        "oddkit"
+      ]
+    }
+  },
+  "colorConverter": {
+    "title": "カラーコンバーター",
+    "description": "HEX、RGB、HSL、OKLCHの色を相互に変換し、プレビューと値のコピーをすべてブラウザ内で行います。",
+    "controls": {
+      "input": "色の入力",
+      "picker": "色を選択",
+      "placeholder": "#7c5cff, rgb(124 92 255), hsl(255 100% 68%)...",
+      "supported": "HEX、RGB(A)、HSL(A)、OKLCHの色の値を入力できます。"
+    },
+    "formats": {
+      "hex": "HEX",
+      "rgb": "RGB",
+      "hsl": "HSL",
+      "oklch": "OKLCH"
+    },
+    "actions": {
+      "copy": "コピー",
+      "copied": "コピーしました"
+    },
+    "preview": {
+      "alt": "カラープレビューのスウォッチ"
+    },
+    "errors": {
+      "invalid": "有効なHEX、RGB、HSL、OKLCHの色を入力してください。"
+    },
+    "seo": {
+      "overviewTitle": "ブラウザで使えるカラーコンバーター",
+      "overview": "UIデザインやCSSの作成、ブランドカラーの確認時にHEX、RGB、HSL、OKLCH間で色を変換できます。対応形式で値を入力または選択すると、すべての変換値が即座に更新されます。",
+      "privacy": "色の変換はブラウザ内でローカルに処理されます。色の値がoddkitのサーバーにアップロードされることはありません。",
+      "formatsTitle": "対応フォーマット",
+      "formats": "HEX(3/4/6/8桁)、rgb()/rgba()、hsl()/hsla()、oklch()の入力をアルファ値とともに読み取り、4つの形式すべてで出力します。",
+      "useCasesTitle": "主な用途",
+      "useCases": [
+        "デザインツールの色をCSS用の値に変換",
+        "フォーマット間でアルファ透明度を確認",
+        "知覚的に均一な最新のOKLCH値を試す"
+      ],
+      "faqTitle": "よくある質問",
+      "faq": [
+        {
+          "question": "入力した色はoddkitのサーバーにアップロードされますか？",
+          "answer": "いいえ。変換はブラウザ内でローカルに処理されます。"
+        },
+        {
+          "question": "アルファ透明度には対応していますか？",
+          "answer": "はい。HEX、RGB、HSL、OKLCHはすべてアルファチャンネルに対応しており、変換後のすべての値に反映されます。"
+        },
+        {
+          "question": "無効な色を入力するとどうなりますか？",
+          "answer": "エラーにはならず、分かりやすいメッセージが表示されるので、そのまま入力を修正できます。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 色、翻訳済み"
+    },
+    "meta": {
+      "title": "カラーコンバーター - oddkit",
+      "description": "ブラウザでHEX、RGB、HSL、OKLCHの色を変換。アルファ値、リアルタイムプレビュー、ワンクリックコピーに対応。",
+      "keywords": [
+        "カラーコンバーター",
+        "hex to rgb",
+        "rgb to hsl",
+        "oklch 変換",
+        "css カラーツール",
+        "ブラウザ カラーツール",
         "oddkit"
       ]
     }

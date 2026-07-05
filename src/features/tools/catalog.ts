@@ -39,6 +39,16 @@ export const TOOL_CATALOG = [
     homeDescriptionKey: 'imageResizer.description',
     enabled: true,
   },
+  {
+    id: 'color-converter',
+    num: '05',
+    tag: '#color · #convert',
+    href: '/tools/color-converter',
+    titleKey: 'colorConverter.title',
+    descriptionKey: 'colorConverter.description',
+    homeDescriptionKey: 'colorConverter.description',
+    enabled: true,
+  },
 ] as const
 
 export type ToolCatalogItem = (typeof TOOL_CATALOG)[number]

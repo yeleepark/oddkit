@@ -20,6 +20,9 @@
     "imageResizer": {
       "description": "无需上传即可调整图片宽高或比例"
     },
+    "colorConverter": {
+      "description": "在浏览器中转换 HEX、RGB、HSL 和 OKLCH 颜色"
+    },
     "promptComment": "{count} 个本地浏览器工具",
     "heroTitle": "只在需要时出现的实用工具。",
     "meta": {
@@ -362,6 +365,76 @@
         "图片尺寸",
         "图片比例",
         "浏览器图片工具",
+        "oddkit"
+      ]
+    }
+  },
+  "colorConverter": {
+    "title": "颜色转换器",
+    "description": "在 HEX、RGB、HSL 和 OKLCH 之间转换颜色，实时预览效果，并可复制任意转换值。全部在浏览器本地完成。",
+    "controls": {
+      "input": "颜色输入",
+      "picker": "选择颜色",
+      "placeholder": "#7c5cff, rgb(124 92 255), hsl(255 100% 68%)...",
+      "supported": "支持输入 HEX、RGB(A)、HSL(A) 和 OKLCH 颜色值。"
+    },
+    "formats": {
+      "hex": "HEX",
+      "rgb": "RGB",
+      "hsl": "HSL",
+      "oklch": "OKLCH"
+    },
+    "actions": {
+      "copy": "复制",
+      "copied": "已复制"
+    },
+    "preview": {
+      "alt": "颜色预览色板"
+    },
+    "errors": {
+      "invalid": "请输入有效的 HEX、RGB、HSL 或 OKLCH 颜色值。"
+    },
+    "seo": {
+      "overviewTitle": "基于浏览器的颜色转换器",
+      "overview": "在设计界面、编写 CSS 或核对品牌色时，可在 HEX、RGB、HSL 和 OKLCH 之间转换颜色。输入或选择任意支持的格式，所有对应数值会即时更新。",
+      "privacy": "颜色转换在浏览器本地完成，任何颜色值都不会上传到 oddkit。",
+      "formatsTitle": "支持的格式",
+      "formats": "可读取 HEX(3/4/6/8 位)、rgb()/rgba()、hsl()/hsla() 和 oklch() 输入(含透明度)，并输出全部四种格式。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "将设计工具中的颜色转换为可直接用于 CSS 的值",
+        "检查各格式之间的透明度是否一致",
+        "探索感知均匀的新一代 OKLCH 颜色值"
+      ],
+      "faqTitle": "常见问题",
+      "faq": [
+        {
+          "question": "我输入的颜色会上传到 oddkit 吗？",
+          "answer": "不会。转换过程完全在浏览器本地完成。"
+        },
+        {
+          "question": "支持透明度(alpha)吗？",
+          "answer": "支持。HEX、RGB、HSL 和 OKLCH 均支持透明度通道，并会保留在每一个转换结果中。"
+        },
+        {
+          "question": "输入无效颜色会发生什么？",
+          "answer": "工具会显示清晰的提示信息而不会崩溃，你可以直接修改输入内容。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 颜色，已转换"
+    },
+    "meta": {
+      "title": "颜色转换器 - oddkit",
+      "description": "在浏览器中转换 HEX、RGB、HSL 和 OKLCH 颜色。支持透明度、实时预览和一键复制。",
+      "keywords": [
+        "颜色转换器",
+        "hex 转 rgb",
+        "rgb 转 hsl",
+        "oklch 转换",
+        "css 颜色工具",
+        "浏览器颜色工具",
         "oddkit"
       ]
     }

@@ -27,6 +27,9 @@
     "imageResizer": {
       "description": "Cambia el tamaño de imágenes sin subir archivos"
     },
+    "colorConverter": {
+      "description": "Convierte colores entre HEX, RGB, HSL y OKLCH directamente en el navegador"
+    },
     "promptComment": "{count} herramientas locales del navegador",
     "heroTitle": "Herramientas útiles, solo cuando las necesitas.",
     "meta": {
@@ -377,6 +380,76 @@
         "dimensiones de imagen",
         "proporción de imagen",
         "herramienta de imagen en el navegador",
+        "oddkit"
+      ]
+    }
+  },
+  "colorConverter": {
+    "title": "Conversor de colores",
+    "description": "Convierte colores entre HEX, RGB, HSL y OKLCH, previsualiza el resultado y copia cualquier valor. Todo se procesa localmente en tu navegador.",
+    "controls": {
+      "input": "Color de entrada",
+      "picker": "Elegir un color",
+      "placeholder": "#7c5cff, rgb(124 92 255), hsl(255 100% 68%)...",
+      "supported": "Admite valores de color HEX, RGB(A), HSL(A) y OKLCH."
+    },
+    "formats": {
+      "hex": "HEX",
+      "rgb": "RGB",
+      "hsl": "HSL",
+      "oklch": "OKLCH"
+    },
+    "actions": {
+      "copy": "Copiar",
+      "copied": "Copiado"
+    },
+    "preview": {
+      "alt": "Muestra de vista previa del color"
+    },
+    "errors": {
+      "invalid": "Introduce un color HEX, RGB, HSL u OKLCH válido."
+    },
+    "seo": {
+      "overviewTitle": "Conversor de colores en el navegador",
+      "overview": "Convierte colores entre HEX, RGB, HSL y OKLCH mientras diseñas interfaces, escribes CSS o revisas los colores de una marca. Escribe o elige cualquier formato compatible y todos los valores equivalentes se actualizan al instante.",
+      "privacy": "Los colores se convierten localmente en tu navegador. Ningún valor de color se sube a oddkit.",
+      "formatsTitle": "Formatos compatibles",
+      "formats": "Admite HEX (3/4/6/8 dígitos), rgb()/rgba(), hsl()/hsla() y oklch(), incluidos valores alfa, y genera los cuatro formatos.",
+      "useCasesTitle": "Casos de uso comunes",
+      "useCases": [
+        "Traducir colores de herramientas de diseño a valores listos para CSS",
+        "Comprobar la transparencia alfa entre formatos",
+        "Explorar valores OKLCH, un espacio de color moderno y perceptualmente uniforme"
+      ],
+      "faqTitle": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Se suben mis colores a oddkit?",
+          "answer": "No. La conversión se procesa localmente en tu navegador."
+        },
+        {
+          "question": "¿Es compatible con la transparencia alfa?",
+          "answer": "Sí. HEX, RGB, HSL y OKLCH admiten un canal alfa, que se conserva en cada valor convertido."
+        },
+        {
+          "question": "¿Qué ocurre si escribo un color no válido?",
+          "answer": "La herramienta muestra un mensaje de error claro en lugar de fallar, para que puedas corregir la entrada sin problemas."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// color, traducido"
+    },
+    "meta": {
+      "title": "Conversor de colores - oddkit",
+      "description": "Convierte colores entre HEX, RGB, HSL y OKLCH en tu navegador. Compatible con valores alfa, vista previa en vivo y copia con un clic.",
+      "keywords": [
+        "conversor de colores",
+        "hex a rgb",
+        "rgb a hsl",
+        "conversor oklch",
+        "herramienta de color css",
+        "herramienta de color en el navegador",
         "oddkit"
       ]
     }
