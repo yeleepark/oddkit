@@ -1,0 +1,17 @@
+.git
+.gitignore
+.eslintrc*
+.prettierrc*
+.prettierignore
+jest.config.*
+jest.setup.*
+src/**/*.test.ts
+src/**/*.test.tsx
+src/**/__tests__/**
+.claude
+.next
+node_modules
+pnpm-lock.yaml
+*.md
+CHANGELOG.md
+LICENSE
