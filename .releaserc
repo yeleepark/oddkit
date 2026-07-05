@@ -1,9 +1,13 @@
 {
   "branches": [
-    "main",
+    {
+      "name": "main",
+      "channel": "production"
+    },
     {
       "name": "dev",
-      "prerelease": true
+      "prerelease": true,
+      "channel": "development"
     }
   ],
   "plugins": [
