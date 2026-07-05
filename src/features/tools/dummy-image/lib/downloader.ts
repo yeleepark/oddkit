@@ -3,6 +3,7 @@ import type { DummyImageConfig, ImageFormat } from '@/features/tools/dummy-image
 import { generateSVG } from '@/features/tools/dummy-image/lib/svg-generator'
 import { generateGIF } from '@/features/tools/dummy-image/lib/gif-generator'
 import { IMAGE_FORMAT_MIME_TYPES } from '@/features/tools/dummy-image/model/options'
+import { trackDownload } from '@/shared/analytics'
 
 export function getMimeType(format: ImageFormat): string {
   return IMAGE_FORMAT_MIME_TYPES[format]
@@ -23,17 +24,21 @@ export async function downloadImage(
     const svgString = generateSVG(config)
     const blob = new Blob([svgString], { type: 'image/svg+xml' })
     triggerDownload(URL.createObjectURL(blob), filename)
+    trackDownload('dummy-image', filename, blob.size, format)
     return
   }
 
   if (format === 'gif') {
     const blob = await generateGIF(canvas)
     triggerDownload(URL.createObjectURL(blob), filename)
+    trackDownload('dummy-image', filename, blob.size, format)
     return
   }
 
   const dataUrl = canvas.toDataURL(getMimeType(format))
+  const blob = await fetch(dataUrl).then((r) => r.blob())
   triggerDownload(dataUrl, filename)
+  trackDownload('dummy-image', filename, blob.size, format)
 }
 
 function triggerDownload(url: string, filename: string): void {

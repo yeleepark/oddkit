@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import Breadcrumb from '@/shared/ui/breadcrumb'
+import Breadcrumb from '@/shared/ui/Breadcrumb'
 
 jest.mock('@/i18n/navigation', () => ({
   Link: ({

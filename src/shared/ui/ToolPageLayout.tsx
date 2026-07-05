@@ -1,11 +1,13 @@
 'use client'
 
+import { useEffect } from 'react'
 import type { ReactNode } from 'react'
 import { useTranslations } from 'next-intl'
 import Container from '@/shared/ui/Container'
 import PageHeader from '@/shared/ui/PageHeader'
 import Breadcrumb from '@/shared/ui/Breadcrumb'
 import { TOOL_CATALOG } from '@/features/tools/catalog'
+import { trackToolOpened } from '@/shared/analytics'
 
 interface ToolPageLayoutProps {
   children: ReactNode
@@ -24,6 +26,10 @@ export default function ToolPageLayout({
 }: ToolPageLayoutProps) {
   const t = useTranslations()
   const commonT = useTranslations('common')
+
+  useEffect(() => {
+    trackToolOpened(toolId, title)
+  }, [toolId, title])
 
   const items = TOOL_CATALOG.filter((tool) => tool.enabled).map((tool) => ({
     id: tool.id,

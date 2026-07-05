@@ -30,6 +30,7 @@ import Button from '@/shared/ui/Button'
 import Preview from '@/shared/ui/Preview'
 import Stat from '@/shared/ui/Stat'
 import StatGrid from '@/shared/ui/StatGrid'
+import { trackToolAction, trackDownload, trackError, trackFileUpload, trackFeaturePreference } from '@/shared/analytics'
 
 interface SourceDimensions {
   width: number
@@ -124,12 +125,14 @@ export default function ImageResizerTool() {
     if (!IMAGE_RESIZER_ACCEPTED_TYPES.includes(nextFile.type as never)) {
       setFile(null)
       setError(t('errors.unsupported'))
+      trackError('image-resizer', 'unsupported_format', nextFile.type)
       return
     }
 
     const url = URL.createObjectURL(nextFile)
     setFile(nextFile)
     setPreviewUrl(url)
+    trackFileUpload('image-resizer', nextFile.size, nextFile.type)
     readDimensions(nextFile, url)
   }
 
@@ -148,10 +151,19 @@ export default function ImageResizerTool() {
     resetResult()
 
     try {
+      trackToolAction('image-resizer', 'resize', {
+        width: options.width,
+        height: options.height,
+        format: options.format,
+        quality: options.quality,
+        keep_aspect_ratio: options.keepAspectRatio,
+      })
       const nextResult = await resizeImage(file, options)
       setResult(nextResult)
       setResultUrl(URL.createObjectURL(nextResult.blob))
-    } catch {
+      trackDownload('image-resizer', nextResult.filename, nextResult.size, options.format)
+    } catch (error) {
+      trackError('image-resizer', 'resize_failed', error instanceof Error ? error.message : String(error))
       setError(t('errors.resize'))
     } finally {
       setIsResizing(false)
@@ -183,7 +195,10 @@ export default function ImageResizerTool() {
               {IMAGE_RESIZER_SCALE_PRESETS.map((preset) => (
                 <Chip
                   key={preset.label}
-                  onClick={() => applyScale(preset.scale)}
+                  onClick={() => {
+                    trackFeaturePreference('image-resizer', 'preset', preset.label)
+                    applyScale(preset.scale)
+                  }}
                   disabled={!sourceDimensions}
                   outline
                   active

@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server'
 import Container from '@/shared/ui/Container'
 import PageHeader from '@/shared/ui/PageHeader'
-import Breadcrumb from '@/shared/ui/breadcrumb'
+import Breadcrumb from '@/shared/ui/Breadcrumb'
 import { SITE_CONFIG } from '@/config/site'
 import type { AppLocale } from '@/config/locales'
 

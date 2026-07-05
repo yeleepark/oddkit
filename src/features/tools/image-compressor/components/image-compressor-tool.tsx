@@ -32,6 +32,7 @@ import Button from '@/shared/ui/Button'
 import Preview from '@/shared/ui/Preview'
 import Stat from '@/shared/ui/Stat'
 import StatGrid from '@/shared/ui/StatGrid'
+import { trackToolAction, trackDownload, trackError, trackFileUpload, trackFeaturePreference } from '@/shared/analytics'
 
 export default function ImageCompressorTool() {
   const t = useTranslations('imageCompressor')
@@ -84,11 +85,13 @@ export default function ImageCompressorTool() {
     if (!IMAGE_COMPRESSOR_ACCEPTED_TYPES.includes(nextFile.type as never)) {
       setFile(null)
       setError(t('errors.unsupported'))
+      trackError('image-compressor', 'unsupported_format', nextFile.type)
       return
     }
 
     setFile(nextFile)
     setPreviewUrl(URL.createObjectURL(nextFile))
+    trackFileUpload('image-compressor', nextFile.size, nextFile.type)
   }
 
   const handleCompress = async () => {
@@ -102,10 +105,19 @@ export default function ImageCompressorTool() {
     }
 
     try {
+      trackToolAction('image-compressor', 'compress', {
+        mode: options.mode,
+        format: options.format,
+        quality: options.quality,
+        max_width: options.maxWidth,
+        max_height: options.maxHeight,
+      })
       const nextResult = await compressImage(file, options)
       setResult(nextResult)
       setResultUrl(URL.createObjectURL(nextResult.blob))
-    } catch {
+      trackDownload('image-compressor', nextResult.filename, nextResult.size, options.format)
+    } catch (error) {
+      trackError('image-compressor', 'compress_failed', error instanceof Error ? error.message : String(error))
       setError(t('errors.compress'))
     } finally {
       setIsCompressing(false)
@@ -136,18 +148,22 @@ export default function ImageCompressorTool() {
             <div className="grid grid-cols-2 gap-2">
               <Chip
                 active={options.mode === 'manual'}
-                onClick={() => setOption({ mode: 'manual' })}
+                onClick={() => {
+                  trackFeaturePreference('image-compressor', 'mode', 'manual')
+                  setOption({ mode: 'manual' })
+                }}
               >
                 {t('modes.manual')}
               </Chip>
               <Chip
                 active={options.mode === 'target'}
-                onClick={() =>
+                onClick={() => {
+                  trackFeaturePreference('image-compressor', 'mode', 'target')
                   setOption({
                     mode: 'target',
                     format: options.format === 'png' ? 'webp' : options.format,
                   })
-                }
+                }}
               >
                 {t('modes.target')}
               </Chip>

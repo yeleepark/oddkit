@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import Button from '@/shared/ui/Button'
 import { downloadImage } from '@/features/tools/dummy-image/lib/downloader'
 import type { DummyImageConfig } from '@/features/tools/dummy-image/model/types'
+import { trackToolAction, trackError } from '@/shared/analytics'
 
 interface DownloadButtonProps {
   canvasRef: React.RefObject<HTMLCanvasElement>
@@ -19,7 +20,14 @@ export default function DownloadButton({ canvasRef, config }: DownloadButtonProp
     if (!canvasRef.current) return
     setLoading(true)
     try {
+      trackToolAction('dummy-image', 'generate', {
+        width: config.width,
+        height: config.height,
+        format: config.format,
+      })
       await downloadImage(canvasRef.current, config)
+    } catch (error) {
+      trackError('dummy-image', 'download_failed', error instanceof Error ? error.message : String(error))
     } finally {
       setLoading(false)
     }

@@ -26,6 +26,7 @@ import Button from '@/shared/ui/Button'
 import Preview from '@/shared/ui/Preview'
 import Stat from '@/shared/ui/Stat'
 import StatGrid from '@/shared/ui/StatGrid'
+import { trackToolAction, trackDownload, trackError, trackFileUpload } from '@/shared/analytics'
 
 export default function ImageConverterTool() {
   const t = useTranslations('imageConverter')
@@ -76,11 +77,13 @@ export default function ImageConverterTool() {
     if (!IMAGE_CONVERTER_ACCEPTED_TYPES.includes(nextFile.type as never)) {
       setFile(null)
       setError(t('errors.unsupported'))
+      trackError('image-converter', 'unsupported_format', nextFile.type)
       return
     }
 
     setFile(nextFile)
     setPreviewUrl(URL.createObjectURL(nextFile))
+    trackFileUpload('image-converter', nextFile.size, nextFile.type)
   }
 
   const handleConvert = async () => {
@@ -90,10 +93,17 @@ export default function ImageConverterTool() {
     resetResult()
 
     try {
+      trackToolAction('image-converter', 'convert', {
+        input_format: file.type,
+        output_format: options.format,
+        quality: options.quality,
+      })
       const nextResult = await convertImage(file, options)
       setResult(nextResult)
       setResultUrl(URL.createObjectURL(nextResult.blob))
-    } catch {
+      trackDownload('image-converter', nextResult.filename, nextResult.size, options.format)
+    } catch (error) {
+      trackError('image-converter', 'convert_failed', error instanceof Error ? error.message : String(error))
       setError(t('errors.convert'))
     } finally {
       setIsConverting(false)
