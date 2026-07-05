@@ -1,31 +1,45 @@
 # oddkit
 
-Small browser-based tools for design, development, and content workflows.
+Small browser-based toolkit for design, development, and content workflows. All tools run entirely in-browser with zero server-side processing.
 
-Website: https://oddkit.tools
+**Website:** https://oddkit.tools
 
-## Current Tools
+## Features
 
-- Dummy Image Generator
-  - Create solid, gradient, and pattern images
-  - Download as PNG, JPG, JPEG, WebP, SVG, or GIF
-  - Runs entirely in the browser
-- Image Compressor
-  - Reduce JPG, PNG, and WebP file sizes
-  - Adjust quality, maximum dimensions, and output format
-  - Runs entirely in the browser
-- Image Converter
-  - Convert images between JPG, PNG, and WebP
-  - Adjust output quality for JPG and WebP
-  - Runs entirely in the browser
-- Image Resizer
-  - Resize images by exact dimensions or percentage presets
-  - Keep aspect ratio and choose the output format
-  - Runs entirely in the browser
+- **100% Client-Side Processing** — No file uploads, no server storage
+- **Fast & Lightweight** — Instant results, minimal dependencies
+- **Multilingual** — English, Korean, Japanese, Simplified Chinese, Traditional Chinese, Spanish
+- **SEO & Analytics** — Structured metadata, Google Analytics tracking
 
-## Embeddable Placeholder Images
+## Tools
 
-A locale-neutral, no-auth endpoint that renders a placeholder image directly, so it can be dropped into any `<img>` tag, README, or mockup:
+### Dummy Image Generator
+Create placeholder images on-the-fly
+- Solid colors, gradients, and patterns
+- Output formats: PNG, JPG, JPEG, WebP, SVG, GIF
+- Configurable dimensions and styling
+
+### Image Compressor
+Reduce file sizes without losing quality
+- Supports JPG, PNG, WebP
+- Manual quality adjustment or automatic target-size compression
+- Dimension constraints to reduce file size further
+
+### Image Converter
+Convert between image formats
+- Supports JPG, PNG, WebP
+- Per-format quality control
+- Preserves image dimensions
+
+### Image Resizer
+Resize images precisely or by preset
+- Exact dimensions or percentage presets (50%, 100%, 150%, 200%)
+- Aspect ratio preservation
+- Format and quality options
+
+## Placeholder Images API
+
+A locale-neutral endpoint that renders placeholder images directly into any `<img>` tag, README, or mockup:
 
 ```md
 https://oddkit.tools/placeholder/600x400.png
@@ -33,21 +47,47 @@ https://oddkit.tools/placeholder/1080x1080.webp
 https://oddkit.tools/placeholder/300x200.jpg
 ```
 
-- Size: `{width}x{height}`, 1–4000px on each side
-- Format: `png`, `jpg`, or `webp`
-- Rendered server-side from the same generator the Dummy Image Generator tool uses, so output matches between the interactive tool and the embed URL
-- Long-lived, immutable `Cache-Control` — repeat requests for the same URL are served from cache, not re-rendered
-- Falls back to a plain placeholder image (never a bare error) if rendering fails for a given request
+**Specification:**
+- Size: `{width}x{height}`, 1–4000px per side
+- Formats: `png`, `jpg`, `webp`
+- Server-rendered using the same engine as the Dummy Image Generator tool
+- Immutable, long-lived `Cache-Control` headers
+- Graceful fallback if rendering fails
 
-## Stack
+## Analytics
 
-- Next.js 16
+Usage metrics are tracked via Google Analytics to understand tool adoption and patterns:
+
+- **tool_opened** — Tool page visits
+- **tool_action** — Primary tool actions (generate, convert, compress, resize)
+- **file_upload** — File uploads with size and type
+- **download** — Generated/processed file downloads with size and format
+- **error** — Processing errors by type
+- **feature_preference** — Feature usage patterns (compression mode, resize presets)
+
+All tracking is client-side only. No data is sent to the server during tool use.
+
+## Tech Stack
+
+**Frontend**
+- Next.js 16 (App Router)
 - React 19
-- TypeScript
+- TypeScript (strict mode)
 - Tailwind CSS v4
-- next-intl
-- sharp
+
+**Internationalization**
+- next-intl with 6 locales
+
+**Image Processing**
+- Canvas API (client-side rendering)
+- sharp (server-side rendering for placeholder API)
+
+**Analytics & Monitoring**
+- react-ga4 (Google Analytics)
+
+**Testing & Quality**
 - Jest
+- ESLint
 
 ## Getting Started
 
@@ -68,19 +108,34 @@ pnpm lint     # Run ESLint
 pnpm test     # Run Jest
 ```
 
-## Project Structure
+## Architecture
 
+### File Structure
 ```txt
 src/
-  app/          # Next.js App Router routes and layouts
-                # (app/placeholder/[dimensions]/ is locale-neutral, excluded from proxy.ts)
-  config/       # Site, locale, and app-level configuration
-  features/     # Feature modules
-  shared/       # Shared UI, layout, and SEO utilities
-  i18n/         # Locale routing and navigation helpers
-  messages/     # Translation messages
-  types/        # Global type declarations
-  proxy.ts      # next-intl locale middleware
+  app/              # Routes and layouts (Next.js App Router)
+  config/           # Site config, locales, feature flags
+  features/         # Feature modules (one per tool)
+    tools/
+      [tool-id]/
+        components/ # Interactive UI
+        lib/        # Processing logic
+        model/      # Types and constants
+  shared/           # Reusable UI, layouts, utilities
+    analytics/      # GA tracking helpers
+    seo/            # Metadata generators
+    ui/             # Shared components
+  i18n/             # Locale routing and navigation
+  messages/         # i18n translation files
+  proxy.ts          # next-intl middleware
 ```
 
-Before changing Next.js code, follow `AGENTS.md` and check the local Next.js docs in `node_modules/next/dist/docs/`.
+### Development Guidelines
+- Before editing Next.js code, read `AGENTS.md` and check `node_modules/next/dist/docs/`
+- All tools should prefer client-side processing (no server uploads)
+- Add new tools by creating a feature module and registering in `src/features/tools/catalog.ts`
+- Update all locale message files when adding user-facing text
+
+## Contributing
+
+See `CLAUDE.md` for development guidance and conventions.
