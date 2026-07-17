@@ -12,7 +12,6 @@ import Grid from '@/shared/ui/Grid'
 import Controls from '@/shared/ui/Controls'
 import Label from '@/shared/ui/Label'
 import Input from '@/shared/ui/Input'
-import Preview from '@/shared/ui/Preview'
 import { trackToolAction, trackError } from '@/shared/analytics'
 
 const COPY_FEEDBACK_MS = 1500
@@ -88,40 +87,29 @@ export default function ColorConverterTool() {
           <p className="font-mono text-xs text-faint">{commonT('noServerUpload')}</p>
         </Controls>
 
-        <div className="space-y-4">
-          <Preview>
-            <div
-              role="img"
-              aria-label={t('preview.alt')}
-              className="h-32 w-full rounded-lg border border-line"
-              style={{ backgroundColor: result ? result.rgb : 'transparent' }}
-            />
-          </Preview>
-
-          <div className="space-y-2">
-            {COLOR_CONVERTER_FORMATS.map(({ id, key }) => {
-              const value = result ? result[id] : '-'
-              return (
-                <div
-                  key={id}
-                  className="flex items-center justify-between gap-3 rounded-lg border border-line p-3"
-                >
-                  <div className="min-w-0">
-                    <p className="font-mono text-[10px] uppercase text-faint">{t(`formats.${key}`)}</p>
-                    <p className="mt-1 truncate font-mono text-sm text-text-main">{value}</p>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => result && handleCopy(id, value)}
-                    disabled={!result}
-                    className="shrink-0 rounded-md border border-line-strong px-3 py-1.5 font-mono text-xs text-text-sub transition-colors hover:border-acid/70 hover:text-acid disabled:cursor-not-allowed disabled:opacity-50"
-                  >
-                    {copiedFormat === id ? t('actions.copied') : t('actions.copy')}
-                  </button>
+        <div className="space-y-2">
+          {COLOR_CONVERTER_FORMATS.map(({ id, key }) => {
+            const value = result ? result[id] : '-'
+            return (
+              <div
+                key={id}
+                className="flex items-center justify-between gap-3 rounded-lg border border-line bg-panel p-3"
+              >
+                <div className="min-w-0">
+                  <p className="font-mono text-[10px] uppercase text-faint">{t(`formats.${key}`)}</p>
+                  <p className="mt-1 truncate font-mono text-sm text-text-main">{value}</p>
                 </div>
-              )
-            })}
-          </div>
+                <button
+                  type="button"
+                  onClick={() => result && handleCopy(id, value)}
+                  disabled={!result}
+                  className="shrink-0 rounded-md border border-line-strong px-3 py-1.5 font-mono text-xs text-text-sub transition-colors hover:border-acid/70 hover:text-acid disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  {copiedFormat === id ? t('actions.copied') : t('actions.copy')}
+                </button>
+              </div>
+            )
+          })}
         </div>
       </Grid>
     </ToolPageLayout>
