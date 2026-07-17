@@ -14,12 +14,14 @@ import type { AppLocale } from '@/config/locales'
 // ToolCard's own corner radius lines up with the container's rounded edge —
 // without this, the hover outline gets visibly clipped at the true outer
 // corners (the parent's overflow-hidden cuts a sharp corner into a rounded
-// one). Hardcoded for exactly 5 items (an odd count leaves the last row with
-// a single, left-column card); a 6th tool falls through to a square card
+// one). Hardcoded for exactly 7 items (an odd count leaves the last row with
+// a single, left-column card); an 8th tool falls through to a square card
 // (no crash) and needs this list extended.
 const HOME_GRID_CORNER_ROUNDING = [
   'rounded-tl-[14px] rounded-tr-[14px] sm:rounded-tr-none',
   'sm:rounded-tr-[14px]',
+  '',
+  '',
   '',
   'sm:rounded-br-[14px]',
   'rounded-bl-[14px] rounded-br-[14px] sm:rounded-br-none',

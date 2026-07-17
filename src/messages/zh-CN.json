@@ -26,6 +26,9 @@
     "encoderDecoder": {
       "description": "使用 URL 编码、Base64 和 HTML 实体在浏览器中编码和解码文本"
     },
+    "jsonFormatter": {
+      "description": "在浏览器本地格式化、压缩和校验 JSON"
+    },
     "promptComment": "{count} 个本地浏览器工具",
     "heroTitle": "只在需要时出现的实用工具。",
     "meta": {
@@ -515,6 +518,78 @@
         "HTML 实体解码",
         "文本编码器",
         "浏览器文本工具",
+        "oddkit"
+      ]
+    }
+  },
+  "jsonFormatter": {
+    "title": "JSON 格式化与校验工具",
+    "description": "在浏览器本地格式化、压缩和校验 JSON。整理缩进、压缩为一行，或通过行列信息定位语法错误。",
+    "controls": {
+      "inputLabel": "输入",
+      "outputLabel": "输出",
+      "placeholder": "在此粘贴或输入 JSON…",
+      "outputPlaceholder": "格式化后的 JSON 将显示在这里。",
+      "charCount": "{count} 个字符"
+    },
+    "modes": {
+      "format": "格式化",
+      "minify": "压缩"
+    },
+    "actions": {
+      "clear": "清空",
+      "copy": "复制输出",
+      "copied": "已复制！"
+    },
+    "status": {
+      "empty": "等待输入",
+      "valid": "有效的 JSON",
+      "invalid": "无效的 JSON"
+    },
+    "errors": {
+      "at": "{message}（第 {line} 行，第 {column} 列）",
+      "atPosition": "{message}（位置 {position}）",
+      "plain": "{message}"
+    },
+    "seo": {
+      "overviewTitle": "浏览器中的 JSON 格式化工具",
+      "overview": "使用统一缩进整理杂乱的 API 响应、配置文件和日志，或将其压缩为一行以便存储和传输。解析使用浏览器原生 JSON 引擎在本地完成。",
+      "privacy": "你粘贴的 JSON 会在浏览器本地处理，不会上传到 oddkit 的服务器。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "格式化 API 响应以便调试",
+        "在发布前压缩 JSON 配置",
+        "定位 JSON 语法错误所在的确切行"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "我的 JSON 会上传到某个地方吗？",
+          "answer": "不会。解析、格式化和压缩都使用 JSON.parse 和 JSON.stringify 在浏览器本地完成。"
+        },
+        {
+          "question": "如果我的 JSON 无效会怎样？",
+          "answer": "oddkit 会显示校验错误，并给出解析失败的大致行列位置，不会导致页面崩溃。"
+        },
+        {
+          "question": "可以复制结果吗？",
+          "answer": "可以。使用“复制输出”按钮即可将格式化或压缩后的 JSON 复制到剪贴板。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 逗号侦探"
+    },
+    "meta": {
+      "title": "JSON 格式化与校验工具 - oddkit",
+      "description": "在浏览器中格式化、压缩和校验 JSON。支持整理缩进、压缩输出，以及通过行列信息定位语法错误，无需上传到服务器。",
+      "keywords": [
+        "json 格式化",
+        "json 校验",
+        "json 压缩",
+        "美化 json",
+        "json 语法检查",
+        "浏览器 json 工具",
         "oddkit"
       ]
     }

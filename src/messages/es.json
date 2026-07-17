@@ -33,6 +33,9 @@
     "encoderDecoder": {
       "description": "Codifica y decodifica texto con codificación URL, Base64 y entidades HTML"
     },
+    "jsonFormatter": {
+      "description": "Formatea, minifica y valida JSON localmente en tu navegador"
+    },
     "promptComment": "{count} herramientas locales del navegador",
     "heroTitle": "Herramientas útiles, solo cuando las necesitas.",
     "meta": {
@@ -530,6 +533,78 @@
         "decodificador de entidades html",
         "codificador de texto",
         "herramienta de texto en el navegador",
+        "oddkit"
+      ]
+    }
+  },
+  "jsonFormatter": {
+    "title": "Formateador y validador de JSON",
+    "description": "Formatea, minifica y valida JSON localmente en tu navegador. Ordena la indentación, compáctalo en una línea o detecta errores de sintaxis con la línea y columna exactas.",
+    "controls": {
+      "inputLabel": "Entrada",
+      "outputLabel": "Salida",
+      "placeholder": "Pega o escribe JSON aquí…",
+      "outputPlaceholder": "El JSON formateado aparecerá aquí.",
+      "charCount": "{count} caracteres"
+    },
+    "modes": {
+      "format": "Formatear",
+      "minify": "Minificar"
+    },
+    "actions": {
+      "clear": "Borrar",
+      "copy": "Copiar salida",
+      "copied": "¡Copiado!"
+    },
+    "status": {
+      "empty": "Esperando entrada",
+      "valid": "JSON válido",
+      "invalid": "JSON inválido"
+    },
+    "errors": {
+      "at": "{message} (línea {line}, columna {column})",
+      "atPosition": "{message} (posición {position})",
+      "plain": "{message}"
+    },
+    "seo": {
+      "overviewTitle": "Formateador de JSON en el navegador",
+      "overview": "Ordena respuestas de API, archivos de configuración y registros con una indentación consistente, o compáctalos en una sola línea para almacenamiento y transporte. El análisis se ejecuta localmente con el motor JSON nativo de tu navegador.",
+      "privacy": "El JSON que pegas se procesa localmente en tu navegador. Nunca se sube a los servidores de oddkit.",
+      "useCasesTitle": "Casos de uso comunes",
+      "useCases": [
+        "Dar formato a respuestas de API para depuración",
+        "Minificar configuración JSON antes de publicarla",
+        "Encontrar la línea exacta que causa un error de sintaxis JSON"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "¿Mi JSON se sube a algún lugar?",
+          "answer": "No. El análisis, formateo y minificación ocurren localmente en tu navegador usando JSON.parse y JSON.stringify."
+        },
+        {
+          "question": "¿Qué ocurre si mi JSON no es válido?",
+          "answer": "oddkit muestra un error de validación con la línea y columna aproximadas donde falló el análisis, sin bloquear la página."
+        },
+        {
+          "question": "¿Puedo copiar el resultado?",
+          "answer": "Sí. Usa el botón Copiar salida para copiar el JSON formateado o minificado al portapapeles."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// detective de comas"
+    },
+    "meta": {
+      "title": "Formateador y validador de JSON - oddkit",
+      "description": "Formatea, minifica y valida JSON en tu navegador. Ordena la indentación, compacta la salida y detecta errores de sintaxis con línea y columna. Nada se sube a un servidor.",
+      "keywords": [
+        "formateador json",
+        "validador json",
+        "minificador json",
+        "json bonito",
+        "linter json",
+        "herramienta json en el navegador",
         "oddkit"
       ]
     }

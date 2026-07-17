@@ -59,6 +59,16 @@ export const TOOL_CATALOG = [
     homeDescriptionKey: 'encoderDecoder.description',
     enabled: true,
   },
+  {
+    id: 'json-formatter',
+    num: '07',
+    tag: '#dev · #json',
+    href: '/tools/json-formatter',
+    titleKey: 'jsonFormatter.title',
+    descriptionKey: 'jsonFormatter.description',
+    homeDescriptionKey: 'jsonFormatter.description',
+    enabled: true,
+  },
 ] as const
 
 export type ToolCatalogItem = (typeof TOOL_CATALOG)[number]
