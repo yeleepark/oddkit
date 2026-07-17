@@ -36,6 +36,9 @@
     "jsonFormatter": {
       "description": "Format, minify, and validate JSON locally in your browser"
     },
+    "timestampConverter": {
+      "description": "Convert Unix timestamps to readable dates and back, with local time and UTC"
+    },
     "promptComment": "{count} local browser tools",
     "heroTitle": "Useful tools, only when you need them.",
     "meta": {
@@ -605,6 +608,101 @@
         "prettify json",
         "json linter",
         "browser json tool",
+        "oddkit"
+      ]
+    }
+  },
+  "timestampConverter": {
+    "title": "Timestamp Converter",
+    "description": "Convert Unix timestamps to readable dates and back, entirely in your browser. Supports seconds and milliseconds, with local time and UTC shown side by side.",
+    "sections": {
+      "toDate": {
+        "title": "Timestamp to date"
+      },
+      "toTimestamp": {
+        "title": "Date to timestamp"
+      }
+    },
+    "controls": {
+      "timestamp": "Unix timestamp",
+      "timestampPlaceholder": "e.g. 1720000000",
+      "unit": "Unit",
+      "now": "Now",
+      "dateTime": "Date and time",
+      "interpretAs": "Interpret as",
+      "useCurrentTime": "Use current time",
+      "compareZone": "Compare time zone",
+      "compareZonePlaceholder": "Select a time zone",
+      "optional": "optional"
+    },
+    "units": {
+      "auto": "Auto-detect",
+      "seconds": "Seconds",
+      "milliseconds": "Milliseconds"
+    },
+    "interpretations": {
+      "local": "Local time",
+      "utc": "UTC"
+    },
+    "results": {
+      "local": "Local ({zone})",
+      "utc": "UTC",
+      "detectedUnit": "Detected unit: {unit}",
+      "unixSeconds": "Unix seconds",
+      "unixMilliseconds": "Unix milliseconds",
+      "isoUtc": "ISO 8601 (UTC)",
+      "empty": "-"
+    },
+    "actions": {
+      "copy": "Copy",
+      "copied": "Copied"
+    },
+    "errors": {
+      "empty": "Enter a timestamp to convert.",
+      "not_a_number": "Enter a valid number, in seconds or milliseconds.",
+      "out_of_range": "This value is outside the range JavaScript dates can represent.",
+      "dateEmpty": "Pick a date and time to convert.",
+      "dateInvalid": "This date and time could not be parsed."
+    },
+    "ui": {
+      "eyebrow": "// what time is 1720000000"
+    },
+    "seo": {
+      "overviewTitle": "Browser-based timestamp converter",
+      "overview": "Convert Unix timestamps to human-readable dates and convert dates back into timestamps, for debugging logs, API payloads, scheduled jobs, and analytics data.",
+      "privacy": "Timestamps and dates are converted locally in your browser. Nothing you enter is uploaded to oddkit.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Check what time a Unix timestamp in a log line or API response represents",
+        "Convert a scheduled date and time into a timestamp for a cron job or API call",
+        "Compare a timestamp across your local time zone, UTC, and another time zone"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Are my timestamps or dates uploaded to oddkit?",
+          "answer": "No. All parsing and formatting happens locally in your browser."
+        },
+        {
+          "question": "How does the tool know if a timestamp is in seconds or milliseconds?",
+          "answer": "By default it auto-detects based on magnitude: present-day second-based timestamps are around 10 digits, while millisecond-based timestamps are around 13 digits. You can also force seconds or milliseconds manually."
+        },
+        {
+          "question": "Can I see a timestamp in a time zone other than my own?",
+          "answer": "Yes. Use the compare time zone selector to see the same instant formatted in any supported IANA time zone alongside your local time and UTC."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Timestamp Converter - oddkit",
+      "description": "Convert Unix timestamps to readable dates and back in your browser. Supports seconds and milliseconds, local time, UTC, and time zone comparison.",
+      "keywords": [
+        "timestamp converter",
+        "unix timestamp",
+        "epoch converter",
+        "unix time to date",
+        "date to timestamp",
+        "utc converter",
         "oddkit"
       ]
     }

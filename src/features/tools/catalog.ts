@@ -69,6 +69,16 @@ export const TOOL_CATALOG = [
     homeDescriptionKey: 'jsonFormatter.description',
     enabled: true,
   },
+  {
+    id: 'timestamp-converter',
+    num: '08',
+    tag: '#dev · #time',
+    href: '/tools/timestamp-converter',
+    titleKey: 'timestampConverter.title',
+    descriptionKey: 'timestampConverter.description',
+    homeDescriptionKey: 'timestampConverter.description',
+    enabled: true,
+  },
 ] as const
 
 export type ToolCatalogItem = (typeof TOOL_CATALOG)[number]
