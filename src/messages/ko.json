@@ -30,6 +30,9 @@
     "colorConverter": {
       "description": "브라우저에서 바로 HEX, RGB, HSL, OKLCH 색상을 변환합니다."
     },
+    "encoderDecoder": {
+      "description": "URL 인코딩, Base64, HTML 엔티티로 텍스트를 인코딩·디코딩합니다."
+    },
     "promptComment": "로컬 브라우저 도구 {count}개",
     "heroTitle": "작업자를 위한 작은 툴킷.",
     "meta": {
@@ -450,6 +453,83 @@
         "oklch 변환",
         "css 색상 도구",
         "브라우저 색상 도구",
+        "oddkit"
+      ]
+    }
+  },
+  "encoderDecoder": {
+    "title": "인코더 · 디코더",
+    "description": "URL 인코딩, Base64, HTML 엔티티를 사용해 텍스트를 브라우저에서 로컬로 인코딩하고 디코딩합니다.",
+    "controls": {
+      "mode": "모드",
+      "direction": "방향",
+      "input": "입력",
+      "inputPlaceholder": "여기에 텍스트를 붙여넣거나 입력하세요…",
+      "output": "출력",
+      "outputPlaceholder": "결과가 여기에 표시됩니다"
+    },
+    "modes": {
+      "url": "URL",
+      "base64": "Base64",
+      "html": "HTML 엔티티"
+    },
+    "directions": {
+      "encode": "인코딩",
+      "decode": "디코딩"
+    },
+    "actions": {
+      "copy": "출력 복사",
+      "copied": "복사됨!"
+    },
+    "errors": {
+      "invalidUrl": "올바른 URL 인코딩 형식이 아닙니다. % 뒤가 불완전하거나 잘못되지 않았는지 확인하세요.",
+      "invalidBase64": "올바른 Base64 형식이 아닙니다. 영문자, 숫자, +, /, = 만 4자 단위로 사용할 수 있습니다.",
+      "invalidHtmlEntity": "인식할 수 없는 HTML 엔티티입니다: {token}",
+      "generic": "이 텍스트를 처리할 수 없습니다. 다른 입력을 시도하세요."
+    },
+    "seo": {
+      "overviewTitle": "브라우저 기반 텍스트 인코더/디코더",
+      "overview": "URL, 쿼리 문자열, 임베드, API 페이로드에 필요한 작은 텍스트 조각을 서버 업로드 없이 인코딩하고 디코딩합니다. URL 인코딩, Base64, HTML 엔티티 사이를 전환하면 결과가 즉시 업데이트됩니다.",
+      "privacy": "텍스트는 브라우저에서 로컬로 인코딩·디코딩됩니다. 입력한 내용은 oddkit으로 업로드되지 않습니다.",
+      "modesTitle": "지원 모드",
+      "modes": "URL 인코딩, Base64, HTML 엔티티 인코딩을 양방향으로 지원합니다.",
+      "useCasesTitle": "주요 사용 사례",
+      "useCases": [
+        "URL과 API 요청에 쓸 쿼리 문자열 값 준비",
+        "토큰, 로그, 설정 파일의 Base64 페이로드 디코딩",
+        "마크업에 삽입하기 전 HTML 엔티티 이스케이프·언이스케이프"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "입력한 텍스트가 oddkit에 업로드되나요?",
+          "answer": "아니요. 인코딩과 디코딩은 브라우저에서 로컬로 실행됩니다."
+        },
+        {
+          "question": "잘못된 입력을 붙여넣으면 어떻게 되나요?",
+          "answer": "조용히 실패하는 대신, 왜 디코딩할 수 없는지 명확한 오류 메시지를 보여줍니다."
+        },
+        {
+          "question": "결과를 복사할 수 있나요?",
+          "answer": "네. 복사 버튼으로 출력 결과를 클립보드에 복사할 수 있습니다."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 텍스트가 무사히 전송되도록"
+    },
+    "meta": {
+      "title": "인코더 · 디코더 - oddkit",
+      "description": "URL 인코딩, Base64, HTML 엔티티로 텍스트를 브라우저에서 바로 인코딩·디코딩하세요. 결과는 클릭 한 번으로 복사할 수 있습니다.",
+      "keywords": [
+        "URL 인코더",
+        "URL 디코더",
+        "Base64 인코더",
+        "Base64 디코더",
+        "HTML 엔티티 인코더",
+        "HTML 엔티티 디코더",
+        "텍스트 인코더",
+        "브라우저 텍스트 도구",
         "oddkit"
       ]
     }

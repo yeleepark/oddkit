@@ -30,6 +30,9 @@
     "colorConverter": {
       "description": "Convert colors between HEX, RGB, HSL, and OKLCH directly in your browser"
     },
+    "encoderDecoder": {
+      "description": "Encode and decode text with URL encoding, Base64, and HTML entities"
+    },
     "promptComment": "{count} local browser tools",
     "heroTitle": "Useful tools, only when you need them.",
     "meta": {
@@ -450,6 +453,83 @@
         "oklch converter",
         "css color tool",
         "browser color tool",
+        "oddkit"
+      ]
+    }
+  },
+  "encoderDecoder": {
+    "title": "Encoder · Decoder",
+    "description": "Encode and decode text using URL encoding, Base64, or HTML entities, all locally in your browser.",
+    "controls": {
+      "mode": "Mode",
+      "direction": "Direction",
+      "input": "Input",
+      "inputPlaceholder": "Paste or type text here…",
+      "output": "Output",
+      "outputPlaceholder": "Result will appear here"
+    },
+    "modes": {
+      "url": "URL",
+      "base64": "Base64",
+      "html": "HTML entity"
+    },
+    "directions": {
+      "encode": "Encode",
+      "decode": "Decode"
+    },
+    "actions": {
+      "copy": "Copy output",
+      "copied": "Copied!"
+    },
+    "errors": {
+      "invalidUrl": "This text isn't valid URL-encoded input. Check for incomplete or malformed % sequences.",
+      "invalidBase64": "This text isn't valid Base64. Only letters, numbers, +, /, and = are allowed, in groups of 4 characters.",
+      "invalidHtmlEntity": "Unrecognized HTML entity: {token}",
+      "generic": "Unable to process this text. Try a different input."
+    },
+    "seo": {
+      "overviewTitle": "Browser-based text encoder and decoder",
+      "overview": "Encode and decode small text snippets for URLs, query strings, embeds, and API payloads without uploading anything to a server. Switch between URL encoding, Base64, and HTML entities, and see the result update instantly.",
+      "privacy": "Text is encoded and decoded locally in your browser. Nothing you type is uploaded to oddkit.",
+      "modesTitle": "Supported modes",
+      "modes": "URL encoding, Base64, and HTML entity encoding are supported, in both directions.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Prepare query string values for URLs and API requests",
+        "Decode Base64 payloads from tokens, logs, or configs",
+        "Escape or unescape HTML entities before embedding text in markup"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Is my text uploaded to oddkit?",
+          "answer": "No. Encoding and decoding run locally in your browser."
+        },
+        {
+          "question": "What happens if I paste invalid input?",
+          "answer": "The tool shows a clear error message explaining why the text can't be decoded, instead of silently failing."
+        },
+        {
+          "question": "Can I copy the result?",
+          "answer": "Yes. Use the copy button to copy the output to your clipboard."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// make text survive the wire"
+    },
+    "meta": {
+      "title": "Encoder · Decoder - oddkit",
+      "description": "Encode and decode text with URL encoding, Base64, and HTML entities directly in your browser. Copy the result with one click.",
+      "keywords": [
+        "url encoder",
+        "url decoder",
+        "base64 encoder",
+        "base64 decoder",
+        "html entity encoder",
+        "html entity decoder",
+        "text encoder",
+        "browser text tool",
         "oddkit"
       ]
     }

@@ -49,6 +49,16 @@ export const TOOL_CATALOG = [
     homeDescriptionKey: 'colorConverter.description',
     enabled: true,
   },
+  {
+    id: 'encoder-decoder',
+    num: '06',
+    tag: '#text · #encode',
+    href: '/tools/encoder-decoder',
+    titleKey: 'encoderDecoder.title',
+    descriptionKey: 'encoderDecoder.description',
+    homeDescriptionKey: 'encoderDecoder.description',
+    enabled: true,
+  },
 ] as const
 
 export type ToolCatalogItem = (typeof TOOL_CATALOG)[number]

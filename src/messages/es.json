@@ -30,6 +30,9 @@
     "colorConverter": {
       "description": "Convierte colores entre HEX, RGB, HSL y OKLCH directamente en el navegador"
     },
+    "encoderDecoder": {
+      "description": "Codifica y decodifica texto con codificación URL, Base64 y entidades HTML"
+    },
     "promptComment": "{count} herramientas locales del navegador",
     "heroTitle": "Herramientas útiles, solo cuando las necesitas.",
     "meta": {
@@ -450,6 +453,83 @@
         "conversor oklch",
         "herramienta de color css",
         "herramienta de color en el navegador",
+        "oddkit"
+      ]
+    }
+  },
+  "encoderDecoder": {
+    "title": "Codificador · Decodificador",
+    "description": "Codifica y decodifica texto con codificación URL, Base64 o entidades HTML, todo localmente en tu navegador.",
+    "controls": {
+      "mode": "Modo",
+      "direction": "Dirección",
+      "input": "Entrada",
+      "inputPlaceholder": "Pega o escribe texto aquí…",
+      "output": "Salida",
+      "outputPlaceholder": "El resultado aparecerá aquí"
+    },
+    "modes": {
+      "url": "URL",
+      "base64": "Base64",
+      "html": "Entidad HTML"
+    },
+    "directions": {
+      "encode": "Codificar",
+      "decode": "Decodificar"
+    },
+    "actions": {
+      "copy": "Copiar salida",
+      "copied": "¡Copiado!"
+    },
+    "errors": {
+      "invalidUrl": "Este texto no es una codificación URL válida. Revisa si hay secuencias % incompletas o mal formadas.",
+      "invalidBase64": "Este texto no es Base64 válido. Solo se permiten letras, números, +, / y =, en grupos de 4 caracteres.",
+      "invalidHtmlEntity": "Entidad HTML no reconocida: {token}",
+      "generic": "No se pudo procesar este texto. Prueba con otra entrada."
+    },
+    "seo": {
+      "overviewTitle": "Codificador y decodificador de texto en el navegador",
+      "overview": "Codifica y decodifica fragmentos de texto para URLs, cadenas de consulta, contenido incrustado y payloads de API sin subir nada a un servidor. Cambia entre codificación URL, Base64 y entidades HTML, y el resultado se actualiza al instante.",
+      "privacy": "El texto se codifica y decodifica localmente en tu navegador. Nada de lo que escribes se sube a oddkit.",
+      "modesTitle": "Modos disponibles",
+      "modes": "Se admiten codificación URL, Base64 y entidades HTML, en ambas direcciones.",
+      "useCasesTitle": "Casos de uso comunes",
+      "useCases": [
+        "Preparar valores de cadenas de consulta para URLs y solicitudes de API",
+        "Decodificar payloads Base64 de tokens, registros o configuraciones",
+        "Escapar o desescapar entidades HTML antes de insertar texto en markup"
+      ],
+      "faqTitle": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Se sube mi texto a oddkit?",
+          "answer": "No. La codificación y decodificación se ejecutan localmente en tu navegador."
+        },
+        {
+          "question": "¿Qué pasa si pego una entrada no válida?",
+          "answer": "La herramienta muestra un mensaje de error claro que explica por qué no se puede decodificar, en lugar de fallar en silencio."
+        },
+        {
+          "question": "¿Puedo copiar el resultado?",
+          "answer": "Sí. Usa el botón de copiar para copiar la salida al portapapeles."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// que el texto sobreviva al viaje"
+    },
+    "meta": {
+      "title": "Codificador · Decodificador - oddkit",
+      "description": "Codifica y decodifica texto con codificación URL, Base64 y entidades HTML directamente en tu navegador. Copia el resultado con un clic.",
+      "keywords": [
+        "codificador url",
+        "decodificador url",
+        "codificador base64",
+        "decodificador base64",
+        "codificador de entidades html",
+        "decodificador de entidades html",
+        "codificador de texto",
+        "herramienta de texto en el navegador",
         "oddkit"
       ]
     }
