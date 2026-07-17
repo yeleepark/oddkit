@@ -5,6 +5,7 @@ import { copyToClipboard } from '@/features/tools/timestamp-converter/lib/clipbo
 
 interface CopyableValueProps {
   label: string
+  labelSlot?: React.ReactNode
   value: string | null
   emptyValue: string
   copyLabel: string
@@ -15,10 +16,13 @@ interface CopyableValueProps {
 /**
  * Labeled, monospaced value row with a copy-to-clipboard button. Used for
  * every generated timestamp/date value so results can be grabbed with one
- * click without leaving the page.
+ * click without leaving the page. labelSlot, when given, replaces the
+ * plain label text (e.g. with a select) while label still drives the
+ * copy button's accessible name.
  */
 export default function CopyableValue({
   label,
+  labelSlot,
   value,
   emptyValue,
   copyLabel,
@@ -39,8 +43,8 @@ export default function CopyableValue({
 
   return (
     <div className="flex items-center justify-between gap-3 rounded-lg border border-line p-3">
-      <div className="min-w-0">
-        <p className="truncate font-mono text-[10px] uppercase text-faint">{label}</p>
+      <div className="min-w-0 flex-1">
+        {labelSlot ?? <p className="truncate font-mono text-[10px] uppercase text-faint">{label}</p>}
         <p className="mt-1 truncate font-mono text-sm text-text-main">{value ?? emptyValue}</p>
       </div>
       <button

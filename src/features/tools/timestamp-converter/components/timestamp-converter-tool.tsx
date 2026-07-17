@@ -17,6 +17,7 @@ import type {
   TimestampUnitOption,
 } from '@/features/tools/timestamp-converter/model/types'
 import CopyableValue from '@/features/tools/timestamp-converter/components/copyable-value'
+import TimeZonePicker from '@/features/tools/timestamp-converter/components/timezone-picker'
 import ToolPageLayout from '@/shared/ui/ToolPageLayout'
 import Grid from '@/shared/ui/Grid'
 import Controls from '@/shared/ui/Controls'
@@ -132,23 +133,6 @@ export default function TimestampConverterTool() {
             <Button variant="secondary" onClick={handleNow} className="w-full">
               {t('controls.now')}
             </Button>
-
-            <div>
-              <Label>{t('controls.compareZone')}</Label>
-              <Select
-                aria-label={t('controls.compareZone')}
-                value={compareZone}
-                onChange={(event) => setCompareZone(event.target.value)}
-                className="w-full"
-              >
-                <option value="">{t('controls.compareZonePlaceholder')}</option>
-                {timeZoneOptions.map((zone) => (
-                  <option key={zone} value={zone}>
-                    {zone}
-                  </option>
-                ))}
-              </Select>
-            </div>
           </Controls>
 
           <div className="space-y-3">
@@ -166,17 +150,26 @@ export default function TimestampConverterTool() {
               copyLabel={t('actions.copy')}
               copiedLabel={t('actions.copied')}
             />
-            {compareZone && (
-              <CopyableValue
-                label={compareZone}
-                value={
-                  timestampResult.ok ? formatInTimeZone(timestampResult.value.date, compareZone) : null
-                }
-                emptyValue={t('results.empty')}
-                copyLabel={t('actions.copy')}
-                copiedLabel={t('actions.copied')}
-              />
-            )}
+            <CopyableValue
+              label={compareZone || t('controls.compareZone')}
+              labelSlot={
+                <TimeZonePicker
+                  zones={timeZoneOptions}
+                  value={compareZone}
+                  onChange={setCompareZone}
+                  placeholder={t('controls.compareZonePlaceholder')}
+                  ariaLabel={t('controls.compareZone')}
+                />
+              }
+              value={
+                compareZone && timestampResult.ok
+                  ? formatInTimeZone(timestampResult.value.date, compareZone)
+                  : null
+              }
+              emptyValue={t('results.empty')}
+              copyLabel={t('actions.copy')}
+              copiedLabel={t('actions.copied')}
+            />
           </div>
         </div>
 
@@ -196,22 +189,6 @@ export default function TimestampConverterTool() {
                 className="w-full"
               />
               {dateError && <p className="mt-2 text-sm text-red-400">{dateError}</p>}
-            </div>
-
-            <div>
-              <Label>{t('controls.interpretAs')}</Label>
-              <Select
-                aria-label={t('controls.interpretAs')}
-                value={interpretAs}
-                onChange={(event) => setInterpretAs(event.target.value as DateInterpretation)}
-                className="w-full"
-              >
-                {DATE_INTERPRETATION_OPTIONS.map((option) => (
-                  <option key={option} value={option}>
-                    {t(`interpretations.${option}`)}
-                  </option>
-                ))}
-              </Select>
             </div>
 
             <Button variant="secondary" onClick={handleUseCurrentTime} className="w-full">
@@ -242,6 +219,27 @@ export default function TimestampConverterTool() {
               copiedLabel={t('actions.copied')}
             />
           </div>
+
+          <details className="group">
+            <summary className="flex cursor-pointer select-none items-center gap-1.5 font-mono text-xs text-faint transition-colors hover:text-acid [&::-webkit-details-marker]:hidden">
+              <span className="inline-block transition-transform group-open:rotate-90">▸</span>
+              {t('controls.interpretAs')} ({t('controls.optional')})
+            </summary>
+            <div className="mt-3">
+              <Select
+                aria-label={t('controls.interpretAs')}
+                value={interpretAs}
+                onChange={(event) => setInterpretAs(event.target.value as DateInterpretation)}
+                className="w-full"
+              >
+                {DATE_INTERPRETATION_OPTIONS.map((option) => (
+                  <option key={option} value={option}>
+                    {t(`interpretations.${option}`)}
+                  </option>
+                ))}
+              </Select>
+            </div>
+          </details>
         </div>
       </Grid>
     </ToolPageLayout>

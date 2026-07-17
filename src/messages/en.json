@@ -632,7 +632,8 @@
       "interpretAs": "Interpret as",
       "useCurrentTime": "Use current time",
       "compareZone": "Compare time zone",
-      "compareZonePlaceholder": "Select a time zone"
+      "compareZonePlaceholder": "Select a time zone",
+      "optional": "optional"
     },
     "units": {
       "auto": "Auto-detect",

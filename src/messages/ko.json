@@ -632,7 +632,8 @@
       "interpretAs": "해석 기준",
       "useCurrentTime": "현재 시각 사용",
       "compareZone": "비교할 시간대",
-      "compareZonePlaceholder": "시간대를 선택하세요"
+      "compareZonePlaceholder": "시간대를 선택하세요",
+      "optional": "옵션"
     },
     "units": {
       "auto": "자동 감지",

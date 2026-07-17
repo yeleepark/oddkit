@@ -617,7 +617,8 @@
       "interpretAs": "解析方式",
       "useCurrentTime": "使用当前时间",
       "compareZone": "对比时区",
-      "compareZonePlaceholder": "选择一个时区"
+      "compareZonePlaceholder": "选择一个时区",
+      "optional": "可选"
     },
     "units": {
       "auto": "自动检测",

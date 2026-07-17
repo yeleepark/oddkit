@@ -632,7 +632,8 @@
       "interpretAs": "解釈方法",
       "useCurrentTime": "現在時刻を使用",
       "compareZone": "比較するタイムゾーン",
-      "compareZonePlaceholder": "タイムゾーンを選択"
+      "compareZonePlaceholder": "タイムゾーンを選択",
+      "optional": "オプション"
     },
     "units": {
       "auto": "自動判定",
