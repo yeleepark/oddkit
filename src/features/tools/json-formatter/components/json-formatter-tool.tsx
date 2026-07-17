@@ -95,7 +95,9 @@ export default function JsonFormatterTool() {
       <Grid>
         <Controls>
           <div>
-            <Label>{t('controls.inputLabel')}</Label>
+            <div className="mb-3 flex min-h-9 items-center">
+              <Label>{t('controls.inputLabel')}</Label>
+            </div>
             <JsonTextarea
               aria-label={t('controls.inputLabel')}
               value={input}
@@ -114,9 +116,9 @@ export default function JsonFormatterTool() {
         </Controls>
 
         <div>
-          <div className="flex items-center justify-between gap-3">
+          <div className="mb-3 flex min-h-9 items-center justify-between gap-3">
             <Label>{t('controls.outputLabel')}</Label>
-            <div className="mb-3 flex gap-2">
+            <div className="flex gap-2">
               <Chip active={mode === 'format'} onClick={() => handleModeChange('format')}>
                 {t('modes.format')}
               </Chip>
