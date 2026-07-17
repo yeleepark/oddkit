@@ -77,6 +77,23 @@ export default function EncoderDecoderTool() {
       <Grid>
         <Controls>
           <div>
+            <Label>{t('controls.input')}</Label>
+            <textarea
+              aria-label={t('controls.input')}
+              className={textareaClassName}
+              rows={10}
+              value={input}
+              onChange={(event) => {
+                setInput(event.target.value)
+                setCopied(false)
+              }}
+              placeholder={t('controls.inputPlaceholder')}
+              spellCheck={false}
+            />
+            <p className="mt-2 font-mono text-xs text-faint">{commonT('noServerUpload')}</p>
+          </div>
+
+          <div>
             <Label>{t('controls.mode')}</Label>
             <div className="flex flex-wrap gap-2">
               {ENCODER_DECODER_MODE_OPTIONS.map((option) => (
@@ -104,23 +121,6 @@ export default function EncoderDecoderTool() {
                 </Chip>
               ))}
             </div>
-          </div>
-
-          <div>
-            <Label>{t('controls.input')}</Label>
-            <textarea
-              aria-label={t('controls.input')}
-              className={textareaClassName}
-              rows={10}
-              value={input}
-              onChange={(event) => {
-                setInput(event.target.value)
-                setCopied(false)
-              }}
-              placeholder={t('controls.inputPlaceholder')}
-              spellCheck={false}
-            />
-            <p className="mt-2 font-mono text-xs text-faint">{commonT('noServerUpload')}</p>
           </div>
         </Controls>
 
