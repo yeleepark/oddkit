@@ -458,7 +458,7 @@
     }
   },
   "encoderDecoder": {
-    "title": "エンコーダー / デコーダー",
+    "title": "エンコーダー · デコーダー",
     "description": "URLエンコード、Base64、HTMLエンティティを使ってテキストをブラウザ内でローカルにエンコード・デコードします。",
     "controls": {
       "mode": "モード",
@@ -519,7 +519,7 @@
       "eyebrow": "// テキストを無事に届ける"
     },
     "meta": {
-      "title": "エンコーダー / デコーダー - oddkit",
+      "title": "エンコーダー · デコーダー - oddkit",
       "description": "URLエンコード、Base64、HTMLエンティティでテキストをブラウザで直接エンコード・デコードできます。結果はワンクリックでコピーできます。",
       "keywords": [
         "URLエンコード",

@@ -458,7 +458,7 @@
     }
   },
   "encoderDecoder": {
-    "title": "Codificador / Decodificador",
+    "title": "Codificador · Decodificador",
     "description": "Codifica y decodifica texto con codificación URL, Base64 o entidades HTML, todo localmente en tu navegador.",
     "controls": {
       "mode": "Modo",
@@ -519,7 +519,7 @@
       "eyebrow": "// que el texto sobreviva al viaje"
     },
     "meta": {
-      "title": "Codificador / Decodificador - oddkit",
+      "title": "Codificador · Decodificador - oddkit",
       "description": "Codifica y decodifica texto con codificación URL, Base64 y entidades HTML directamente en tu navegador. Copia el resultado con un clic.",
       "keywords": [
         "codificador url",

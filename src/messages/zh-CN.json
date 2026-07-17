@@ -443,7 +443,7 @@
     }
   },
   "encoderDecoder": {
-    "title": "编码器 / 解码器",
+    "title": "编码器 · 解码器",
     "description": "使用 URL 编码、Base64 或 HTML 实体在浏览器本地编码和解码文本。",
     "controls": {
       "mode": "模式",
@@ -504,7 +504,7 @@
       "eyebrow": "// 让文本安全上路"
     },
     "meta": {
-      "title": "编码器 / 解码器 - oddkit",
+      "title": "编码器 · 解码器 - oddkit",
       "description": "直接在浏览器中使用 URL 编码、Base64 和 HTML 实体编码和解码文本，一键复制结果。",
       "keywords": [
         "URL 编码",

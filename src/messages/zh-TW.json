@@ -443,7 +443,7 @@
     }
   },
   "encoderDecoder": {
-    "title": "編碼器 / 解碼器",
+    "title": "編碼器 · 解碼器",
     "description": "使用 URL 編碼、Base64 或 HTML 實體在瀏覽器本機編碼與解碼文字。",
     "controls": {
       "mode": "模式",
@@ -504,7 +504,7 @@
       "eyebrow": "// 讓文字安全上路"
     },
     "meta": {
-      "title": "編碼器 / 解碼器 - oddkit",
+      "title": "編碼器 · 解碼器 - oddkit",
       "description": "直接在瀏覽器中使用 URL 編碼、Base64 和 HTML 實體編碼與解碼文字，一鍵複製結果。",
       "keywords": [
         "URL 編碼",

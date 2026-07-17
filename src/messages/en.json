@@ -458,7 +458,7 @@
     }
   },
   "encoderDecoder": {
-    "title": "Encoder / Decoder",
+    "title": "Encoder · Decoder",
     "description": "Encode and decode text using URL encoding, Base64, or HTML entities, all locally in your browser.",
     "controls": {
       "mode": "Mode",
@@ -519,7 +519,7 @@
       "eyebrow": "// make text survive the wire"
     },
     "meta": {
-      "title": "Encoder / Decoder - oddkit",
+      "title": "Encoder · Decoder - oddkit",
       "description": "Encode and decode text with URL encoding, Base64, and HTML entities directly in your browser. Copy the result with one click.",
       "keywords": [
         "url encoder",

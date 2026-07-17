@@ -458,7 +458,7 @@
     }
   },
   "encoderDecoder": {
-    "title": "인코더 / 디코더",
+    "title": "인코더 · 디코더",
     "description": "URL 인코딩, Base64, HTML 엔티티를 사용해 텍스트를 브라우저에서 로컬로 인코딩하고 디코딩합니다.",
     "controls": {
       "mode": "모드",
@@ -519,7 +519,7 @@
       "eyebrow": "// 텍스트가 무사히 전송되도록"
     },
     "meta": {
-      "title": "인코더 / 디코더 - oddkit",
+      "title": "인코더 · 디코더 - oddkit",
       "description": "URL 인코딩, Base64, HTML 엔티티로 텍스트를 브라우저에서 바로 인코딩·디코딩하세요. 결과는 클릭 한 번으로 복사할 수 있습니다.",
       "keywords": [
         "URL 인코더",
