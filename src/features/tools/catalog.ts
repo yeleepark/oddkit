@@ -1,8 +1,15 @@
+export const TOOL_CATEGORIES = ['image', 'color', 'text', 'dev'] as const
+
+export type ToolCategory = (typeof TOOL_CATEGORIES)[number]
+
+export type ToolCategoryFilter = ToolCategory | 'all'
+
 export const TOOL_CATALOG = [
   {
     id: 'dummy-image',
     num: '01',
     tag: '#image · #placeholder',
+    category: 'image',
     href: '/tools/dummy-image',
     titleKey: 'dummyImage.title',
     descriptionKey: 'dummyImage.description',
@@ -13,6 +20,7 @@ export const TOOL_CATALOG = [
     id: 'image-converter',
     num: '02',
     tag: '#image · #convert',
+    category: 'image',
     href: '/tools/image-converter',
     titleKey: 'imageConverter.title',
     descriptionKey: 'imageConverter.description',
@@ -23,6 +31,7 @@ export const TOOL_CATALOG = [
     id: 'image-compressor',
     num: '03',
     tag: '#image · #optimize',
+    category: 'image',
     href: '/tools/image-compressor',
     titleKey: 'imageCompressor.title',
     descriptionKey: 'imageCompressor.description',
@@ -33,6 +42,7 @@ export const TOOL_CATALOG = [
     id: 'image-resizer',
     num: '04',
     tag: '#image · #resize',
+    category: 'image',
     href: '/tools/image-resizer',
     titleKey: 'imageResizer.title',
     descriptionKey: 'imageResizer.description',
@@ -43,6 +53,7 @@ export const TOOL_CATALOG = [
     id: 'color-converter',
     num: '05',
     tag: '#color · #convert',
+    category: 'color',
     href: '/tools/color-converter',
     titleKey: 'colorConverter.title',
     descriptionKey: 'colorConverter.description',
@@ -53,6 +64,7 @@ export const TOOL_CATALOG = [
     id: 'encoder-decoder',
     num: '06',
     tag: '#text · #encode',
+    category: 'text',
     href: '/tools/encoder-decoder',
     titleKey: 'encoderDecoder.title',
     descriptionKey: 'encoderDecoder.description',
@@ -63,6 +75,7 @@ export const TOOL_CATALOG = [
     id: 'json-formatter',
     num: '07',
     tag: '#dev · #json',
+    category: 'dev',
     href: '/tools/json-formatter',
     titleKey: 'jsonFormatter.title',
     descriptionKey: 'jsonFormatter.description',
@@ -73,6 +86,7 @@ export const TOOL_CATALOG = [
     id: 'timestamp-converter',
     num: '08',
     tag: '#dev · #time',
+    category: 'dev',
     href: '/tools/timestamp-converter',
     titleKey: 'timestampConverter.title',
     descriptionKey: 'timestampConverter.description',
