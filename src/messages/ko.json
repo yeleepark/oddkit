@@ -41,6 +41,21 @@
     },
     "promptComment": "로컬 브라우저 도구 {count}개",
     "heroTitle": "작업자를 위한 작은 툴킷.",
+    "search": {
+      "placeholder": "도구 검색...",
+      "ariaLabel": "도구 검색"
+    },
+    "categories": {
+      "all": "전체",
+      "image": "이미지",
+      "color": "색상",
+      "text": "텍스트",
+      "dev": "개발"
+    },
+    "noResults": {
+      "title": "일치하는 도구가 없습니다",
+      "reset": "필터 초기화"
+    },
     "meta": {
       "title": "oddkit - 작업자를 위한 작은 툴킷",
       "description": "이미지 생성, 압축, 변환, 리사이즈처럼 일하다 필요한 작은 웹 도구를 한곳에서 빠르게 사용하세요.",

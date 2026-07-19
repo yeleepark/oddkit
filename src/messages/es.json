@@ -41,6 +41,21 @@
     },
     "promptComment": "{count} herramientas locales del navegador",
     "heroTitle": "Herramientas útiles, solo cuando las necesitas.",
+    "search": {
+      "placeholder": "Buscar herramientas...",
+      "ariaLabel": "Buscar herramientas"
+    },
+    "categories": {
+      "all": "Todas",
+      "image": "Imagen",
+      "color": "Color",
+      "text": "Texto",
+      "dev": "Dev"
+    },
+    "noResults": {
+      "title": "No se encontraron herramientas",
+      "reset": "Restablecer filtros"
+    },
     "meta": {
       "title": "oddkit - Un pequeño kit de herramientas para trabajar",
       "description": "Usa herramientas web para generar, comprimir, convertir y redimensionar imágenes, junto con pequeñas tareas de trabajo.",

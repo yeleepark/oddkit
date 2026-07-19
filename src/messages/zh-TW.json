@@ -34,6 +34,21 @@
     },
     "promptComment": "{count} 個本機瀏覽器工具",
     "heroTitle": "只在需要時使用的實用工具。",
+    "search": {
+      "placeholder": "搜尋工具...",
+      "ariaLabel": "搜尋工具"
+    },
+    "categories": {
+      "all": "全部",
+      "image": "圖片",
+      "color": "顏色",
+      "text": "文字",
+      "dev": "開發"
+    },
+    "noResults": {
+      "title": "找不到符合的工具",
+      "reset": "重設篩選"
+    },
     "meta": {
       "title": "oddkit - 為工作準備的小工具集",
       "description": "在瀏覽器中使用圖片產生、壓縮、轉換、尺寸調整等工作中常用的小型網頁工具。",

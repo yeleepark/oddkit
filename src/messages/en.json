@@ -41,6 +41,21 @@
     },
     "promptComment": "{count} local browser tools",
     "heroTitle": "Useful tools, only when you need them.",
+    "search": {
+      "placeholder": "Search tools...",
+      "ariaLabel": "Search tools"
+    },
+    "categories": {
+      "all": "All",
+      "image": "Image",
+      "color": "Color",
+      "text": "Text",
+      "dev": "Dev"
+    },
+    "noResults": {
+      "title": "No tools found",
+      "reset": "Reset filters"
+    },
     "meta": {
       "title": "oddkit - A small toolkit for work",
       "description": "Use small browser-based tools for image generation, compression, conversion, resizing, and everyday work tasks.",
