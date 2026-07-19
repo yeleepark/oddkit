@@ -39,6 +39,9 @@
     "timestampConverter": {
       "description": "Convert Unix timestamps to readable dates and back, with local time and UTC"
     },
+    "characterCounter": {
+      "description": "Count characters in your text, with and without spaces."
+    },
     "promptComment": "{count} local browser tools",
     "heroTitle": "Useful tools, only when you need them.",
     "search": {
@@ -718,6 +721,64 @@
         "unix time to date",
         "date to timestamp",
         "utc converter",
+        "oddkit"
+      ]
+    }
+  },
+  "characterCounter": {
+    "title": "Character Counter",
+    "description": "Count characters in your text locally in your browser, with spaces included and excluded.",
+    "controls": {
+      "inputLabel": "Text",
+      "placeholder": "Paste or type text here…"
+    },
+    "actions": {
+      "clear": "Clear"
+    },
+    "stats": {
+      "title": "Count",
+      "withSpaces": "With spaces",
+      "withoutSpaces": "Without spaces"
+    },
+    "seo": {
+      "overviewTitle": "Browser-based character counter",
+      "overview": "Count characters in essays, social posts, meta descriptions, and form fields as you type. Counting runs locally and updates instantly, with a separate count that excludes all whitespace.",
+      "privacy": "Text you type or paste is processed locally in your browser. It is never uploaded to oddkit's servers.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Check text length against a character limit before submitting",
+        "Compare character counts with and without spaces",
+        "Count multi-byte characters like emoji correctly"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Is my text uploaded anywhere?",
+          "answer": "No. Counting happens entirely locally in your browser as you type."
+        },
+        {
+          "question": "How is \"without spaces\" calculated?",
+          "answer": "All whitespace characters — spaces, tabs, and line breaks — are removed before counting."
+        },
+        {
+          "question": "Does it count emoji correctly?",
+          "answer": "Yes. Counting uses Unicode code points, so multi-byte characters like emoji count as a single character."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// tally"
+    },
+    "meta": {
+      "title": "Character Counter - oddkit",
+      "description": "Count characters in your text in your browser, with spaces included and excluded. Nothing is uploaded to a server.",
+      "keywords": [
+        "character counter",
+        "text length checker",
+        "letter count",
+        "count characters",
+        "string length",
+        "browser text tool",
         "oddkit"
       ]
     }

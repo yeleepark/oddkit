@@ -32,6 +32,9 @@
     "timestampConverter": {
       "description": "将 Unix 时间戳转换为日期，或将日期转换回时间戳"
     },
+    "characterCounter": {
+      "description": "统计文本字符数，包含空格和不含空格。"
+    },
     "promptComment": "{count} 个本地浏览器工具",
     "heroTitle": "只在需要时出现的实用工具。",
     "search": {
@@ -703,6 +706,64 @@
         "Unix 时间转日期",
         "日期转时间戳",
         "UTC 转换器",
+        "oddkit"
+      ]
+    }
+  },
+  "characterCounter": {
+    "title": "字符计数器",
+    "description": "在浏览器中本地统计文本字符数，同时显示包含空格和不含空格的字数。",
+    "controls": {
+      "inputLabel": "文本",
+      "placeholder": "在此粘贴或输入文本…"
+    },
+    "actions": {
+      "clear": "清空"
+    },
+    "stats": {
+      "title": "字符数",
+      "withSpaces": "含空格",
+      "withoutSpaces": "不含空格"
+    },
+    "seo": {
+      "overviewTitle": "基于浏览器的字符计数器",
+      "overview": "在撰写文章、社交媒体帖子、元描述或表单内容时，实时查看字符数。计数在浏览器中本地即时完成，并同时显示不含空格的字符数。",
+      "privacy": "您输入或粘贴的文本会在浏览器中本地处理，不会上传到 oddkit 的服务器。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "提交前检查文本是否超出字符限制",
+        "对比包含空格和不含空格的字符数",
+        "准确统计表情符号等多字节字符"
+      ],
+      "faqTitle": "常见问题",
+      "faq": [
+        {
+          "question": "我的文本会被上传吗?",
+          "answer": "不会。所有计数在您输入时都在浏览器中本地完成。"
+        },
+        {
+          "question": "“不含空格”的字符数是如何计算的?",
+          "answer": "会先移除空格、制表符和换行符等所有空白字符，然后再统计字符数。"
+        },
+        {
+          "question": "能正确统计表情符号吗?",
+          "answer": "可以。计数基于 Unicode 码点，因此表情符号等多字节字符会被正确统计为一个字符。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 计数器"
+    },
+    "meta": {
+      "title": "字符计数器 - oddkit",
+      "description": "在浏览器中统计文本字符数，包含空格和不含空格。不会上传到服务器。",
+      "keywords": [
+        "字符计数器",
+        "字数统计",
+        "不含空格字数",
+        "文本长度检测",
+        "表情符号字数",
+        "浏览器文本工具",
         "oddkit"
       ]
     }
