@@ -7,26 +7,8 @@ import JsonLd from '@/shared/seo/json-ld'
 import Container from '@/shared/ui/Container'
 import PromptText from '@/shared/ui/PromptText'
 import MutedText from '@/shared/ui/MutedText'
-import ToolCard from '@/shared/ui/ToolCard'
+import ToolCatalogBrowser from '@/features/tools/components/tool-catalog-browser'
 import type { AppLocale } from '@/config/locales'
-
-// Matches the outer corners of a 2-col-desktop / 1-col-mobile grid so each
-// ToolCard's own corner radius lines up with the container's rounded edge —
-// without this, the hover outline gets visibly clipped at the true outer
-// corners (the parent's overflow-hidden cuts a sharp corner into a rounded
-// one). Hardcoded for exactly 8 items (an even count fills every row); a
-// 9th tool falls through to a square card (no crash) and needs this list
-// extended.
-const HOME_GRID_CORNER_ROUNDING = [
-  'rounded-tl-[14px] rounded-tr-[14px] sm:rounded-tr-none',
-  'sm:rounded-tr-[14px]',
-  '',
-  '',
-  '',
-  '',
-  'sm:rounded-bl-[14px]',
-  'rounded-bl-[14px] rounded-br-[14px] sm:rounded-bl-none',
-] as const
 
 export async function generateMetadata({
   params,
@@ -90,6 +72,30 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     })),
   }
 
+  const catalogTools = tools.map((tool) => ({
+    id: tool.id,
+    num: tool.num,
+    tag: tool.tag,
+    category: tool.category,
+    href: tool.href,
+    title: t(tool.titleKey),
+    description: homeT(tool.homeDescriptionKey),
+  }))
+
+  const catalogLabels = {
+    searchPlaceholder: homeT('search.placeholder'),
+    searchAriaLabel: homeT('search.ariaLabel'),
+    categoryLabels: {
+      all: homeT('categories.all'),
+      image: homeT('categories.image'),
+      color: homeT('categories.color'),
+      text: homeT('categories.text'),
+      dev: homeT('categories.dev'),
+    },
+    noResultsTitle: homeT('noResults.title'),
+    noResultsReset: homeT('noResults.reset'),
+  }
+
   return (
     <Container>
       <JsonLd data={jsonLd} />
@@ -110,22 +116,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </h1>
         <p className="mt-5 text-[16.5px] text-mist">{homeT('seoDescription')}</p>
       </section>
-      <section
-        className="mb-14 grid grid-cols-1 gap-px overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-2"
-        style={{ boxShadow: 'var(--theme-shadow)' }}
-      >
-        {tools.map(({ homeDescriptionKey, href, id, num, tag, titleKey }, index) => (
-          <ToolCard
-            key={id}
-            title={t(titleKey)}
-            description={homeT(homeDescriptionKey)}
-            href={href}
-            num={num}
-            tag={tag}
-            roundedClassName={HOME_GRID_CORNER_ROUNDING[index]}
-          />
-        ))}
-      </section>
+      <ToolCatalogBrowser tools={catalogTools} labels={catalogLabels} />
     </Container>
   )
 }
