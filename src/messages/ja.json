@@ -41,6 +41,21 @@
     },
     "promptComment": "ローカルブラウザツール {count} 個",
     "heroTitle": "必要な時だけ使う、ちょうどいいツール。",
+    "search": {
+      "placeholder": "ツールを検索...",
+      "ariaLabel": "ツールを検索"
+    },
+    "categories": {
+      "all": "すべて",
+      "image": "画像",
+      "color": "カラー",
+      "text": "テキスト",
+      "dev": "開発"
+    },
+    "noResults": {
+      "title": "一致するツールがありません",
+      "reset": "フィルターをリセット"
+    },
     "meta": {
       "title": "oddkit - 作業者のための小さなツールキット",
       "description": "画像生成、圧縮、変換、リサイズなど、作業中に必要になる小さなWebツールをブラウザで使えます。",
