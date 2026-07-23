@@ -97,6 +97,7 @@ export const TOOL_CATALOG = [
     id: 'character-counter',
     num: '09',
     tag: '#text · #count',
+    category: 'text',
     href: '/tools/character-counter',
     titleKey: 'characterCounter.title',
     descriptionKey: 'characterCounter.description',
