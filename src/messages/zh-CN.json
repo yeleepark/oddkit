@@ -35,6 +35,9 @@
     "characterCounter": {
       "description": "统计文本字符数，包含空格和不含空格。"
     },
+    "dummyText": {
+      "description": "选择语言，按指定字符数生成占位文本"
+    },
     "promptComment": "{count} 个本地浏览器工具",
     "heroTitle": "只在需要时出现的实用工具。",
     "search": {
@@ -763,6 +766,64 @@
         "不含空格字数",
         "文本长度检测",
         "表情符号字数",
+        "浏览器文本工具",
+        "oddkit"
+      ]
+    }
+  },
+  "dummyText": {
+    "title": "占位文本生成器",
+    "description": "在浏览器中生成占位文本。选择语言和字符数，并立即复制结果。",
+    "controls": {
+      "languageLabel": "语言",
+      "charCountLabel": "字符数",
+      "countRange": "{min}–{max}",
+      "outputLabel": "输出",
+      "charCount": "{count} 字符"
+    },
+    "actions": {
+      "regenerate": "重新生成",
+      "copy": "复制输出",
+      "copied": "已复制！"
+    },
+    "ui": {
+      "eyebrow": "// 填充用文本"
+    },
+    "seo": {
+      "overviewTitle": "基于浏览器的占位文本生成器",
+      "overview": "为原型、线框图和布局测试生成占位文本。精确指定语言和所需字符数，预览文本在不同文字体系下的显示效果。",
+      "privacy": "文本在浏览器中本地生成，不会上传到 oddkit 的服务器。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "为设计原型填充逼真的占位文案",
+        "测试布局在不同语言和字符数下的表现",
+        "为原型和演示快速生成填充内容"
+      ],
+      "faqTitle": "常见问题",
+      "faq": [
+        {
+          "question": "生成的文本会发送到服务器吗？",
+          "answer": "不会。所有文本都通过 JavaScript 在浏览器本地生成。"
+        },
+        {
+          "question": "可以控制生成的文本数量吗？",
+          "answer": "可以。选择语言并设置所需的精确字符数。"
+        },
+        {
+          "question": "可以生成多种语言的占位文本吗？",
+          "answer": "可以。从多种语言中选择，预览版面在不同文字体系下的效果。"
+        }
+      ]
+    },
+    "meta": {
+      "title": "占位文本生成器 - oddkit",
+      "description": "在浏览器中按指定字符数生成多种语言的占位文本，无需上传到服务器。",
+      "keywords": [
+        "lorem ipsum 生成器",
+        "占位文本生成器",
+        "填充文本生成器",
+        "虚拟文本生成器",
+        "多语言占位文本",
         "浏览器文本工具",
         "oddkit"
       ]

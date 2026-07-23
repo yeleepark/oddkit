@@ -42,6 +42,9 @@
     "characterCounter": {
       "description": "Count characters in your text, with and without spaces."
     },
+    "dummyText": {
+      "description": "Generate dummy placeholder text in a language of your choice, at an exact character count"
+    },
     "promptComment": "{count} local browser tools",
     "heroTitle": "Useful tools, only when you need them.",
     "search": {
@@ -778,6 +781,64 @@
         "letter count",
         "count characters",
         "string length",
+        "browser text tool",
+        "oddkit"
+      ]
+    }
+  },
+  "dummyText": {
+    "title": "Dummy Text Generator",
+    "description": "Generate placeholder text in your browser. Choose a language and character count, then copy the result instantly.",
+    "controls": {
+      "languageLabel": "Language",
+      "charCountLabel": "Character count",
+      "countRange": "{min}–{max}",
+      "outputLabel": "Output",
+      "charCount": "{count} chars"
+    },
+    "actions": {
+      "regenerate": "Regenerate",
+      "copy": "Copy output",
+      "copied": "Copied!"
+    },
+    "ui": {
+      "eyebrow": "// filler content"
+    },
+    "seo": {
+      "overviewTitle": "Browser-based dummy text generator",
+      "overview": "Generate placeholder dummy text for mockups, wireframes, and layout testing. Choose a language and the exact character count you need to preview how text renders across different scripts.",
+      "privacy": "Text is generated locally in your browser. Nothing is uploaded to oddkit's servers.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Fill design mockups with realistic-looking placeholder copy",
+        "Preview how a layout handles different languages and character counts",
+        "Generate quick filler content for prototypes and demos"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Is the generated text sent to a server?",
+          "answer": "No. All text is generated locally in your browser using JavaScript."
+        },
+        {
+          "question": "Can I control how much text is generated?",
+          "answer": "Yes. Choose a language and set the exact character count you need."
+        },
+        {
+          "question": "Can I generate placeholder text in different languages?",
+          "answer": "Yes. Pick from several languages to preview how your layout handles different scripts and character widths."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Dummy Text Generator - oddkit",
+      "description": "Generate dummy placeholder text in multiple languages with an exact character count, directly in your browser. Nothing is uploaded to a server.",
+      "keywords": [
+        "lorem ipsum generator",
+        "dummy text generator",
+        "placeholder text generator",
+        "filler text generator",
+        "multilingual dummy text",
         "browser text tool",
         "oddkit"
       ]

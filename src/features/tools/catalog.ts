@@ -104,6 +104,17 @@ export const TOOL_CATALOG = [
     homeDescriptionKey: 'characterCounter.description',
     enabled: true,
   },
+  {
+    id: 'dummy-text',
+    num: '10',
+    tag: '#text · #placeholder',
+    category: 'text',
+    href: '/tools/dummy-text',
+    titleKey: 'dummyText.title',
+    descriptionKey: 'dummyText.description',
+    homeDescriptionKey: 'dummyText.description',
+    enabled: true,
+  },
 ] as const
 
 export type ToolCatalogItem = (typeof TOOL_CATALOG)[number]
