@@ -1,7 +1,6 @@
-export type DummyTextUnit = 'words' | 'sentences' | 'paragraphs'
+export type DummyTextLanguage = 'en' | 'ko' | 'ja' | 'zh-CN' | 'zh-TW' | 'es'
 
 export interface DummyTextOptions {
-  unit: DummyTextUnit
-  count: number
-  startWithLorem: boolean
+  language: DummyTextLanguage
+  charCount: number
 }

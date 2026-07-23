@@ -1,138 +1,124 @@
-import type { DummyTextOptions } from '@/features/tools/dummy-text/model/types'
+import type { DummyTextOptions, DummyTextLanguage } from '@/features/tools/dummy-text/model/types'
 
-const WORD_BANK = [
-  'lorem',
-  'ipsum',
-  'dolor',
-  'sit',
-  'amet',
-  'consectetur',
-  'adipiscing',
-  'elit',
-  'sed',
-  'do',
-  'eiusmod',
-  'tempor',
-  'incididunt',
-  'ut',
-  'labore',
-  'et',
-  'dolore',
-  'magna',
-  'aliqua',
-  'enim',
-  'ad',
-  'minim',
-  'veniam',
-  'quis',
-  'nostrud',
-  'exercitation',
-  'ullamco',
-  'laboris',
-  'nisi',
-  'aliquip',
-  'ex',
-  'ea',
-  'commodo',
-  'consequat',
-  'duis',
-  'aute',
-  'irure',
-  'in',
-  'reprehenderit',
-  'voluptate',
-  'velit',
-  'esse',
-  'cillum',
-  'fugiat',
-  'nulla',
-  'pariatur',
-  'excepteur',
-  'sint',
-  'occaecat',
-  'cupidatat',
-  'non',
-  'proident',
-  'sunt',
-  'culpa',
-  'qui',
-  'officia',
-  'deserunt',
-  'mollit',
-  'anim',
-  'id',
-  'est',
-  'laborum',
-] as const
-
-const CLASSIC_OPENER_WORDS = ['lorem', 'ipsum', 'dolor', 'sit', 'amet']
-
-const SENTENCE_WORD_RANGE = { min: 6, max: 14 }
-const PARAGRAPH_SENTENCE_RANGE = { min: 3, max: 7 }
-
-function randomInt(min: number, max: number, rng: () => number): number {
-  return Math.floor(rng() * (max - min + 1)) + min
+const WORD_BANKS: Record<'en' | 'es', string[]> = {
+  en: [
+    'lorem',
+    'ipsum',
+    'dolor',
+    'sit',
+    'amet',
+    'consectetur',
+    'adipiscing',
+    'elit',
+    'sed',
+    'do',
+    'eiusmod',
+    'tempor',
+    'incididunt',
+    'ut',
+    'labore',
+    'et',
+    'dolore',
+    'magna',
+    'aliqua',
+    'enim',
+    'ad',
+    'minim',
+    'veniam',
+    'quis',
+    'nostrud',
+    'exercitation',
+    'ullamco',
+    'laboris',
+    'nisi',
+    'aliquip',
+  ],
+  es: [
+    'el',
+    'la',
+    'de',
+    'que',
+    'y',
+    'en',
+    'un',
+    'ser',
+    'se',
+    'no',
+    'haber',
+    'por',
+    'con',
+    'su',
+    'para',
+    'como',
+    'estar',
+    'tener',
+    'le',
+    'lo',
+    'todo',
+    'pero',
+    'mas',
+    'hacer',
+    'poder',
+    'decir',
+    'este',
+    'ir',
+    'otro',
+    'ese',
+  ],
 }
 
-function randomWord(rng: () => number): string {
-  return WORD_BANK[Math.floor(rng() * WORD_BANK.length)]
+const CHAR_POOLS: Record<'ko' | 'ja' | 'zh-CN' | 'zh-TW', string> = {
+  ko: '가나다라마바사아자차카타파하고노도로모보소오조초코토포호구누두루무부수우주추쿠투푸후그느드르므브스으즈츠크트프흐',
+  ja: 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんがぎぐげござじずぜぞだぢづでど',
+  'zh-CN':
+    '的一是在不了有和人这中大为上个国我以要他时来用们生到作地于出就分对成会可主发年动同工也能下过子说产种面而方后多定',
+  'zh-TW':
+    '的一是在不了有和人這中大為上個國我以要他時來用們生到作地於出就分對成會可主發年動同工也能下過子說產種面而方後多定',
+}
+
+function randomWord(pool: string[], rng: () => number): string {
+  return pool[Math.floor(rng() * pool.length)]
 }
 
 function capitalize(word: string): string {
   return word.charAt(0).toUpperCase() + word.slice(1)
 }
 
-function buildWords(count: number, rng: () => number): string[] {
-  return Array.from({ length: count }, () => randomWord(rng))
+function buildWordBasedText(language: 'en' | 'es', charCount: number, rng: () => number): string {
+  const pool = WORD_BANKS[language]
+  let result = ''
+  while (result.length < charCount) {
+    if (result.length > 0) result += ' '
+    result += randomWord(pool, rng)
+  }
+  return capitalize(result).slice(0, charCount)
 }
 
-function buildSentence(rng: () => number): string {
-  const wordCount = randomInt(SENTENCE_WORD_RANGE.min, SENTENCE_WORD_RANGE.max, rng)
-  const words = buildWords(wordCount, rng)
-  return `${capitalize(words[0])} ${words.slice(1).join(' ')}.`
+function buildCharPoolText(
+  language: 'ko' | 'ja' | 'zh-CN' | 'zh-TW',
+  charCount: number,
+  rng: () => number
+): string {
+  const pool = CHAR_POOLS[language]
+  let result = ''
+  while (result.length < charCount) {
+    result += pool.charAt(Math.floor(rng() * pool.length))
+  }
+  return result.slice(0, charCount)
 }
-
-function buildParagraph(rng: () => number): string {
-  const sentenceCount = randomInt(
-    PARAGRAPH_SENTENCE_RANGE.min,
-    PARAGRAPH_SENTENCE_RANGE.max,
-    rng
-  )
-  return Array.from({ length: sentenceCount }, () => buildSentence(rng)).join(' ')
-}
-
-const CLASSIC_OPENER_SENTENCE =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
 
 export function generateDummyText(
   options: DummyTextOptions,
   rng: () => number = Math.random
 ): string {
-  const { unit, count, startWithLorem } = options
-  if (count <= 0) return ''
+  const { language, charCount } = options
+  if (charCount <= 0) return ''
 
-  if (unit === 'words') {
-    const words = buildWords(count, rng)
-    if (startWithLorem) {
-      const openerLength = Math.min(count, CLASSIC_OPENER_WORDS.length)
-      for (let i = 0; i < openerLength; i++) {
-        words[i] = CLASSIC_OPENER_WORDS[i]
-      }
-    }
-    return capitalize(words.join(' '))
-  }
+  return isWordBasedLanguage(language)
+    ? buildWordBasedText(language, charCount, rng)
+    : buildCharPoolText(language, charCount, rng)
+}
 
-  if (unit === 'sentences') {
-    const sentences = Array.from({ length: count }, () => buildSentence(rng))
-    if (startWithLorem) {
-      sentences[0] = CLASSIC_OPENER_SENTENCE
-    }
-    return sentences.join(' ')
-  }
-
-  const paragraphs = Array.from({ length: count }, () => buildParagraph(rng))
-  if (startWithLorem) {
-    paragraphs[0] = `${CLASSIC_OPENER_SENTENCE} ${paragraphs[0]}`
-  }
-  return paragraphs.join('\n\n')
+function isWordBasedLanguage(language: DummyTextLanguage): language is 'en' | 'es' {
+  return language === 'en' || language === 'es'
 }

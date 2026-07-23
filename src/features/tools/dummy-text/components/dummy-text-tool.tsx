@@ -4,13 +4,13 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { generateDummyText } from '@/features/tools/dummy-text/lib/generate'
 import {
-  DEFAULT_DUMMY_TEXT_COUNT,
-  DEFAULT_DUMMY_TEXT_START_WITH_LOREM,
-  DEFAULT_DUMMY_TEXT_UNIT,
-  DUMMY_TEXT_COUNT_LIMITS,
-  DUMMY_TEXT_UNITS,
+  DEFAULT_DUMMY_TEXT_CHAR_COUNT,
+  DEFAULT_DUMMY_TEXT_LANGUAGE,
+  DUMMY_TEXT_CHAR_COUNT_LIMITS,
+  DUMMY_TEXT_LANGUAGES,
 } from '@/features/tools/dummy-text/model/config'
-import type { DummyTextUnit } from '@/features/tools/dummy-text/model/types'
+import type { DummyTextLanguage } from '@/features/tools/dummy-text/model/types'
+import { LOCALE_OPTIONS } from '@/config/locales'
 import ToolPageLayout from '@/shared/ui/ToolPageLayout'
 import Grid from '@/shared/ui/Grid'
 import Controls from '@/shared/ui/Controls'
@@ -20,12 +20,15 @@ import Input from '@/shared/ui/Input'
 import Button from '@/shared/ui/Button'
 import { trackToolAction, trackError, trackFeaturePreference } from '@/shared/analytics'
 
+const LANGUAGE_LABELS: Record<DummyTextLanguage, string> = Object.fromEntries(
+  LOCALE_OPTIONS.map((option) => [option.code, option.label])
+) as Record<DummyTextLanguage, string>
+
 export default function DummyTextTool() {
   const t = useTranslations('dummyText')
   const commonT = useTranslations('common')
-  const [unit, setUnit] = useState<DummyTextUnit>(DEFAULT_DUMMY_TEXT_UNIT)
-  const [count, setCount] = useState(DEFAULT_DUMMY_TEXT_COUNT)
-  const [startWithLorem, setStartWithLorem] = useState(DEFAULT_DUMMY_TEXT_START_WITH_LOREM)
+  const [language, setLanguage] = useState<DummyTextLanguage>(DEFAULT_DUMMY_TEXT_LANGUAGE)
+  const [charCount, setCharCount] = useState(DEFAULT_DUMMY_TEXT_CHAR_COUNT)
   const [seed, setSeed] = useState(0)
   const [copied, setCopied] = useState(false)
   const copyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -36,43 +39,35 @@ export default function DummyTextTool() {
     }
   }, [])
 
-  const limits = DUMMY_TEXT_COUNT_LIMITS[unit]
+  const limits = DUMMY_TEXT_CHAR_COUNT_LIMITS
 
   const output = useMemo(
-    () => generateDummyText({ unit, count, startWithLorem }),
+    () => generateDummyText({ language, charCount }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [unit, count, startWithLorem, seed]
+    [language, charCount, seed]
   )
 
-  const handleUnitChange = (nextUnit: DummyTextUnit) => {
-    const nextLimits = DUMMY_TEXT_COUNT_LIMITS[nextUnit]
-    setUnit(nextUnit)
-    setCount((current) => Math.min(Math.max(current, nextLimits.min), nextLimits.max))
-    trackFeaturePreference('dummy-text', 'unit', nextUnit)
+  const handleLanguageChange = (nextLanguage: DummyTextLanguage) => {
+    setLanguage(nextLanguage)
+    trackFeaturePreference('dummy-text', 'language', nextLanguage)
   }
 
-  const handleCountChange = (value: string) => {
+  const handleCharCountChange = (value: string) => {
     const parsed = Number(value)
     if (Number.isNaN(parsed)) return
-    setCount(Math.min(Math.max(Math.round(parsed), limits.min), limits.max))
-  }
-
-  const handleStartWithLoremToggle = () => {
-    const next = !startWithLorem
-    setStartWithLorem(next)
-    trackFeaturePreference('dummy-text', 'startWithLorem', next)
+    setCharCount(Math.min(Math.max(Math.round(parsed), limits.min), limits.max))
   }
 
   const handleRegenerate = () => {
     setSeed((current) => current + 1)
-    trackToolAction('dummy-text', 'regenerate', { unit, count })
+    trackToolAction('dummy-text', 'regenerate', { language, charCount })
   }
 
   const handleCopy = async () => {
     if (!output) return
     try {
       await navigator.clipboard.writeText(output)
-      trackToolAction('dummy-text', 'copy', { unit, count })
+      trackToolAction('dummy-text', 'copy', { language, charCount })
       setCopied(true)
       if (copyTimeoutRef.current) clearTimeout(copyTimeoutRef.current)
       copyTimeoutRef.current = setTimeout(() => setCopied(false), 1500)
@@ -92,12 +87,12 @@ export default function DummyTextTool() {
         <Controls>
           <div>
             <div className="mb-3 flex min-h-9 items-center">
-              <Label>{t('controls.unitLabel')}</Label>
+              <Label>{t('controls.languageLabel')}</Label>
             </div>
             <div className="flex flex-wrap gap-2">
-              {DUMMY_TEXT_UNITS.map((option) => (
-                <Chip key={option} active={unit === option} onClick={() => handleUnitChange(option)}>
-                  {t(`units.${option}`)}
+              {DUMMY_TEXT_LANGUAGES.map((option) => (
+                <Chip key={option} active={language === option} onClick={() => handleLanguageChange(option)}>
+                  {LANGUAGE_LABELS[option]}
                 </Chip>
               ))}
             </div>
@@ -105,28 +100,19 @@ export default function DummyTextTool() {
 
           <div>
             <div className="mb-3 flex min-h-9 items-center">
-              <Label>{t('controls.countLabel')}</Label>
+              <Label>{t('controls.charCountLabel')}</Label>
             </div>
             <Input
               type="number"
               min={limits.min}
               max={limits.max}
-              value={count}
-              onChange={(event) => handleCountChange(event.target.value)}
+              value={charCount}
+              onChange={(event) => handleCharCountChange(event.target.value)}
               className="w-28"
             />
             <p className="mt-2 font-mono text-xs text-faint">
               {t('controls.countRange', { min: limits.min, max: limits.max })}
             </p>
-          </div>
-
-          <div>
-            <div className="mb-3 flex min-h-9 items-center">
-              <Label>{t('controls.optionsLabel')}</Label>
-            </div>
-            <Chip active={startWithLorem} onClick={handleStartWithLoremToggle}>
-              {t('controls.startWithLorem')}
-            </Chip>
           </div>
 
           <Button variant="secondary" type="button" onClick={handleRegenerate}>
