@@ -43,7 +43,7 @@
       "description": "Cuenta los caracteres de tu texto, con y sin espacios."
     },
     "dummyText": {
-      "description": "Genera texto de relleno lorem ipsum en palabras, frases o párrafos"
+      "description": "Elige un idioma y genera texto de relleno con la cantidad exacta de caracteres"
     },
     "promptComment": "{count} herramientas locales del navegador",
     "heroTitle": "Herramientas útiles, solo cuando las necesitas.",
@@ -788,20 +788,13 @@
   },
   "dummyText": {
     "title": "Generador de texto de relleno",
-    "description": "Genera texto de relleno lorem ipsum en tu navegador. Elige palabras, frases o párrafos y copia el resultado al instante.",
+    "description": "Genera texto de relleno en tu navegador. Elige un idioma y una cantidad de caracteres, y copia el resultado al instante.",
     "controls": {
-      "unitLabel": "Unidad",
-      "countLabel": "Cantidad",
+      "languageLabel": "Idioma",
+      "charCountLabel": "Cantidad de caracteres",
       "countRange": "{min}–{max}",
-      "optionsLabel": "Opciones",
-      "startWithLorem": "Empezar con \"Lorem ipsum\"",
       "outputLabel": "Resultado",
       "charCount": "{count} caracteres"
-    },
-    "units": {
-      "words": "Palabras",
-      "sentences": "Frases",
-      "paragraphs": "Párrafos"
     },
     "actions": {
       "regenerate": "Regenerar",
@@ -813,12 +806,12 @@
     },
     "seo": {
       "overviewTitle": "Generador de texto de relleno en el navegador",
-      "overview": "Genera texto de relleno lorem ipsum para maquetas, wireframes y pruebas de diseño. Elige la cantidad exacta de palabras, frases o párrafos que necesites, con la opción de empezar con el clásico \"Lorem ipsum dolor sit amet\".",
+      "overview": "Genera texto de relleno para maquetas, wireframes y pruebas de diseño. Elige un idioma y la cantidad exacta de caracteres que necesites para previsualizar cómo se ve el texto en distintos alfabetos.",
       "privacy": "El texto se genera localmente en tu navegador. Nunca se sube a los servidores de oddkit.",
       "useCasesTitle": "Casos de uso comunes",
       "useCases": [
         "Rellenar maquetas de diseño con texto de relleno realista",
-        "Probar cómo se comporta un diseño con distintas cantidades de texto",
+        "Probar cómo se comporta un diseño con distintos idiomas y cantidades de texto",
         "Generar contenido de relleno rápido para prototipos y demos"
       ],
       "faqTitle": "Preguntas frecuentes",
@@ -829,23 +822,23 @@
         },
         {
           "question": "¿Puedo controlar cuánto texto se genera?",
-          "answer": "Sí. Elige palabras, frases o párrafos y define la cantidad exacta que necesites."
+          "answer": "Sí. Elige un idioma y define la cantidad exacta de caracteres que necesites."
         },
         {
-          "question": "¿El texto siempre empieza con \"Lorem ipsum\"?",
-          "answer": "Solo si activas la opción \"Empezar con Lorem ipsum\". De lo contrario, cada generación es aleatoria."
+          "question": "¿Puedo generar texto de relleno en distintos idiomas?",
+          "answer": "Sí. Elige entre varios idiomas para previsualizar cómo se ve tu diseño con distintos alfabetos."
         }
       ]
     },
     "meta": {
       "title": "Generador de texto de relleno - oddkit",
-      "description": "Genera texto de relleno lorem ipsum en palabras, frases o párrafos directamente en tu navegador. No se sube nada a un servidor.",
+      "description": "Genera texto de relleno en varios idiomas con la cantidad exacta de caracteres, directamente en tu navegador. No se sube nada a un servidor.",
       "keywords": [
         "generador de lorem ipsum",
         "generador de texto de relleno",
         "generador de texto de marcador de posición",
         "generador de texto ficticio",
-        "lorem ipsum",
+        "texto de relleno multilingüe",
         "herramienta de texto en el navegador",
         "oddkit"
       ]

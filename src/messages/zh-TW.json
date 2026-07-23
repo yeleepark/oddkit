@@ -36,7 +36,7 @@
       "description": "統計文字字數，包含空格與不含空格。"
     },
     "dummyText": {
-      "description": "依單詞、句子或段落產生佔位用 lorem ipsum 文字"
+      "description": "選擇語言，依指定字元數產生佔位文字"
     },
     "promptComment": "{count} 個本機瀏覽器工具",
     "heroTitle": "只在需要時使用的實用工具。",
@@ -773,20 +773,13 @@
   },
   "dummyText": {
     "title": "佔位文字產生器",
-    "description": "在瀏覽器中產生 lorem ipsum 佔位文字。選擇依單詞、句子或段落產生，並立即複製結果。",
+    "description": "在瀏覽器中產生佔位文字。選擇語言與字元數，並立即複製結果。",
     "controls": {
-      "unitLabel": "單位",
-      "countLabel": "數量",
+      "languageLabel": "語言",
+      "charCountLabel": "字元數",
       "countRange": "{min}–{max}",
-      "optionsLabel": "選項",
-      "startWithLorem": "以「Lorem ipsum」開頭",
       "outputLabel": "輸出",
       "charCount": "{count} 個字元"
-    },
-    "units": {
-      "words": "單詞",
-      "sentences": "句子",
-      "paragraphs": "段落"
     },
     "actions": {
       "regenerate": "重新產生",
@@ -798,12 +791,12 @@
     },
     "seo": {
       "overviewTitle": "基於瀏覽器的佔位文字產生器",
-      "overview": "為原型、線框圖與版面配置測試產生 lorem ipsum 佔位文字。可精確指定所需的單詞、句子或段落數量，並可選擇以經典的「Lorem ipsum dolor sit amet」開頭。",
+      "overview": "為原型、線框圖與版面配置測試產生佔位文字。精確指定語言與所需字元數，預覽文字在不同文字系統下的顯示效果。",
       "privacy": "文字在瀏覽器中本地產生，不會上傳到 oddkit 的伺服器。",
       "useCasesTitle": "常見用途",
       "useCases": [
         "為設計原型填入逼真的佔位文案",
-        "測試版面配置在不同文字量下的表現",
+        "測試版面配置在不同語言與字元數下的表現",
         "為原型與展示快速產生填充內容"
       ],
       "faqTitle": "常見問題",
@@ -814,23 +807,23 @@
         },
         {
           "question": "可以控制產生的文字數量嗎？",
-          "answer": "可以。選擇單詞、句子或段落單位，並設定所需的精確數量。"
+          "answer": "可以。選擇語言並設定所需的精確字元數。"
         },
         {
-          "question": "文字是否一定以「Lorem ipsum」開頭？",
-          "answer": "只有啟用「以 Lorem ipsum 開頭」選項時才會。否則每次產生都是隨機的。"
+          "question": "可以產生多種語言的佔位文字嗎？",
+          "answer": "可以。從多種語言中選擇，預覽版面在不同文字系統下的效果。"
         }
       ]
     },
     "meta": {
       "title": "佔位文字產生器 - oddkit",
-      "description": "在瀏覽器中依單詞、句子或段落產生 lorem ipsum 佔位文字，無需上傳到伺服器。",
+      "description": "在瀏覽器中依指定字元數產生多種語言的佔位文字，無需上傳到伺服器。",
       "keywords": [
         "lorem ipsum 產生器",
         "佔位文字產生器",
         "填充文字產生器",
         "虛擬文字產生器",
-        "lorem ipsum",
+        "多語言佔位文字",
         "瀏覽器文字工具",
         "oddkit"
       ]

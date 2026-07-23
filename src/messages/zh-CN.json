@@ -36,7 +36,7 @@
       "description": "统计文本字符数，包含空格和不含空格。"
     },
     "dummyText": {
-      "description": "按单词、句子或段落生成占位用 lorem ipsum 文本"
+      "description": "选择语言，按指定字符数生成占位文本"
     },
     "promptComment": "{count} 个本地浏览器工具",
     "heroTitle": "只在需要时出现的实用工具。",
@@ -773,20 +773,13 @@
   },
   "dummyText": {
     "title": "占位文本生成器",
-    "description": "在浏览器中生成 lorem ipsum 占位文本。选择按单词、句子或段落生成，并立即复制结果。",
+    "description": "在浏览器中生成占位文本。选择语言和字符数，并立即复制结果。",
     "controls": {
-      "unitLabel": "单位",
-      "countLabel": "数量",
+      "languageLabel": "语言",
+      "charCountLabel": "字符数",
       "countRange": "{min}–{max}",
-      "optionsLabel": "选项",
-      "startWithLorem": "以 \"Lorem ipsum\" 开头",
       "outputLabel": "输出",
       "charCount": "{count} 字符"
-    },
-    "units": {
-      "words": "单词",
-      "sentences": "句子",
-      "paragraphs": "段落"
     },
     "actions": {
       "regenerate": "重新生成",
@@ -798,12 +791,12 @@
     },
     "seo": {
       "overviewTitle": "基于浏览器的占位文本生成器",
-      "overview": "为原型、线框图和布局测试生成 lorem ipsum 占位文本。可精确指定所需的单词、句子或段落数量，并可选择以经典的 \"Lorem ipsum dolor sit amet\" 开头。",
+      "overview": "为原型、线框图和布局测试生成占位文本。精确指定语言和所需字符数，预览文本在不同文字体系下的显示效果。",
       "privacy": "文本在浏览器中本地生成，不会上传到 oddkit 的服务器。",
       "useCasesTitle": "常见用途",
       "useCases": [
         "为设计原型填充逼真的占位文案",
-        "测试布局在不同文本量下的表现",
+        "测试布局在不同语言和字符数下的表现",
         "为原型和演示快速生成填充内容"
       ],
       "faqTitle": "常见问题",
@@ -814,23 +807,23 @@
         },
         {
           "question": "可以控制生成的文本数量吗？",
-          "answer": "可以。选择单词、句子或段落单位，并设置所需的精确数量。"
+          "answer": "可以。选择语言并设置所需的精确字符数。"
         },
         {
-          "question": "文本是否总是以 \"Lorem ipsum\" 开头？",
-          "answer": "只有启用「以 Lorem ipsum 开头」选项时才会。否则每次生成都是随机的。"
+          "question": "可以生成多种语言的占位文本吗？",
+          "answer": "可以。从多种语言中选择，预览版面在不同文字体系下的效果。"
         }
       ]
     },
     "meta": {
       "title": "占位文本生成器 - oddkit",
-      "description": "在浏览器中按单词、句子或段落生成 lorem ipsum 占位文本，无需上传到服务器。",
+      "description": "在浏览器中按指定字符数生成多种语言的占位文本，无需上传到服务器。",
       "keywords": [
         "lorem ipsum 生成器",
         "占位文本生成器",
         "填充文本生成器",
         "虚拟文本生成器",
-        "lorem ipsum",
+        "多语言占位文本",
         "浏览器文本工具",
         "oddkit"
       ]
