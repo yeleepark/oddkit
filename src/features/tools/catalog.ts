@@ -93,6 +93,17 @@ export const TOOL_CATALOG = [
     homeDescriptionKey: 'timestampConverter.description',
     enabled: true,
   },
+  {
+    id: 'character-counter',
+    num: '09',
+    tag: '#text · #count',
+    category: 'text',
+    href: '/tools/character-counter',
+    titleKey: 'characterCounter.title',
+    descriptionKey: 'characterCounter.description',
+    homeDescriptionKey: 'characterCounter.description',
+    enabled: true,
+  },
 ] as const
 
 export type ToolCatalogItem = (typeof TOOL_CATALOG)[number]

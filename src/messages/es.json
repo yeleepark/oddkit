@@ -39,6 +39,9 @@
     "timestampConverter": {
       "description": "Convierte marcas de tiempo Unix en fechas y de vuelta en marcas de tiempo"
     },
+    "characterCounter": {
+      "description": "Cuenta los caracteres de tu texto, con y sin espacios."
+    },
     "promptComment": "{count} herramientas locales del navegador",
     "heroTitle": "Herramientas útiles, solo cuando las necesitas.",
     "search": {
@@ -718,6 +721,64 @@
         "hora unix a fecha",
         "fecha a marca de tiempo",
         "conversor utc",
+        "oddkit"
+      ]
+    }
+  },
+  "characterCounter": {
+    "title": "Contador de caracteres",
+    "description": "Cuenta los caracteres de tu texto localmente en el navegador, con espacios incluidos y excluidos.",
+    "controls": {
+      "inputLabel": "Texto",
+      "placeholder": "Pega o escribe texto aquí…"
+    },
+    "actions": {
+      "clear": "Borrar"
+    },
+    "stats": {
+      "title": "Recuento",
+      "withSpaces": "Con espacios",
+      "withoutSpaces": "Sin espacios"
+    },
+    "seo": {
+      "overviewTitle": "Contador de caracteres en el navegador",
+      "overview": "Cuenta los caracteres de ensayos, publicaciones en redes sociales, meta descripciones y campos de formulario mientras escribes. El recuento se calcula localmente al instante, con un conteo aparte que excluye todos los espacios en blanco.",
+      "privacy": "El texto que escribes o pegas se procesa localmente en tu navegador. Nunca se sube a los servidores de oddkit.",
+      "useCasesTitle": "Casos de uso comunes",
+      "useCases": [
+        "Comprobar la longitud del texto antes de enviarlo",
+        "Comparar el recuento de caracteres con y sin espacios",
+        "Contar correctamente caracteres multibyte como los emojis"
+      ],
+      "faqTitle": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Se sube mi texto a algún lado?",
+          "answer": "No. El recuento se realiza completamente en local, en tu navegador, mientras escribes."
+        },
+        {
+          "question": "¿Cómo se calcula el recuento \"sin espacios\"?",
+          "answer": "Se eliminan todos los caracteres de espacio en blanco (espacios, tabulaciones y saltos de línea) antes de contar."
+        },
+        {
+          "question": "¿Cuenta los emojis correctamente?",
+          "answer": "Sí. El recuento usa puntos de código Unicode, por lo que los caracteres multibyte como los emojis se cuentan como un solo carácter."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// conteo"
+    },
+    "meta": {
+      "title": "Contador de caracteres - oddkit",
+      "description": "Cuenta los caracteres de tu texto en el navegador, con espacios incluidos y excluidos. No se sube nada a un servidor.",
+      "keywords": [
+        "contador de caracteres",
+        "longitud de texto",
+        "contar letras",
+        "contador de caracteres online",
+        "longitud de cadena",
+        "herramienta de texto en el navegador",
         "oddkit"
       ]
     }

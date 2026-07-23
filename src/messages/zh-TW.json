@@ -32,6 +32,9 @@
     "timestampConverter": {
       "description": "將 Unix 時間戳記轉換為日期，或將日期轉換回時間戳記"
     },
+    "characterCounter": {
+      "description": "統計文字字數，包含空格與不含空格。"
+    },
     "promptComment": "{count} 個本機瀏覽器工具",
     "heroTitle": "只在需要時使用的實用工具。",
     "search": {
@@ -703,6 +706,64 @@
         "Unix 時間轉日期",
         "日期轉時間戳記",
         "UTC 轉換器",
+        "oddkit"
+      ]
+    }
+  },
+  "characterCounter": {
+    "title": "字元計數器",
+    "description": "在瀏覽器中本機統計文字字數，同時顯示包含空格與不含空格的字數。",
+    "controls": {
+      "inputLabel": "文字",
+      "placeholder": "在此貼上或輸入文字…"
+    },
+    "actions": {
+      "clear": "清除"
+    },
+    "stats": {
+      "title": "字數",
+      "withSpaces": "含空格",
+      "withoutSpaces": "不含空格"
+    },
+    "seo": {
+      "overviewTitle": "瀏覽器端字元計數器",
+      "overview": "撰寫文章、社群貼文、meta 描述或表單內容時，即時查看字數。計數在瀏覽器中本機即時完成，並同時顯示不含空格的字數。",
+      "privacy": "您輸入或貼上的文字會在瀏覽器中本機處理，不會上傳到 oddkit 的伺服器。",
+      "useCasesTitle": "常見用途",
+      "useCases": [
+        "送出前檢查文字是否超出字數限制",
+        "比較包含空格與不含空格的字數",
+        "正確統計表情符號等多位元組字元"
+      ],
+      "faqTitle": "常見問題",
+      "faq": [
+        {
+          "question": "我的文字會被上傳嗎?",
+          "answer": "不會。所有計數都在您輸入時於瀏覽器中本機完成。"
+        },
+        {
+          "question": "「不含空格」的字數如何計算?",
+          "answer": "會先移除空格、Tab 與換行等所有空白字元，再統計字數。"
+        },
+        {
+          "question": "能正確統計表情符號嗎?",
+          "answer": "可以。計數以 Unicode 碼點為單位，因此表情符號等多位元組字元會被正確計為一個字元。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 計數器"
+    },
+    "meta": {
+      "title": "字元計數器 - oddkit",
+      "description": "在瀏覽器中統計文字字數，包含空格與不含空格。不會上傳到伺服器。",
+      "keywords": [
+        "字元計數器",
+        "字數統計",
+        "不含空格字數",
+        "文字長度檢測",
+        "表情符號字數",
+        "瀏覽器文字工具",
         "oddkit"
       ]
     }
