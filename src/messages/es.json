@@ -27,8 +27,41 @@
     "imageResizer": {
       "description": "Cambia el tamaño de imágenes sin subir archivos"
     },
+    "colorConverter": {
+      "description": "Convierte colores entre HEX, RGB, HSL y OKLCH directamente en el navegador"
+    },
+    "encoderDecoder": {
+      "description": "Codifica y decodifica texto con codificación URL, Base64 y entidades HTML"
+    },
+    "jsonFormatter": {
+      "description": "Formatea, minifica y valida JSON localmente en tu navegador"
+    },
+    "timestampConverter": {
+      "description": "Convierte marcas de tiempo Unix en fechas y de vuelta en marcas de tiempo"
+    },
+    "characterCounter": {
+      "description": "Cuenta los caracteres de tu texto, con y sin espacios."
+    },
+    "dummyText": {
+      "description": "Elige un idioma y genera texto de relleno con la cantidad exacta de caracteres"
+    },
     "promptComment": "{count} herramientas locales del navegador",
     "heroTitle": "Herramientas útiles, solo cuando las necesitas.",
+    "search": {
+      "placeholder": "Buscar herramientas...",
+      "ariaLabel": "Buscar herramientas"
+    },
+    "categories": {
+      "all": "Todas",
+      "image": "Imagen",
+      "color": "Color",
+      "text": "Texto",
+      "dev": "Dev"
+    },
+    "noResults": {
+      "title": "No se encontraron herramientas",
+      "reset": "Restablecer filtros"
+    },
     "meta": {
       "title": "oddkit - Un pequeño kit de herramientas para trabajar",
       "description": "Usa herramientas web para generar, comprimir, convertir y redimensionar imágenes, junto con pequeñas tareas de trabajo.",
@@ -377,6 +410,436 @@
         "dimensiones de imagen",
         "proporción de imagen",
         "herramienta de imagen en el navegador",
+        "oddkit"
+      ]
+    }
+  },
+  "colorConverter": {
+    "title": "Conversor de colores",
+    "description": "Convierte colores entre HEX, RGB, HSL y OKLCH, previsualiza el resultado y copia cualquier valor. Todo se procesa localmente en tu navegador.",
+    "controls": {
+      "input": "Color de entrada",
+      "picker": "Elegir un color",
+      "placeholder": "#7c5cff, rgb(124 92 255), hsl(255 100% 68%)...",
+      "supported": "Admite valores de color HEX, RGB(A), HSL(A) y OKLCH."
+    },
+    "formats": {
+      "hex": "HEX",
+      "rgb": "RGB",
+      "hsl": "HSL",
+      "oklch": "OKLCH"
+    },
+    "actions": {
+      "copy": "Copiar",
+      "copied": "Copiado"
+    },
+    "preview": {
+      "alt": "Muestra de vista previa del color"
+    },
+    "errors": {
+      "invalid": "Introduce un color HEX, RGB, HSL u OKLCH válido."
+    },
+    "seo": {
+      "overviewTitle": "Conversor de colores en el navegador",
+      "overview": "Convierte colores entre HEX, RGB, HSL y OKLCH mientras diseñas interfaces, escribes CSS o revisas los colores de una marca. Escribe o elige cualquier formato compatible y todos los valores equivalentes se actualizan al instante.",
+      "privacy": "Los colores se convierten localmente en tu navegador. Ningún valor de color se sube a oddkit.",
+      "formatsTitle": "Formatos compatibles",
+      "formats": "Admite HEX (3/4/6/8 dígitos), rgb()/rgba(), hsl()/hsla() y oklch(), incluidos valores alfa, y genera los cuatro formatos.",
+      "useCasesTitle": "Casos de uso comunes",
+      "useCases": [
+        "Traducir colores de herramientas de diseño a valores listos para CSS",
+        "Comprobar la transparencia alfa entre formatos",
+        "Explorar valores OKLCH, un espacio de color moderno y perceptualmente uniforme"
+      ],
+      "faqTitle": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Se suben mis colores a oddkit?",
+          "answer": "No. La conversión se procesa localmente en tu navegador."
+        },
+        {
+          "question": "¿Es compatible con la transparencia alfa?",
+          "answer": "Sí. HEX, RGB, HSL y OKLCH admiten un canal alfa, que se conserva en cada valor convertido."
+        },
+        {
+          "question": "¿Qué ocurre si escribo un color no válido?",
+          "answer": "La herramienta muestra un mensaje de error claro en lugar de fallar, para que puedas corregir la entrada sin problemas."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// color, traducido"
+    },
+    "meta": {
+      "title": "Conversor de colores - oddkit",
+      "description": "Convierte colores entre HEX, RGB, HSL y OKLCH en tu navegador. Compatible con valores alfa, vista previa en vivo y copia con un clic.",
+      "keywords": [
+        "conversor de colores",
+        "hex a rgb",
+        "rgb a hsl",
+        "conversor oklch",
+        "herramienta de color css",
+        "herramienta de color en el navegador",
+        "oddkit"
+      ]
+    }
+  },
+  "encoderDecoder": {
+    "title": "Codificador · Decodificador",
+    "description": "Codifica y decodifica texto con codificación URL, Base64 o entidades HTML, todo localmente en tu navegador.",
+    "controls": {
+      "mode": "Modo",
+      "direction": "Dirección",
+      "input": "Entrada",
+      "inputPlaceholder": "Pega o escribe texto aquí…",
+      "output": "Salida",
+      "outputPlaceholder": "El resultado aparecerá aquí"
+    },
+    "modes": {
+      "url": "URL",
+      "base64": "Base64",
+      "html": "Entidad HTML"
+    },
+    "directions": {
+      "encode": "Codificar",
+      "decode": "Decodificar"
+    },
+    "actions": {
+      "copy": "Copiar salida",
+      "copied": "¡Copiado!"
+    },
+    "errors": {
+      "invalidUrl": "Este texto no es una codificación URL válida. Revisa si hay secuencias % incompletas o mal formadas.",
+      "invalidBase64": "Este texto no es Base64 válido. Solo se permiten letras, números, +, / y =, en grupos de 4 caracteres.",
+      "invalidHtmlEntity": "Entidad HTML no reconocida: {token}",
+      "generic": "No se pudo procesar este texto. Prueba con otra entrada."
+    },
+    "seo": {
+      "overviewTitle": "Codificador y decodificador de texto en el navegador",
+      "overview": "Codifica y decodifica fragmentos de texto para URLs, cadenas de consulta, contenido incrustado y payloads de API sin subir nada a un servidor. Cambia entre codificación URL, Base64 y entidades HTML, y el resultado se actualiza al instante.",
+      "privacy": "El texto se codifica y decodifica localmente en tu navegador. Nada de lo que escribes se sube a oddkit.",
+      "modesTitle": "Modos disponibles",
+      "modes": "Se admiten codificación URL, Base64 y entidades HTML, en ambas direcciones.",
+      "useCasesTitle": "Casos de uso comunes",
+      "useCases": [
+        "Preparar valores de cadenas de consulta para URLs y solicitudes de API",
+        "Decodificar payloads Base64 de tokens, registros o configuraciones",
+        "Escapar o desescapar entidades HTML antes de insertar texto en markup"
+      ],
+      "faqTitle": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Se sube mi texto a oddkit?",
+          "answer": "No. La codificación y decodificación se ejecutan localmente en tu navegador."
+        },
+        {
+          "question": "¿Qué pasa si pego una entrada no válida?",
+          "answer": "La herramienta muestra un mensaje de error claro que explica por qué no se puede decodificar, en lugar de fallar en silencio."
+        },
+        {
+          "question": "¿Puedo copiar el resultado?",
+          "answer": "Sí. Usa el botón de copiar para copiar la salida al portapapeles."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// que el texto sobreviva al viaje"
+    },
+    "meta": {
+      "title": "Codificador · Decodificador - oddkit",
+      "description": "Codifica y decodifica texto con codificación URL, Base64 y entidades HTML directamente en tu navegador. Copia el resultado con un clic.",
+      "keywords": [
+        "codificador url",
+        "decodificador url",
+        "codificador base64",
+        "decodificador base64",
+        "codificador de entidades html",
+        "decodificador de entidades html",
+        "codificador de texto",
+        "herramienta de texto en el navegador",
+        "oddkit"
+      ]
+    }
+  },
+  "jsonFormatter": {
+    "title": "Formateador y validador de JSON",
+    "description": "Formatea, minifica y valida JSON localmente en tu navegador. Ordena la indentación, compáctalo en una línea o detecta errores de sintaxis con la línea y columna exactas.",
+    "controls": {
+      "inputLabel": "Entrada",
+      "outputLabel": "Salida",
+      "placeholder": "Pega o escribe JSON aquí…",
+      "outputPlaceholder": "El JSON formateado aparecerá aquí.",
+      "charCount": "{count} caracteres"
+    },
+    "modes": {
+      "format": "Formatear",
+      "minify": "Minificar"
+    },
+    "actions": {
+      "clear": "Borrar",
+      "copy": "Copiar salida",
+      "copied": "¡Copiado!"
+    },
+    "status": {
+      "empty": "Esperando entrada",
+      "valid": "JSON válido",
+      "invalid": "JSON inválido"
+    },
+    "errors": {
+      "at": "{message} (línea {line}, columna {column})",
+      "atPosition": "{message} (posición {position})",
+      "plain": "{message}"
+    },
+    "seo": {
+      "overviewTitle": "Formateador de JSON en el navegador",
+      "overview": "Ordena respuestas de API, archivos de configuración y registros con una indentación consistente, o compáctalos en una sola línea para almacenamiento y transporte. El análisis se ejecuta localmente con el motor JSON nativo de tu navegador.",
+      "privacy": "El JSON que pegas se procesa localmente en tu navegador. Nunca se sube a los servidores de oddkit.",
+      "useCasesTitle": "Casos de uso comunes",
+      "useCases": [
+        "Dar formato a respuestas de API para depuración",
+        "Minificar configuración JSON antes de publicarla",
+        "Encontrar la línea exacta que causa un error de sintaxis JSON"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "¿Mi JSON se sube a algún lugar?",
+          "answer": "No. El análisis, formateo y minificación ocurren localmente en tu navegador usando JSON.parse y JSON.stringify."
+        },
+        {
+          "question": "¿Qué ocurre si mi JSON no es válido?",
+          "answer": "oddkit muestra un error de validación con la línea y columna aproximadas donde falló el análisis, sin bloquear la página."
+        },
+        {
+          "question": "¿Puedo copiar el resultado?",
+          "answer": "Sí. Usa el botón Copiar salida para copiar el JSON formateado o minificado al portapapeles."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// detective de comas"
+    },
+    "meta": {
+      "title": "Formateador y validador de JSON - oddkit",
+      "description": "Formatea, minifica y valida JSON en tu navegador. Ordena la indentación, compacta la salida y detecta errores de sintaxis con línea y columna. Nada se sube a un servidor.",
+      "keywords": [
+        "formateador json",
+        "validador json",
+        "minificador json",
+        "json bonito",
+        "linter json",
+        "herramienta json en el navegador",
+        "oddkit"
+      ]
+    }
+  },
+  "timestampConverter": {
+    "title": "Conversor de marcas de tiempo",
+    "description": "Convierte marcas de tiempo Unix en fechas legibles y fechas de vuelta en marcas de tiempo, todo en tu navegador. Admite segundos y milisegundos, con hora local y UTC lado a lado.",
+    "sections": {
+      "toDate": {
+        "title": "Marca de tiempo a fecha"
+      },
+      "toTimestamp": {
+        "title": "Fecha a marca de tiempo"
+      }
+    },
+    "controls": {
+      "timestamp": "Marca de tiempo Unix",
+      "timestampPlaceholder": "p. ej. 1720000000",
+      "unit": "Unidad",
+      "now": "Ahora",
+      "dateTime": "Fecha y hora",
+      "interpretAs": "Interpretar como",
+      "useCurrentTime": "Usar la hora actual",
+      "compareZone": "Comparar zona horaria",
+      "compareZonePlaceholder": "Selecciona una zona horaria",
+      "optional": "opcional"
+    },
+    "units": {
+      "auto": "Detección automática",
+      "seconds": "Segundos",
+      "milliseconds": "Milisegundos"
+    },
+    "interpretations": {
+      "local": "Hora local",
+      "utc": "UTC"
+    },
+    "results": {
+      "local": "Local ({zone})",
+      "utc": "UTC",
+      "detectedUnit": "Unidad detectada: {unit}",
+      "unixSeconds": "Segundos Unix",
+      "unixMilliseconds": "Milisegundos Unix",
+      "isoUtc": "ISO 8601 (UTC)",
+      "empty": "-"
+    },
+    "actions": {
+      "copy": "Copiar",
+      "copied": "Copiado"
+    },
+    "errors": {
+      "empty": "Introduce una marca de tiempo para convertir.",
+      "not_a_number": "Introduce un número válido, en segundos o milisegundos.",
+      "out_of_range": "Este valor está fuera del rango que puede representar una fecha de JavaScript.",
+      "dateEmpty": "Elige una fecha y hora para convertir.",
+      "dateInvalid": "No se pudo interpretar esta fecha y hora."
+    },
+    "ui": {
+      "eyebrow": "// qué hora es 1720000000"
+    },
+    "seo": {
+      "overviewTitle": "Conversor de marcas de tiempo en el navegador",
+      "overview": "Convierte marcas de tiempo Unix en fechas legibles, y fechas de vuelta en marcas de tiempo, al revisar registros, respuestas de API, tareas programadas o datos de analítica.",
+      "privacy": "Las marcas de tiempo y fechas se convierten localmente en tu navegador. Nada de lo que introduces se sube a oddkit.",
+      "useCasesTitle": "Casos de uso comunes",
+      "useCases": [
+        "Comprobar qué hora representa una marca de tiempo Unix en un registro o respuesta de API",
+        "Convertir una fecha y hora programada en una marca de tiempo para una tarea cron o una llamada a la API",
+        "Comparar una marca de tiempo entre tu zona horaria local, UTC y otra zona horaria"
+      ],
+      "faqTitle": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Se suben mis marcas de tiempo o fechas a oddkit?",
+          "answer": "No. Todo el análisis y formateo ocurre localmente en tu navegador."
+        },
+        {
+          "question": "¿Cómo sabe la herramienta si una marca de tiempo está en segundos o milisegundos?",
+          "answer": "De forma predeterminada, lo detecta según la magnitud: las marcas de tiempo actuales en segundos tienen unos 10 dígitos, mientras que las de milisegundos tienen unos 13. También puedes forzar segundos o milisegundos manualmente."
+        },
+        {
+          "question": "¿Puedo ver una marca de tiempo en una zona horaria distinta a la mía?",
+          "answer": "Sí. Usa el selector de comparación de zona horaria para ver el mismo instante en cualquier zona horaria IANA compatible, junto con tu hora local y UTC."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Conversor de marcas de tiempo - oddkit",
+      "description": "Convierte marcas de tiempo Unix en fechas y de vuelta en tu navegador. Admite segundos y milisegundos, hora local, UTC y comparación de zonas horarias.",
+      "keywords": [
+        "conversor de marcas de tiempo",
+        "marca de tiempo unix",
+        "conversor epoch",
+        "hora unix a fecha",
+        "fecha a marca de tiempo",
+        "conversor utc",
+        "oddkit"
+      ]
+    }
+  },
+  "characterCounter": {
+    "title": "Contador de caracteres",
+    "description": "Cuenta los caracteres de tu texto localmente en el navegador, con espacios incluidos y excluidos.",
+    "controls": {
+      "inputLabel": "Texto",
+      "placeholder": "Pega o escribe texto aquí…"
+    },
+    "actions": {
+      "clear": "Borrar"
+    },
+    "stats": {
+      "title": "Recuento",
+      "withSpaces": "Con espacios",
+      "withoutSpaces": "Sin espacios"
+    },
+    "seo": {
+      "overviewTitle": "Contador de caracteres en el navegador",
+      "overview": "Cuenta los caracteres de ensayos, publicaciones en redes sociales, meta descripciones y campos de formulario mientras escribes. El recuento se calcula localmente al instante, con un conteo aparte que excluye todos los espacios en blanco.",
+      "privacy": "El texto que escribes o pegas se procesa localmente en tu navegador. Nunca se sube a los servidores de oddkit.",
+      "useCasesTitle": "Casos de uso comunes",
+      "useCases": [
+        "Comprobar la longitud del texto antes de enviarlo",
+        "Comparar el recuento de caracteres con y sin espacios",
+        "Contar correctamente caracteres multibyte como los emojis"
+      ],
+      "faqTitle": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Se sube mi texto a algún lado?",
+          "answer": "No. El recuento se realiza completamente en local, en tu navegador, mientras escribes."
+        },
+        {
+          "question": "¿Cómo se calcula el recuento \"sin espacios\"?",
+          "answer": "Se eliminan todos los caracteres de espacio en blanco (espacios, tabulaciones y saltos de línea) antes de contar."
+        },
+        {
+          "question": "¿Cuenta los emojis correctamente?",
+          "answer": "Sí. El recuento usa puntos de código Unicode, por lo que los caracteres multibyte como los emojis se cuentan como un solo carácter."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// conteo"
+    },
+    "meta": {
+      "title": "Contador de caracteres - oddkit",
+      "description": "Cuenta los caracteres de tu texto en el navegador, con espacios incluidos y excluidos. No se sube nada a un servidor.",
+      "keywords": [
+        "contador de caracteres",
+        "longitud de texto",
+        "contar letras",
+        "contador de caracteres online",
+        "longitud de cadena",
+        "herramienta de texto en el navegador",
+        "oddkit"
+      ]
+    }
+  },
+  "dummyText": {
+    "title": "Generador de texto de relleno",
+    "description": "Genera texto de relleno en tu navegador. Elige un idioma y una cantidad de caracteres, y copia el resultado al instante.",
+    "controls": {
+      "languageLabel": "Idioma",
+      "charCountLabel": "Cantidad de caracteres",
+      "countRange": "{min}–{max}",
+      "outputLabel": "Resultado",
+      "charCount": "{count} caracteres"
+    },
+    "actions": {
+      "regenerate": "Regenerar",
+      "copy": "Copiar resultado",
+      "copied": "¡Copiado!"
+    },
+    "ui": {
+      "eyebrow": "// contenido de relleno"
+    },
+    "seo": {
+      "overviewTitle": "Generador de texto de relleno en el navegador",
+      "overview": "Genera texto de relleno para maquetas, wireframes y pruebas de diseño. Elige un idioma y la cantidad exacta de caracteres que necesites para previsualizar cómo se ve el texto en distintos alfabetos.",
+      "privacy": "El texto se genera localmente en tu navegador. Nunca se sube a los servidores de oddkit.",
+      "useCasesTitle": "Casos de uso comunes",
+      "useCases": [
+        "Rellenar maquetas de diseño con texto de relleno realista",
+        "Probar cómo se comporta un diseño con distintos idiomas y cantidades de texto",
+        "Generar contenido de relleno rápido para prototipos y demos"
+      ],
+      "faqTitle": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿El texto generado se envía a un servidor?",
+          "answer": "No. Todo el texto se genera localmente en tu navegador con JavaScript."
+        },
+        {
+          "question": "¿Puedo controlar cuánto texto se genera?",
+          "answer": "Sí. Elige un idioma y define la cantidad exacta de caracteres que necesites."
+        },
+        {
+          "question": "¿Puedo generar texto de relleno en distintos idiomas?",
+          "answer": "Sí. Elige entre varios idiomas para previsualizar cómo se ve tu diseño con distintos alfabetos."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Generador de texto de relleno - oddkit",
+      "description": "Genera texto de relleno en varios idiomas con la cantidad exacta de caracteres, directamente en tu navegador. No se sube nada a un servidor.",
+      "keywords": [
+        "generador de lorem ipsum",
+        "generador de texto de relleno",
+        "generador de texto de marcador de posición",
+        "generador de texto ficticio",
+        "texto de relleno multilingüe",
+        "herramienta de texto en el navegador",
         "oddkit"
       ]
     }

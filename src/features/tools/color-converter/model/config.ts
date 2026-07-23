@@ -1,0 +1,1 @@
+export const DEFAULT_COLOR_CONVERTER_INPUT = '#7c5cff'

@@ -31,9 +31,11 @@ The image converter converts JPG, PNG, and WebP images locally in the browser. I
 
 The image resizer changes JPG, PNG, and WebP image dimensions locally in the browser. It supports exact width and height inputs, percentage presets, aspect ratio locking, and output conversion to JPG, PNG, or WebP.
 
+The JSON formatter and validator formats, minifies, and validates JSON locally in the browser. It reports a validation error with an approximate line and column when parsing fails, and supports copying the formatted or minified output to the clipboard.
+
 ## Crawling Notes
 
-Pages are localized. The default locale is ${DEFAULT_LOCALE}. Generated images and user inputs are not uploaded to a server.
+Pages are localized. The default locale is ${DEFAULT_LOCALE}. Generated images, pasted JSON, and other user inputs are not uploaded to a server.
 `
 
   return new Response(body, {

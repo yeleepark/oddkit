@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { getLocale } from 'next-intl/server'
+import Script from 'next/script'
 import { GoogleAnalytics } from '@/shared/analytics/google-analytics'
 import '@/app/globals.css'
+
+const GOOGLE_ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID
 
 const geist = Geist({
   subsets: ['latin'],
@@ -47,6 +50,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang={locale} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {GOOGLE_ADSENSE_CLIENT_ID && (
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${GOOGLE_ADSENSE_CLIENT_ID}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
       </head>
       <body
         className={`${geist.variable} ${geistMono.variable} min-h-screen bg-ink font-sans text-text-main`}

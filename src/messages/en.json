@@ -27,8 +27,41 @@
     "imageResizer": {
       "description": "Resize images by width, height, or percentage without uploading files"
     },
+    "colorConverter": {
+      "description": "Convert colors between HEX, RGB, HSL, and OKLCH directly in your browser"
+    },
+    "encoderDecoder": {
+      "description": "Encode and decode text with URL encoding, Base64, and HTML entities"
+    },
+    "jsonFormatter": {
+      "description": "Format, minify, and validate JSON locally in your browser"
+    },
+    "timestampConverter": {
+      "description": "Convert Unix timestamps to readable dates and back, with local time and UTC"
+    },
+    "characterCounter": {
+      "description": "Count characters in your text, with and without spaces."
+    },
+    "dummyText": {
+      "description": "Generate dummy placeholder text in a language of your choice, at an exact character count"
+    },
     "promptComment": "{count} local browser tools",
     "heroTitle": "Useful tools, only when you need them.",
+    "search": {
+      "placeholder": "Search tools...",
+      "ariaLabel": "Search tools"
+    },
+    "categories": {
+      "all": "All",
+      "image": "Image",
+      "color": "Color",
+      "text": "Text",
+      "dev": "Dev"
+    },
+    "noResults": {
+      "title": "No tools found",
+      "reset": "Reset filters"
+    },
     "meta": {
       "title": "oddkit - A small toolkit for work",
       "description": "Use small browser-based tools for image generation, compression, conversion, resizing, and everyday work tasks.",
@@ -377,6 +410,436 @@
         "image dimensions",
         "aspect ratio image",
         "browser image tool",
+        "oddkit"
+      ]
+    }
+  },
+  "colorConverter": {
+    "title": "Color Converter",
+    "description": "Convert colors between HEX, RGB, HSL, and OKLCH, preview the result, and copy any value. Everything runs locally in your browser.",
+    "controls": {
+      "input": "Color input",
+      "picker": "Pick a color",
+      "placeholder": "#7c5cff, rgb(124 92 255), hsl(255 100% 68%)...",
+      "supported": "Accepts HEX, RGB(A), HSL(A), and OKLCH color values."
+    },
+    "formats": {
+      "hex": "HEX",
+      "rgb": "RGB",
+      "hsl": "HSL",
+      "oklch": "OKLCH"
+    },
+    "actions": {
+      "copy": "Copy",
+      "copied": "Copied"
+    },
+    "preview": {
+      "alt": "Color preview swatch"
+    },
+    "errors": {
+      "invalid": "Enter a valid HEX, RGB, HSL, or OKLCH color."
+    },
+    "seo": {
+      "overviewTitle": "Browser-based color converter",
+      "overview": "Convert colors between HEX, RGB, HSL, and OKLCH while designing UI, writing CSS, or checking brand colors. Type or pick any supported format and see every equivalent value update instantly.",
+      "privacy": "Colors are converted locally in your browser. No color values are uploaded to oddkit.",
+      "formatsTitle": "Supported formats",
+      "formats": "Reads HEX (3/4/6/8 digit), rgb()/rgba(), hsl()/hsla(), and oklch() input, including alpha values, and outputs all four formats.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Translate design tool colors into CSS-ready values",
+        "Check alpha transparency across formats",
+        "Explore OKLCH values for modern, perceptually uniform color"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Are my colors uploaded to oddkit?",
+          "answer": "No. Conversion runs locally in your browser."
+        },
+        {
+          "question": "Does it support alpha transparency?",
+          "answer": "Yes. HEX, RGB, HSL, and OKLCH all support an alpha channel, and it carries through every converted value."
+        },
+        {
+          "question": "What happens if I type an invalid color?",
+          "answer": "The tool shows a clear error message instead of crashing, so you can fix the input without losing your place."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// color, translated"
+    },
+    "meta": {
+      "title": "Color Converter - oddkit",
+      "description": "Convert colors between HEX, RGB, HSL, and OKLCH in your browser. Supports alpha values, live preview, and one-click copy.",
+      "keywords": [
+        "color converter",
+        "hex to rgb",
+        "rgb to hsl",
+        "oklch converter",
+        "css color tool",
+        "browser color tool",
+        "oddkit"
+      ]
+    }
+  },
+  "encoderDecoder": {
+    "title": "Encoder · Decoder",
+    "description": "Encode and decode text using URL encoding, Base64, or HTML entities, all locally in your browser.",
+    "controls": {
+      "mode": "Mode",
+      "direction": "Direction",
+      "input": "Input",
+      "inputPlaceholder": "Paste or type text here…",
+      "output": "Output",
+      "outputPlaceholder": "Result will appear here"
+    },
+    "modes": {
+      "url": "URL",
+      "base64": "Base64",
+      "html": "HTML entity"
+    },
+    "directions": {
+      "encode": "Encode",
+      "decode": "Decode"
+    },
+    "actions": {
+      "copy": "Copy output",
+      "copied": "Copied!"
+    },
+    "errors": {
+      "invalidUrl": "This text isn't valid URL-encoded input. Check for incomplete or malformed % sequences.",
+      "invalidBase64": "This text isn't valid Base64. Only letters, numbers, +, /, and = are allowed, in groups of 4 characters.",
+      "invalidHtmlEntity": "Unrecognized HTML entity: {token}",
+      "generic": "Unable to process this text. Try a different input."
+    },
+    "seo": {
+      "overviewTitle": "Browser-based text encoder and decoder",
+      "overview": "Encode and decode small text snippets for URLs, query strings, embeds, and API payloads without uploading anything to a server. Switch between URL encoding, Base64, and HTML entities, and see the result update instantly.",
+      "privacy": "Text is encoded and decoded locally in your browser. Nothing you type is uploaded to oddkit.",
+      "modesTitle": "Supported modes",
+      "modes": "URL encoding, Base64, and HTML entity encoding are supported, in both directions.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Prepare query string values for URLs and API requests",
+        "Decode Base64 payloads from tokens, logs, or configs",
+        "Escape or unescape HTML entities before embedding text in markup"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Is my text uploaded to oddkit?",
+          "answer": "No. Encoding and decoding run locally in your browser."
+        },
+        {
+          "question": "What happens if I paste invalid input?",
+          "answer": "The tool shows a clear error message explaining why the text can't be decoded, instead of silently failing."
+        },
+        {
+          "question": "Can I copy the result?",
+          "answer": "Yes. Use the copy button to copy the output to your clipboard."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// make text survive the wire"
+    },
+    "meta": {
+      "title": "Encoder · Decoder - oddkit",
+      "description": "Encode and decode text with URL encoding, Base64, and HTML entities directly in your browser. Copy the result with one click.",
+      "keywords": [
+        "url encoder",
+        "url decoder",
+        "base64 encoder",
+        "base64 decoder",
+        "html entity encoder",
+        "html entity decoder",
+        "text encoder",
+        "browser text tool",
+        "oddkit"
+      ]
+    }
+  },
+  "jsonFormatter": {
+    "title": "JSON Formatter & Validator",
+    "description": "Format, minify, and validate JSON locally in your browser. Prettify indentation, compact JSON to one line, or catch syntax errors with line and column details.",
+    "controls": {
+      "inputLabel": "Input",
+      "outputLabel": "Output",
+      "placeholder": "Paste or type JSON here…",
+      "outputPlaceholder": "Formatted JSON will appear here.",
+      "charCount": "{count} chars"
+    },
+    "modes": {
+      "format": "Format",
+      "minify": "Minify"
+    },
+    "actions": {
+      "clear": "Clear",
+      "copy": "Copy output",
+      "copied": "Copied!"
+    },
+    "status": {
+      "empty": "Waiting for input",
+      "valid": "Valid JSON",
+      "invalid": "Invalid JSON"
+    },
+    "errors": {
+      "at": "{message} (line {line}, column {column})",
+      "atPosition": "{message} (position {position})",
+      "plain": "{message}"
+    },
+    "seo": {
+      "overviewTitle": "Browser-based JSON formatter",
+      "overview": "Clean up messy API responses, config files, and logs by formatting JSON with consistent indentation, or compact it into a single line for storage and transport. Parsing runs locally using your browser's native JSON engine.",
+      "privacy": "JSON you paste is processed locally in your browser. It is never uploaded to oddkit's servers.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Pretty-print API responses for debugging",
+        "Minify JSON config before shipping it",
+        "Find the exact line causing a JSON syntax error"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Is my JSON uploaded anywhere?",
+          "answer": "No. Parsing, formatting, and minifying all happen locally in your browser using JSON.parse and JSON.stringify."
+        },
+        {
+          "question": "What happens if my JSON is invalid?",
+          "answer": "oddkit shows a validation error with the approximate line and column where parsing failed, without crashing."
+        },
+        {
+          "question": "Can I copy the result?",
+          "answer": "Yes. Use the Copy output button to copy the formatted or minified JSON to your clipboard."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// comma detective"
+    },
+    "meta": {
+      "title": "JSON Formatter & Validator - oddkit",
+      "description": "Format, minify, and validate JSON in your browser. Prettify indentation, compact output, and find syntax errors with line and column details. Nothing is uploaded to a server.",
+      "keywords": [
+        "json formatter",
+        "json validator",
+        "json minifier",
+        "prettify json",
+        "json linter",
+        "browser json tool",
+        "oddkit"
+      ]
+    }
+  },
+  "timestampConverter": {
+    "title": "Timestamp Converter",
+    "description": "Convert Unix timestamps to readable dates and back, entirely in your browser. Supports seconds and milliseconds, with local time and UTC shown side by side.",
+    "sections": {
+      "toDate": {
+        "title": "Timestamp to date"
+      },
+      "toTimestamp": {
+        "title": "Date to timestamp"
+      }
+    },
+    "controls": {
+      "timestamp": "Unix timestamp",
+      "timestampPlaceholder": "e.g. 1720000000",
+      "unit": "Unit",
+      "now": "Now",
+      "dateTime": "Date and time",
+      "interpretAs": "Interpret as",
+      "useCurrentTime": "Use current time",
+      "compareZone": "Compare time zone",
+      "compareZonePlaceholder": "Select a time zone",
+      "optional": "optional"
+    },
+    "units": {
+      "auto": "Auto-detect",
+      "seconds": "Seconds",
+      "milliseconds": "Milliseconds"
+    },
+    "interpretations": {
+      "local": "Local time",
+      "utc": "UTC"
+    },
+    "results": {
+      "local": "Local ({zone})",
+      "utc": "UTC",
+      "detectedUnit": "Detected unit: {unit}",
+      "unixSeconds": "Unix seconds",
+      "unixMilliseconds": "Unix milliseconds",
+      "isoUtc": "ISO 8601 (UTC)",
+      "empty": "-"
+    },
+    "actions": {
+      "copy": "Copy",
+      "copied": "Copied"
+    },
+    "errors": {
+      "empty": "Enter a timestamp to convert.",
+      "not_a_number": "Enter a valid number, in seconds or milliseconds.",
+      "out_of_range": "This value is outside the range JavaScript dates can represent.",
+      "dateEmpty": "Pick a date and time to convert.",
+      "dateInvalid": "This date and time could not be parsed."
+    },
+    "ui": {
+      "eyebrow": "// what time is 1720000000"
+    },
+    "seo": {
+      "overviewTitle": "Browser-based timestamp converter",
+      "overview": "Convert Unix timestamps to human-readable dates and convert dates back into timestamps, for debugging logs, API payloads, scheduled jobs, and analytics data.",
+      "privacy": "Timestamps and dates are converted locally in your browser. Nothing you enter is uploaded to oddkit.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Check what time a Unix timestamp in a log line or API response represents",
+        "Convert a scheduled date and time into a timestamp for a cron job or API call",
+        "Compare a timestamp across your local time zone, UTC, and another time zone"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Are my timestamps or dates uploaded to oddkit?",
+          "answer": "No. All parsing and formatting happens locally in your browser."
+        },
+        {
+          "question": "How does the tool know if a timestamp is in seconds or milliseconds?",
+          "answer": "By default it auto-detects based on magnitude: present-day second-based timestamps are around 10 digits, while millisecond-based timestamps are around 13 digits. You can also force seconds or milliseconds manually."
+        },
+        {
+          "question": "Can I see a timestamp in a time zone other than my own?",
+          "answer": "Yes. Use the compare time zone selector to see the same instant formatted in any supported IANA time zone alongside your local time and UTC."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Timestamp Converter - oddkit",
+      "description": "Convert Unix timestamps to readable dates and back in your browser. Supports seconds and milliseconds, local time, UTC, and time zone comparison.",
+      "keywords": [
+        "timestamp converter",
+        "unix timestamp",
+        "epoch converter",
+        "unix time to date",
+        "date to timestamp",
+        "utc converter",
+        "oddkit"
+      ]
+    }
+  },
+  "characterCounter": {
+    "title": "Character Counter",
+    "description": "Count characters in your text locally in your browser, with spaces included and excluded.",
+    "controls": {
+      "inputLabel": "Text",
+      "placeholder": "Paste or type text here…"
+    },
+    "actions": {
+      "clear": "Clear"
+    },
+    "stats": {
+      "title": "Count",
+      "withSpaces": "With spaces",
+      "withoutSpaces": "Without spaces"
+    },
+    "seo": {
+      "overviewTitle": "Browser-based character counter",
+      "overview": "Count characters in essays, social posts, meta descriptions, and form fields as you type. Counting runs locally and updates instantly, with a separate count that excludes all whitespace.",
+      "privacy": "Text you type or paste is processed locally in your browser. It is never uploaded to oddkit's servers.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Check text length against a character limit before submitting",
+        "Compare character counts with and without spaces",
+        "Count multi-byte characters like emoji correctly"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Is my text uploaded anywhere?",
+          "answer": "No. Counting happens entirely locally in your browser as you type."
+        },
+        {
+          "question": "How is \"without spaces\" calculated?",
+          "answer": "All whitespace characters — spaces, tabs, and line breaks — are removed before counting."
+        },
+        {
+          "question": "Does it count emoji correctly?",
+          "answer": "Yes. Counting uses Unicode code points, so multi-byte characters like emoji count as a single character."
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// tally"
+    },
+    "meta": {
+      "title": "Character Counter - oddkit",
+      "description": "Count characters in your text in your browser, with spaces included and excluded. Nothing is uploaded to a server.",
+      "keywords": [
+        "character counter",
+        "text length checker",
+        "letter count",
+        "count characters",
+        "string length",
+        "browser text tool",
+        "oddkit"
+      ]
+    }
+  },
+  "dummyText": {
+    "title": "Dummy Text Generator",
+    "description": "Generate placeholder text in your browser. Choose a language and character count, then copy the result instantly.",
+    "controls": {
+      "languageLabel": "Language",
+      "charCountLabel": "Character count",
+      "countRange": "{min}–{max}",
+      "outputLabel": "Output",
+      "charCount": "{count} chars"
+    },
+    "actions": {
+      "regenerate": "Regenerate",
+      "copy": "Copy output",
+      "copied": "Copied!"
+    },
+    "ui": {
+      "eyebrow": "// filler content"
+    },
+    "seo": {
+      "overviewTitle": "Browser-based dummy text generator",
+      "overview": "Generate placeholder dummy text for mockups, wireframes, and layout testing. Choose a language and the exact character count you need to preview how text renders across different scripts.",
+      "privacy": "Text is generated locally in your browser. Nothing is uploaded to oddkit's servers.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Fill design mockups with realistic-looking placeholder copy",
+        "Preview how a layout handles different languages and character counts",
+        "Generate quick filler content for prototypes and demos"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Is the generated text sent to a server?",
+          "answer": "No. All text is generated locally in your browser using JavaScript."
+        },
+        {
+          "question": "Can I control how much text is generated?",
+          "answer": "Yes. Choose a language and set the exact character count you need."
+        },
+        {
+          "question": "Can I generate placeholder text in different languages?",
+          "answer": "Yes. Pick from several languages to preview how your layout handles different scripts and character widths."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Dummy Text Generator - oddkit",
+      "description": "Generate dummy placeholder text in multiple languages with an exact character count, directly in your browser. Nothing is uploaded to a server.",
+      "keywords": [
+        "lorem ipsum generator",
+        "dummy text generator",
+        "placeholder text generator",
+        "filler text generator",
+        "multilingual dummy text",
+        "browser text tool",
         "oddkit"
       ]
     }

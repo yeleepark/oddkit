@@ -20,8 +20,41 @@
     "imageResizer": {
       "description": "无需上传即可调整图片宽高或比例"
     },
+    "colorConverter": {
+      "description": "在浏览器中转换 HEX、RGB、HSL 和 OKLCH 颜色"
+    },
+    "encoderDecoder": {
+      "description": "使用 URL 编码、Base64 和 HTML 实体在浏览器中编码和解码文本"
+    },
+    "jsonFormatter": {
+      "description": "在浏览器本地格式化、压缩和校验 JSON"
+    },
+    "timestampConverter": {
+      "description": "将 Unix 时间戳转换为日期，或将日期转换回时间戳"
+    },
+    "characterCounter": {
+      "description": "统计文本字符数，包含空格和不含空格。"
+    },
+    "dummyText": {
+      "description": "选择语言，按指定字符数生成占位文本"
+    },
     "promptComment": "{count} 个本地浏览器工具",
     "heroTitle": "只在需要时出现的实用工具。",
+    "search": {
+      "placeholder": "搜索工具...",
+      "ariaLabel": "搜索工具"
+    },
+    "categories": {
+      "all": "全部",
+      "image": "图片",
+      "color": "颜色",
+      "text": "文本",
+      "dev": "开发"
+    },
+    "noResults": {
+      "title": "未找到匹配的工具",
+      "reset": "重置筛选"
+    },
     "meta": {
       "title": "oddkit - 为工作准备的小工具集",
       "description": "在浏览器中使用图片生成、压缩、转换、尺寸调整等工作中常用的小型网页工具。",
@@ -362,6 +395,436 @@
         "图片尺寸",
         "图片比例",
         "浏览器图片工具",
+        "oddkit"
+      ]
+    }
+  },
+  "colorConverter": {
+    "title": "颜色转换器",
+    "description": "在 HEX、RGB、HSL 和 OKLCH 之间转换颜色，实时预览效果，并可复制任意转换值。全部在浏览器本地完成。",
+    "controls": {
+      "input": "颜色输入",
+      "picker": "选择颜色",
+      "placeholder": "#7c5cff, rgb(124 92 255), hsl(255 100% 68%)...",
+      "supported": "支持输入 HEX、RGB(A)、HSL(A) 和 OKLCH 颜色值。"
+    },
+    "formats": {
+      "hex": "HEX",
+      "rgb": "RGB",
+      "hsl": "HSL",
+      "oklch": "OKLCH"
+    },
+    "actions": {
+      "copy": "复制",
+      "copied": "已复制"
+    },
+    "preview": {
+      "alt": "颜色预览色板"
+    },
+    "errors": {
+      "invalid": "请输入有效的 HEX、RGB、HSL 或 OKLCH 颜色值。"
+    },
+    "seo": {
+      "overviewTitle": "基于浏览器的颜色转换器",
+      "overview": "在设计界面、编写 CSS 或核对品牌色时，可在 HEX、RGB、HSL 和 OKLCH 之间转换颜色。输入或选择任意支持的格式，所有对应数值会即时更新。",
+      "privacy": "颜色转换在浏览器本地完成，任何颜色值都不会上传到 oddkit。",
+      "formatsTitle": "支持的格式",
+      "formats": "可读取 HEX(3/4/6/8 位)、rgb()/rgba()、hsl()/hsla() 和 oklch() 输入(含透明度)，并输出全部四种格式。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "将设计工具中的颜色转换为可直接用于 CSS 的值",
+        "检查各格式之间的透明度是否一致",
+        "探索感知均匀的新一代 OKLCH 颜色值"
+      ],
+      "faqTitle": "常见问题",
+      "faq": [
+        {
+          "question": "我输入的颜色会上传到 oddkit 吗？",
+          "answer": "不会。转换过程完全在浏览器本地完成。"
+        },
+        {
+          "question": "支持透明度(alpha)吗？",
+          "answer": "支持。HEX、RGB、HSL 和 OKLCH 均支持透明度通道，并会保留在每一个转换结果中。"
+        },
+        {
+          "question": "输入无效颜色会发生什么？",
+          "answer": "工具会显示清晰的提示信息而不会崩溃，你可以直接修改输入内容。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 颜色，已转换"
+    },
+    "meta": {
+      "title": "颜色转换器 - oddkit",
+      "description": "在浏览器中转换 HEX、RGB、HSL 和 OKLCH 颜色。支持透明度、实时预览和一键复制。",
+      "keywords": [
+        "颜色转换器",
+        "hex 转 rgb",
+        "rgb 转 hsl",
+        "oklch 转换",
+        "css 颜色工具",
+        "浏览器颜色工具",
+        "oddkit"
+      ]
+    }
+  },
+  "encoderDecoder": {
+    "title": "编码器 · 解码器",
+    "description": "使用 URL 编码、Base64 或 HTML 实体在浏览器本地编码和解码文本。",
+    "controls": {
+      "mode": "模式",
+      "direction": "方向",
+      "input": "输入",
+      "inputPlaceholder": "在此粘贴或输入文本…",
+      "output": "输出",
+      "outputPlaceholder": "结果将显示在这里"
+    },
+    "modes": {
+      "url": "URL",
+      "base64": "Base64",
+      "html": "HTML 实体"
+    },
+    "directions": {
+      "encode": "编码",
+      "decode": "解码"
+    },
+    "actions": {
+      "copy": "复制输出",
+      "copied": "已复制！"
+    },
+    "errors": {
+      "invalidUrl": "这不是有效的 URL 编码文本。请检查是否有不完整或格式错误的 % 序列。",
+      "invalidBase64": "这不是有效的 Base64 文本。只能使用字母、数字、+、/ 和 =，且长度需为 4 的倍数。",
+      "invalidHtmlEntity": "无法识别的 HTML 实体：{token}",
+      "generic": "无法处理此文本，请尝试其他输入。"
+    },
+    "seo": {
+      "overviewTitle": "浏览器中的文本编码/解码工具",
+      "overview": "无需将内容上传到服务器，即可为 URL、查询字符串、嵌入代码和 API 数据编码和解码小段文本。在 URL 编码、Base64 和 HTML 实体之间切换，结果会即时更新。",
+      "privacy": "文本会在浏览器本地编码和解码。你输入的内容不会上传到 oddkit。",
+      "modesTitle": "支持的模式",
+      "modes": "支持 URL 编码、Base64 和 HTML 实体编码的双向转换。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "为 URL 和 API 请求准备查询字符串值",
+        "解码来自令牌、日志或配置文件的 Base64 数据",
+        "在嵌入标记之前转义或还原 HTML 实体"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "我输入的文本会上传到 oddkit 吗？",
+          "answer": "不会。编码和解码都在浏览器本地执行。"
+        },
+        {
+          "question": "粘贴无效输入会怎样？",
+          "answer": "工具会显示清晰的错误提示，说明为什么无法解码，而不是静默失败。"
+        },
+        {
+          "question": "可以复制结果吗？",
+          "answer": "可以。使用复制按钮即可将输出结果复制到剪贴板。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 让文本安全上路"
+    },
+    "meta": {
+      "title": "编码器 · 解码器 - oddkit",
+      "description": "直接在浏览器中使用 URL 编码、Base64 和 HTML 实体编码和解码文本，一键复制结果。",
+      "keywords": [
+        "URL 编码",
+        "URL 解码",
+        "Base64 编码",
+        "Base64 解码",
+        "HTML 实体编码",
+        "HTML 实体解码",
+        "文本编码器",
+        "浏览器文本工具",
+        "oddkit"
+      ]
+    }
+  },
+  "jsonFormatter": {
+    "title": "JSON 格式化与校验工具",
+    "description": "在浏览器本地格式化、压缩和校验 JSON。整理缩进、压缩为一行，或通过行列信息定位语法错误。",
+    "controls": {
+      "inputLabel": "输入",
+      "outputLabel": "输出",
+      "placeholder": "在此粘贴或输入 JSON…",
+      "outputPlaceholder": "格式化后的 JSON 将显示在这里。",
+      "charCount": "{count} 个字符"
+    },
+    "modes": {
+      "format": "格式化",
+      "minify": "压缩"
+    },
+    "actions": {
+      "clear": "清空",
+      "copy": "复制输出",
+      "copied": "已复制！"
+    },
+    "status": {
+      "empty": "等待输入",
+      "valid": "有效的 JSON",
+      "invalid": "无效的 JSON"
+    },
+    "errors": {
+      "at": "{message}（第 {line} 行，第 {column} 列）",
+      "atPosition": "{message}（位置 {position}）",
+      "plain": "{message}"
+    },
+    "seo": {
+      "overviewTitle": "浏览器中的 JSON 格式化工具",
+      "overview": "使用统一缩进整理杂乱的 API 响应、配置文件和日志，或将其压缩为一行以便存储和传输。解析使用浏览器原生 JSON 引擎在本地完成。",
+      "privacy": "你粘贴的 JSON 会在浏览器本地处理，不会上传到 oddkit 的服务器。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "格式化 API 响应以便调试",
+        "在发布前压缩 JSON 配置",
+        "定位 JSON 语法错误所在的确切行"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "我的 JSON 会上传到某个地方吗？",
+          "answer": "不会。解析、格式化和压缩都使用 JSON.parse 和 JSON.stringify 在浏览器本地完成。"
+        },
+        {
+          "question": "如果我的 JSON 无效会怎样？",
+          "answer": "oddkit 会显示校验错误，并给出解析失败的大致行列位置，不会导致页面崩溃。"
+        },
+        {
+          "question": "可以复制结果吗？",
+          "answer": "可以。使用“复制输出”按钮即可将格式化或压缩后的 JSON 复制到剪贴板。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 逗号侦探"
+    },
+    "meta": {
+      "title": "JSON 格式化与校验工具 - oddkit",
+      "description": "在浏览器中格式化、压缩和校验 JSON。支持整理缩进、压缩输出，以及通过行列信息定位语法错误，无需上传到服务器。",
+      "keywords": [
+        "json 格式化",
+        "json 校验",
+        "json 压缩",
+        "美化 json",
+        "json 语法检查",
+        "浏览器 json 工具",
+        "oddkit"
+      ]
+    }
+  },
+  "timestampConverter": {
+    "title": "时间戳转换器",
+    "description": "在浏览器中将 Unix 时间戳转换为可读日期，或将日期转换回时间戳。支持秒和毫秒，同时显示本地时间和 UTC。",
+    "sections": {
+      "toDate": {
+        "title": "时间戳转日期"
+      },
+      "toTimestamp": {
+        "title": "日期转时间戳"
+      }
+    },
+    "controls": {
+      "timestamp": "Unix 时间戳",
+      "timestampPlaceholder": "例如：1720000000",
+      "unit": "单位",
+      "now": "当前时间",
+      "dateTime": "日期和时间",
+      "interpretAs": "解析方式",
+      "useCurrentTime": "使用当前时间",
+      "compareZone": "对比时区",
+      "compareZonePlaceholder": "选择一个时区",
+      "optional": "可选"
+    },
+    "units": {
+      "auto": "自动检测",
+      "seconds": "秒",
+      "milliseconds": "毫秒"
+    },
+    "interpretations": {
+      "local": "本地时间",
+      "utc": "UTC"
+    },
+    "results": {
+      "local": "本地时间（{zone}）",
+      "utc": "UTC",
+      "detectedUnit": "检测到的单位：{unit}",
+      "unixSeconds": "Unix 秒",
+      "unixMilliseconds": "Unix 毫秒",
+      "isoUtc": "ISO 8601（UTC）",
+      "empty": "-"
+    },
+    "actions": {
+      "copy": "复制",
+      "copied": "已复制"
+    },
+    "errors": {
+      "empty": "请输入要转换的时间戳。",
+      "not_a_number": "请输入有效的数字，单位为秒或毫秒。",
+      "out_of_range": "该数值超出了 JavaScript 日期可表示的范围。",
+      "dateEmpty": "请选择要转换的日期和时间。",
+      "dateInvalid": "无法解析该日期和时间。"
+    },
+    "ui": {
+      "eyebrow": "// 1720000000 是几点"
+    },
+    "seo": {
+      "overviewTitle": "基于浏览器的时间戳转换器",
+      "overview": "在查看日志、API 响应、定时任务或分析数据时，将 Unix 时间戳转换为易读的日期，也可以将日期转换回时间戳。",
+      "privacy": "时间戳和日期均在浏览器中本地转换，你输入的内容不会上传到 oddkit。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "查看日志或 API 响应中的 Unix 时间戳对应的具体时间",
+        "将定时任务或 API 调用所需的日期转换为时间戳",
+        "在本地时间、UTC 和其他时区之间比较同一时刻"
+      ],
+      "faqTitle": "常见问题",
+      "faq": [
+        {
+          "question": "我的时间戳或日期会上传到 oddkit 吗？",
+          "answer": "不会。所有转换都在浏览器中本地完成。"
+        },
+        {
+          "question": "工具如何判断时间戳是秒还是毫秒？",
+          "answer": "默认根据数值位数自动判断：当前的秒级时间戳约为 10 位，毫秒级约为 13 位。你也可以手动指定秒或毫秒。"
+        },
+        {
+          "question": "可以查看其他时区的时间吗？",
+          "answer": "可以。使用对比时区选择器，即可将同一时刻显示为任意支持的 IANA 时区，并与本地时间、UTC 一并查看。"
+        }
+      ]
+    },
+    "meta": {
+      "title": "时间戳转换器 - oddkit",
+      "description": "在浏览器中将 Unix 时间戳转换为日期，或将日期转换回时间戳。支持秒/毫秒、本地时间、UTC 以及时区对比。",
+      "keywords": [
+        "时间戳转换",
+        "Unix 时间戳",
+        "纪元时间转换",
+        "Unix 时间转日期",
+        "日期转时间戳",
+        "UTC 转换器",
+        "oddkit"
+      ]
+    }
+  },
+  "characterCounter": {
+    "title": "字符计数器",
+    "description": "在浏览器中本地统计文本字符数，同时显示包含空格和不含空格的字数。",
+    "controls": {
+      "inputLabel": "文本",
+      "placeholder": "在此粘贴或输入文本…"
+    },
+    "actions": {
+      "clear": "清空"
+    },
+    "stats": {
+      "title": "字符数",
+      "withSpaces": "含空格",
+      "withoutSpaces": "不含空格"
+    },
+    "seo": {
+      "overviewTitle": "基于浏览器的字符计数器",
+      "overview": "在撰写文章、社交媒体帖子、元描述或表单内容时，实时查看字符数。计数在浏览器中本地即时完成，并同时显示不含空格的字符数。",
+      "privacy": "您输入或粘贴的文本会在浏览器中本地处理，不会上传到 oddkit 的服务器。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "提交前检查文本是否超出字符限制",
+        "对比包含空格和不含空格的字符数",
+        "准确统计表情符号等多字节字符"
+      ],
+      "faqTitle": "常见问题",
+      "faq": [
+        {
+          "question": "我的文本会被上传吗?",
+          "answer": "不会。所有计数在您输入时都在浏览器中本地完成。"
+        },
+        {
+          "question": "“不含空格”的字符数是如何计算的?",
+          "answer": "会先移除空格、制表符和换行符等所有空白字符，然后再统计字符数。"
+        },
+        {
+          "question": "能正确统计表情符号吗?",
+          "answer": "可以。计数基于 Unicode 码点，因此表情符号等多字节字符会被正确统计为一个字符。"
+        }
+      ]
+    },
+    "ui": {
+      "eyebrow": "// 计数器"
+    },
+    "meta": {
+      "title": "字符计数器 - oddkit",
+      "description": "在浏览器中统计文本字符数，包含空格和不含空格。不会上传到服务器。",
+      "keywords": [
+        "字符计数器",
+        "字数统计",
+        "不含空格字数",
+        "文本长度检测",
+        "表情符号字数",
+        "浏览器文本工具",
+        "oddkit"
+      ]
+    }
+  },
+  "dummyText": {
+    "title": "占位文本生成器",
+    "description": "在浏览器中生成占位文本。选择语言和字符数，并立即复制结果。",
+    "controls": {
+      "languageLabel": "语言",
+      "charCountLabel": "字符数",
+      "countRange": "{min}–{max}",
+      "outputLabel": "输出",
+      "charCount": "{count} 字符"
+    },
+    "actions": {
+      "regenerate": "重新生成",
+      "copy": "复制输出",
+      "copied": "已复制！"
+    },
+    "ui": {
+      "eyebrow": "// 填充用文本"
+    },
+    "seo": {
+      "overviewTitle": "基于浏览器的占位文本生成器",
+      "overview": "为原型、线框图和布局测试生成占位文本。精确指定语言和所需字符数，预览文本在不同文字体系下的显示效果。",
+      "privacy": "文本在浏览器中本地生成，不会上传到 oddkit 的服务器。",
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "为设计原型填充逼真的占位文案",
+        "测试布局在不同语言和字符数下的表现",
+        "为原型和演示快速生成填充内容"
+      ],
+      "faqTitle": "常见问题",
+      "faq": [
+        {
+          "question": "生成的文本会发送到服务器吗？",
+          "answer": "不会。所有文本都通过 JavaScript 在浏览器本地生成。"
+        },
+        {
+          "question": "可以控制生成的文本数量吗？",
+          "answer": "可以。选择语言并设置所需的精确字符数。"
+        },
+        {
+          "question": "可以生成多种语言的占位文本吗？",
+          "answer": "可以。从多种语言中选择，预览版面在不同文字体系下的效果。"
+        }
+      ]
+    },
+    "meta": {
+      "title": "占位文本生成器 - oddkit",
+      "description": "在浏览器中按指定字符数生成多种语言的占位文本，无需上传到服务器。",
+      "keywords": [
+        "lorem ipsum 生成器",
+        "占位文本生成器",
+        "填充文本生成器",
+        "虚拟文本生成器",
+        "多语言占位文本",
+        "浏览器文本工具",
         "oddkit"
       ]
     }
