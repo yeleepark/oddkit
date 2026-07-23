@@ -42,6 +42,9 @@
     "characterCounter": {
       "description": "Count characters in your text, with and without spaces."
     },
+    "dummyText": {
+      "description": "Generate lorem ipsum placeholder text in words, sentences, or paragraphs"
+    },
     "promptComment": "{count} local browser tools",
     "heroTitle": "Useful tools, only when you need them.",
     "search": {
@@ -778,6 +781,71 @@
         "letter count",
         "count characters",
         "string length",
+        "browser text tool",
+        "oddkit"
+      ]
+    }
+  },
+  "dummyText": {
+    "title": "Dummy Text Generator",
+    "description": "Generate placeholder lorem ipsum text in your browser. Choose words, sentences, or paragraphs, and copy the result instantly.",
+    "controls": {
+      "unitLabel": "Unit",
+      "countLabel": "Count",
+      "countRange": "{min}–{max}",
+      "optionsLabel": "Options",
+      "startWithLorem": "Start with \"Lorem ipsum\"",
+      "outputLabel": "Output",
+      "charCount": "{count} chars"
+    },
+    "units": {
+      "words": "Words",
+      "sentences": "Sentences",
+      "paragraphs": "Paragraphs"
+    },
+    "actions": {
+      "regenerate": "Regenerate",
+      "copy": "Copy output",
+      "copied": "Copied!"
+    },
+    "ui": {
+      "eyebrow": "// filler content"
+    },
+    "seo": {
+      "overviewTitle": "Browser-based dummy text generator",
+      "overview": "Generate placeholder lorem ipsum text for mockups, wireframes, and layout testing. Choose the exact number of words, sentences, or paragraphs you need, with the option to start with the classic \"Lorem ipsum dolor sit amet\" opener.",
+      "privacy": "Text is generated locally in your browser. Nothing is uploaded to oddkit's servers.",
+      "useCasesTitle": "Common use cases",
+      "useCases": [
+        "Fill design mockups with realistic-looking placeholder copy",
+        "Test how a layout handles varying amounts of text",
+        "Generate quick filler content for prototypes and demos"
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "question": "Is the generated text sent to a server?",
+          "answer": "No. All text is generated locally in your browser using JavaScript."
+        },
+        {
+          "question": "Can I control how much text is generated?",
+          "answer": "Yes. Choose words, sentences, or paragraphs and set the exact count you need."
+        },
+        {
+          "question": "Does the text always start with \"Lorem ipsum\"?",
+          "answer": "Only if you enable the \"Start with Lorem ipsum\" option. Otherwise every generation is randomized."
+        }
+      ]
+    },
+    "meta": {
+      "title": "Dummy Text Generator - oddkit",
+      "description": "Generate lorem ipsum placeholder text in words, sentences, or paragraphs directly in your browser. Nothing is uploaded to a server.",
+      "keywords": [
+        "lorem ipsum generator",
+        "dummy text generator",
+        "placeholder text generator",
+        "filler text generator",
+        "lorem ipsum",
         "browser text tool",
         "oddkit"
       ]
